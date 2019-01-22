@@ -1,0 +1,171 @@
+---
+layout: page
+title: "About"
+description: " --. .--- -..- ... "
+header-img: "img/about/steps.jpg" 
+multilingual: true
+---
+
+ 
+    <!-- canvas-nest.min.js --> 
+<!--   
+<script type="text/javascript" color="245,230,213" opacity='0.7' zIndex="-2" count="99" src="../../../../js/canvas-nest.min.js"></script>
+-->
+<!-- Language Selector -->
+<!-- 
+<select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
+    <option value="0" selected> 中文 Chinese </option>
+    <option value="1"> 英文 English </option>
+</select>
+-->
+<!-- Chinese Version -->
+<!-- 
+<div class="zh post-container">
+    {% capture about_zh %}{% include about/zh.md %}{% endcapture %}
+    {{ about_zh | markdownify }}
+</div>
+-->
+<!-- English Version -->
+<!--           
+<div class="en post-container">
+    {% capture about_en %}{% include about/en.md %}{% endcapture %}
+    {{ about_en | markdownify }}
+</div>
+-->
+
+
+
+  <!-- main style -->
+  <link rel="stylesheet" type="text/css" href="../../../../about/css/main.css?v=2017.11.11_v2"> 
+
+        <section>
+            <div class="about-me">
+                <div class="text-center">
+                <img class="unselectable" src="../../../../img/about/about-me.png" height="100" width="275">
+                <br><br>
+                </div>
+                <div class="clearfix"></div>
+                <div class="about-me__content" id="terminal-start">
+                    <p>Last login: Thu Aug 30 12:26:00 2018 from www.gjxslisa.club</p>
+
+<pre style="border: none;">
+<br>
+(  ____ \\__    _/|\     /|(  ____ \
+| (    \/   )  (  ( \   / )| (    \/
+| |         |  |   \ (_) / | (_____ 
+| | ____    |  |    ) _ (  (_____  )
+| | \_  )   |  |   / ( ) \       ) |
+| (___) ||\_)  )  ( /   \ )/\____) |
+(_______)(____/   |/     \|\_______)
+
+Amazon Linux version 2017.09 is available.
+</pre>
+
+                    <br><br>
+                    <div class="command">
+                        <!-- email -->
+                        <p>echo $email</p>
+                        <span class="hideme">email: gjxslwz@gmail.com</span>
+                        <!-- phone -->
+                        <p>echo $phone</p>
+                        <span class="hideme">phone: (086)-110-XXXX</span>
+                        <!-- address -->
+                        <p>echo $address</p>
+                        <span class="hideme">address: Guangdong, ON, China</span>
+                        <!-- education -->
+                        <p>echo $education</p>
+                        <span class="hideme">Guangdong University of Technology • 2015 - 2019<br>
+                        BSc: Automation Engineering;</span>
+                        <p>echo $aspiration</p>
+                        <span class="hideme">World Peace.</span>
+                        <p>echo $hobby</p>
+                        <span class="hideme">think about life.</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+
+    <!-- =================== script =================== -->
+    <script src="../../../../about/js/jquery.min.js"></script>
+    <script src="../../../../about/js/jquery-ui.min.js"></script>
+    <script src="../../../../about/lib/parallax.js-1.4.2/parallax.min.js"></script>
+    <!-- Latest compiled and minified JavaScript -->
+
+    <!-- particles js -->
+    <script src="../../../../about/js/particles.min.js"></script>
+
+    <!-- bootstrap 4.0.0-beta.2 -->
+    <script src="../../../../about/js/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh" crossorigin="anonymous"></script>
+    <script src="../../../../about/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ" crossorigin="anonymous"></script>
+
+  
+  <script>
+      /*-------------------------------
+        terminal linux style
+      -------------------------------*/
+      var about_me_content_displayed = false;
+      var $lines = $('.command p');
+      $lines.hide();
+
+      var lineContents = [];
+      var output = [];
+
+      var terminal = function() {
+        var skip = 0;
+        typeLine = function(idx) {
+        idx == null && (idx = 0);
+        var element = $lines.eq(idx);
+        var content = lineContents[idx];
+        if(typeof content == "undefined") {
+          $('.skip').hide();
+          return;
+        }
+        var charIdx = 0;
+
+        // console.log(idx);
+
+        var typeChar = function() {
+          var rand = Math.round(Math.random() * 150) + 20;
+
+          setTimeout(function() {
+          var char = content[charIdx++];
+          element.append(char);
+          if(typeof char !== "undefined")
+            typeChar();
+          else {
+            element.append('<br/><span class="output">' + output[idx] + '</span>');
+            element.removeClass('active');
+            typeLine(++idx);
+          }
+          }, skip ? 0 : rand);
+        }
+        element.append('gjxs@GJXS:~$ ').addClass('active');
+        typeChar();
+        }
+
+        $lines.each(function(i) {
+        lineContents[i] = $(this).text();
+        output[i] = $(this).next('span').html();
+        $(this).text('').show();
+        });
+        typeLine();
+      }
+
+      $(window).scroll(function() {
+         var hT = $('#terminal-start').offset().top,
+           hH = $('#terminal-start').outerHeight(),
+           wH = $(window).height(),
+           wS = $(this).scrollTop() - 250;
+         if (wS > (hT+hH-wH) && !about_me_content_displayed){
+        about_me_content_displayed = true;
+        terminal();
+         }
+      });
+      // end terminal style ------------------------------------
+
+    </script>
+
+
+
+

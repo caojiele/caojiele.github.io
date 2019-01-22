@@ -1,0 +1,147 @@
+# Site settings
+title: Jlcao Blog
+SEOTitle: 曹杰乐的博客 | Jlcao Blog
+header-img: img/home-bg-fj.jpg
+email:  caojiele1225@126.com
+description: "关于程序与设计以及架构 | 曹杰乐，Java & Mobile Lover，Software Engineer | 这里是 @Jiele曹杰乐 的个人博客，与你一起发现更大的世界。"
+keyword: "曹杰乐, Jiele曹杰乐, Jiele, Jack-cao, @Jack-cao, 曹杰乐的博客, Jlcao Blog, 博客, 个人网站, 互联网, Java, node.js, 后端, 开发"
+url: "https://www.caojiele.com"              # your host, for absolute URL
+baseurl: ""                             # for example, '/blog' if your blog hosted on 'host/blog'
+
+# Publish posts or collection documents with a future date.
+future: true
+
+# SNS settings
+RSS: true
+zhihu_username:     wang-le-6-62
+github_username:    caojiele
+linkedin_username:  Jack-cao-387159129    //firstname-lastname-idxxxx
+#weibo_username:    Jack
+#twitter_username:   
+#facebook_username:  
+#linkedin_username:  
+
+
+
+# Build settings
+# from 2016, 'pygments' is unsupported on GitHub Pages. Use 'rouge' for highlighting instead.
+highlighter: rouge
+permalink: pretty
+paginate: 10
+exclude: ["less","node_modules","Gruntfile.js","package.json","README.md","README.zh.md"]
+anchorjs: false                           # if you want to customize anchor. check out line:181 of `post.html`
+
+
+
+# Gems
+# from PR#40, to support local preview for Jekyll 3.0
+# make sure you have this gem installed
+# `$ gem install jekyll-paginate`
+plugins: [jekyll-paginate]
+
+
+
+# Markdown settings
+# replace redcarpet to kramdown,
+# although redcarpet can auto highlight code, the lack of header-id make the catalog impossible, so I switch to kramdown
+# document: http://jekyllrb.com/docs/configuration/#kramdown
+markdown: kramdown
+kramdown:
+  input: GFM                            # use Github Flavored Markdown !important
+  syntax_highlighter_opts:
+    span:
+      line_numbers: false
+    block:
+      line_numbers: true
+      start_line: 1
+
+
+
+# Disqus settings
+# disqus_username: gjxs
+# livere_uid: MTAyMC8zNzIzMy8xMzc2Nw==
+
+# gitalk settings
+gitalk:
+   enable: true
+   owner: caojiele
+   repo: caojiele.github.io
+   clientID: 71d864566f502c0a73ba
+   clientSecret: 0275406b08f33cc8118d02eb9332cfb707f13bf0
+   admin: caojiele
+
+# ---------------- #
+#      Search      #
+# ---------------- #
+simple_jekyll_search:
+    # 是否支持全文搜索
+    fulltext: false
+    # 最多显示多少条搜索结果
+    limit: 10
+
+# Analytics settings
+# Baidu Analytics
+#ba_track_id: 5e4a91c21c
+#ba_track_id:8db676af20
+
+# Google Analytics
+ga_track_id: 'UA-120526213-1'            # Format: UA-xxxxxx-xx
+ga_domain: auto
+
+# Baidu Analytics
+baidu_analytics: 'f449fbb4d143d156c197d3a7a38a779d'
+
+
+
+
+# Sidebar settings
+sidebar: true                           # whether or not using Sidebar.
+sidebar-about-description: "When you look long into an abyss,the abyss looks into you<br>当你凝视深渊时，深渊也在凝视你"
+sidebar-avatar: /img/avatar-Jack.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+
+
+
+# Featured Tags
+featured-tags: true                     # whether or not using Feature-Tags
+featured-condition-size: 1              # A tag will be featured if the size of it is more than this condition value
+
+
+
+# Progressive Web Apps
+chrome-tab-theme-color: "#000000"
+service-worker: true
+
+
+# MathJax rendering for layout:page (e.g. post preview)
+page-mathjax: false
+
+
+
+# Friends
+friends: [
+    {
+        title: "黄玄的博客",
+        href: "https://huangxuan.me/"
+    },{
+        title: "许雪里的博客",
+        href: "http://www.xuxueli.com/blog/#/"
+    },{
+        title: "小马哥的技术博客",
+        href: "https://mercyblitz.github.io/"
+    },{
+        title: "Ebn's Blog",
+        href: "http://ebnbin.com/"
+    },{
+        title: "SmdCn's Blog",
+        href: "http://blog.smdcn.net"
+    },{
+        title: "David's Game",
+        href: "https://www.ruoyaowu.com/"
+    },{
+        title: "DHong Say",
+        href: "http://dhong.co"
+    },{
+        title: "一之笔的博客",
+        href: "https://yizibi.github.io"
+    }
+]
