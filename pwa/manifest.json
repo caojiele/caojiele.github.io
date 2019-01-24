@@ -1,7 +1,7 @@
 {
-  "name": "G.J.先生 Blog",
-  "short_name": "G.J.先生 Blog",
-  "description": "文艺技术宅",
+  "name": "Jlcao Blog",
+  "short_name": "Jlcao Blog",
+  "description": " 有内容的Java攻城狮 ",
   "icons": [{
     "src": "icons/128.png",
     "sizes": "128x128",
