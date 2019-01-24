@@ -1,7 +1,7 @@
 # Site settings
 title: Jlcao Blog
 SEOTitle: 曹杰乐的博客 | Jlcao Blog
-header-img: img/home-bg-fj.jpg
+header-img: img/root/home-bg-fj.jpg
 email:  caojiele1225@126.com
 description: "关于程序与设计以及架构 | 曹杰乐，Java & Mobile Lover，Software Engineer | 这里是 @Jiele曹杰乐 的个人博客，与你一起发现更大的世界。"
 keyword: "曹杰乐, Jiele曹杰乐, Jiele, Jack-cao, @Jack-cao, 曹杰乐的博客, Jlcao Blog, 博客, 个人网站, 互联网, Java, node.js, 后端, 开发"
@@ -15,8 +15,8 @@ future: true
 RSS: true
 zhihu_username:     wang-le-6-62
 github_username:    caojiele
-linkedin_username:  Jack-cao-387159129    //firstname-lastname-idxxxx
-#weibo_username:    Jack
+linkedin_username:  Jack-cao-387159129  
+weibo_username:    Jack
 #twitter_username:   
 #facebook_username:  
 #linkedin_username:  
@@ -96,8 +96,8 @@ baidu_analytics: 'f449fbb4d143d156c197d3a7a38a779d'
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
-sidebar-about-description: "When you look long into an abyss,the abyss looks into you<br>当你凝视深渊时，深渊也在凝视你"
-sidebar-avatar: /img/avatar-Jack.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-about-description: " 当你凝视深渊时 深渊也在凝视你"
+sidebar-avatar: /img/root/avatar-Jack.jpg      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 
 
