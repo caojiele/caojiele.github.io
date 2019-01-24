@@ -1,7 +1,7 @@
 /* ===========================================================
  * sw.js
  * ===========================================================
- * Copyright 2016 @GJXS1980
+ * Copyright 2016 @caojiele
  * Licensed under Apache 2.0
  * service worker scripting
  * ========================================================== */
@@ -17,13 +17,13 @@ const PRECACHE_LIST = [
   "./offline.html",
   "./js/jquery.min.js",
   "./js/bootstrap.min.js",
-  "./js/gjxs-blog.min.js",
+  "./js/jlcao-blog.min.js",
   "./js/snackbar.js",
   "./img/root/icon_wechat.png",
-  "./img/root/avatar-gjxs.jpg",
+  "./img/root/avatar-Jack.jpg",
   "./img/root/home-bg.jpg",
   "./img/404/404-bg.jpg",
-  "./css/gjxs-blog.min.css",
+  "./css/jlcao-blog.min.css",
   "./css/syntax.css",
   "./css/bootstrap.min.css"
   // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css",
@@ -32,7 +32,7 @@ const PRECACHE_LIST = [
 ]
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
-  "gjxslisa.club",
+  "caojiele.com",
   "yanshuo.io",
   "cdnjs.cloudflare.com"
 ]
@@ -236,7 +236,7 @@ function sendMessageToAllClients(msg) {
  */
 function sendMessageToClientsAsync(msg) {
   // waiting for new client alive with "async" setTimeout hacking
-  // https://twitter.com/GJXS2017
+  // https://twitter.com/caojiele
   // https://jakearchibald.com/2016/service-worker-meeting-notes/#fetch-event-clients
   setTimeout(() => {
     sendMessageToAllClients(msg)
