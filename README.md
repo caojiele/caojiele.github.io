@@ -27,7 +27,7 @@
 $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 ```
 
-**[在这里预览模板 &rarr;](http://huangxuan.me/huxblog-boilerplate/)**
+**[在这里预览模板 &rarr;](https://www.caojiele.com/Jlcaoblog-boilerplate/)**
 
 ## 各版本特性
 
