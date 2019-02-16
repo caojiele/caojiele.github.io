@@ -102,7 +102,7 @@ tags:
 
 #### 侧边栏
 
-看右边:
+&rarr;看右边:
 ![](http://huangxuan.me/img/blog-sidebar.jpg)
 
 设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
