@@ -1,7 +1,8 @@
 # Jlcao blog 模板
 
-### [我的博客在这里 &rarr;](http://www.caojiele.com)
+### [我的博客在这里 &rarr;](https://www.caojiele.com)
 
+![](https://www.caojiele.com/img/root/blog-desktop.jpg)
 
 ### 关于收到"Page Build Warning"的email
 
