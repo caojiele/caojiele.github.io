@@ -18,7 +18,7 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 
 ##### New Feature (V1.5.2)
 
-* 当你fork了我的仓库之后，还要删掉里面的关于我的文档是不是感到略烦躁呢？**Boilerplate** 模板将帮助你快速开始，方便合并与更新。
+* 当你fork了我的仓库之后，还要删掉里面关于我的文档是不是感到烦躁呢？**Boilerplate** 模板将帮助你快速开始，方便合并与更新。
 * `-apple-system`被添加到了字体规则里面了，这套字体格式能将iOS9默认的新字体**San Francisco**表现的非常漂亮。
 * 解决了代码过长自动换行的bug,替换为横向滚动条。详情请见[issue#15](https://github.com/Huxpro/huxpro.github.io/issues/15)
 
