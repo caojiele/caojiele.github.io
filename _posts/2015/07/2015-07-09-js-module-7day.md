@@ -22,7 +22,7 @@ tags:
 ### [Watch Fullscreen →](https://www.caojiele.com/js-module-7day/)
 
 <div class="visible-md visible-lg">
-<img src="//www.caojiele.com/js-module-7day/attach/qrcode.png" width="350"/>
+<img src="//www.caojiele.com/js-module-7day/attach/qrcode.png" width="350"/><br>
 <small class="img-hint">你也可以通过扫描二维码在手机上观看</small>
 </div>
 
