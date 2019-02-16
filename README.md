@@ -51,7 +51,7 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 	* [标题底图](#标题底图)
 	* [搜索展示标题-头文件](#搜索展示标题-头文件)
 * 关于其他
-	* [关于收到页面构建警告的email](#关于收到"Page Build Warning"的email)
+	* [关于收到"Page Build Warning"的email](#关于收到页面构建警告的email)
 
 #### 环境要求
 
@@ -234,7 +234,7 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 其实这个SEO Title就是定义了<head><title>标题</title></head>这个里面的东西和多说分享的标题，你可以自行修改的。
 
-#### 关于收到"Page Build Warning"的email
+#### 关于收到页面构建警告的email
 
 由于jekyll升级到3.0.x,对原来的pygments代码高亮不再支持，现只支持一种-rouge，所以你需要在 `_config.yml`文件中修改`highlighter: rouge`.另外还需要在`_config.yml`文件中加上`gems: [jekyll-paginate]`.
 
