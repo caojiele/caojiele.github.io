@@ -42,7 +42,7 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 	* [关于我](#关于我)
 	* [推荐标签](#推荐标签)
 	* [好友链接](#好友链接)
-	* [HTML5 演示文档布局](#HTML5 演示文档布局)
+	* [演示文档布局](#演示文档布局)
 * 评论与 Google/Baidu Analytics
 	* [评论](#评论)
 	* [网站分析](#网站分析) 
@@ -157,7 +157,7 @@ friends: [
 ```
 
 
-#### HTML5 演示文档布局
+#### 演示文档布局
 
 HTML5幻灯片的排版：
 
