@@ -35,21 +35,24 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 
 * 开始
 	* [环境要求](#环境要求)
-	* [开始](#get-started)
-	* [写一篇博文](#write-posts)
+	* [开始](#开始)
+	* [写一篇博文](#写一篇博文)
 * 组件
-	* [侧边栏](#sidebar)
-	* [迷你关于我](#mini-about-me)
-	* [推荐标签](#featured-tags)
-	* [好友链接](#friends)
-	* [HTML5 演示文档布局](#keynote-layout)
+	* [侧边栏](#侧边栏)
+	* [关于我](#关于我)
+	* [推荐标签](#推荐标签)
+	* [好友链接](#好友链接)
+	* [HTML5 演示文档布局](#HTML5 演示文档布局)
 * 评论与 Google/Baidu Analytics
-	* [评论](#comment)
-	* [网站分析](#analytics) 
+	* [评论](#评论)
+	* [网站分析](#网站分析) 
 * 高级部分
-	* [自定义](#customization)
-	* [标题底图](#header-image)
-	* [搜索展示标题-头文件](#seo-title)
+	* [自定义](#自定义)
+	* [标题底图](#标题底图)
+	* [搜索展示标题-头文件](#搜索展示标题-头文件)
+* 关于其他
+	* [关于收到"Page Build Warning"的emai](#关于收到"Page Build Warning"的emai)
+	* [致谢](#致谢)
 
 #### 环境要求
 
@@ -58,7 +61,7 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 经 [@BrucZhaoR](https://github.com/BruceZhaoR)的测试，好像两个命令都是可以的自动运行修改后的文件的，刷新后可以实时预览。官方文件是建议安装bundler，这样你在本地的效果就跟在github上面是一样的。详情请见这里：https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll
 
 
-#### Get Started
+#### 开始
 
 你可以通用修改 `_config.yml`文件来轻松的开始搭建自己的博客:
 
@@ -78,7 +81,7 @@ weibo_username: caojiele      # 你的微博账号，底部链接会自动更新
 
 Jekyll官方网站还有很多的参数可以调，比如设置文章的链接形式...网址在这里：[Jekyll - Official Site](http://jekyllrb.com/) 中文版的在这里：[Jekyll中文](http://jekyllcn.com/).
 
-#### write-posts
+#### 写一篇博文
 
 要发表的文章一般以markdown的格式放在这里`_posts/`，你只要看看这篇模板里的文章你就立刻明白该如何设置。
 
@@ -98,7 +101,7 @@ tags:
 
 ```
 
-#### SideBar
+#### 侧边栏
 
 看右边:
 ![](http://huangxuan.me/img/blog-sidebar.jpg)
@@ -114,11 +117,11 @@ sidebar-avatar: /img/avatar-jack.jpg     #你的大头贴，请使用绝对地�
 侧边栏是响应式布局的，当屏幕尺寸小于992px的时候，侧边栏就会移动到底部。具体请见bootstrap栅格系统 <http://v3.bootcss.com/css/>
 
 
-#### Mini About Me
+#### 关于我
 
 Mini-About-Me 这个模块将在你的头像下面，展示你所有的社交账号。这个也是响应式布局，当屏幕变小时候，会将其移动到页面底部，只不过会稍微有点小变化，具体请看代码。
 
-#### Featured Tags
+#### 推荐标签
 
 看到这个网站 [Medium](http://medium.com) 的推荐标签非常的炫酷，所以我将他加了进来。
 这个模块现在是独立的，可以呈现在所有页面，包括主页和发表的每一篇文章标题的头上。
@@ -134,7 +137,7 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 内部有一个条件模板 `{% if tag[1].size > {{site.featured-condition-size}} %}` 是用来做筛选过滤的.
 
 
-#### Friends
+#### 好友链接
 
 好友链接部分。这会在全部页面显示。
 
@@ -155,7 +158,7 @@ friends: [
 ```
 
 
-#### Keynote Layout
+#### HTML5 演示文档布局
 
 HTML5幻灯片的排版：
 
@@ -175,7 +178,7 @@ iframe:     "http://huangxuan.me/js-module-7day/"
 iframe在不同的设备中，将会自动的调整大小。保留内边距是为了让手机用户可以向下滑动，以及添加更多的内容。
 
 
-#### Comment
+#### 评论
 
 博客不仅支持多说[Duoshuo](http://duoshuo.com)评论系统，也支持[Disqus](http://disqus.com)评论系统。
 
@@ -196,7 +199,7 @@ disqus_username: _你的用户名_
 
 **最后**多说是支持分享的，如果你不想分享，请这样设置：`duoshuo_share: false`。你可以同时使用两个评论系统，不过个人感觉怪怪的。
 
-#### Analytics
+#### 网站分析
 
 网站分析，现在支持百度统计和Google Analytics。需要去官方网站注册一下，然后将返回的code贴在下面：
 
@@ -209,7 +212,7 @@ ga_track_id: 'UA-49627206-1'            # 你用Google账号去注册一个就�
 ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
 ```
 
-#### Customization
+#### 自定义
 
 如果你喜欢折腾，你可以去自定义我的这个模板的 code，[Grunt](gruntjs.com)已经为你准备好了。（感谢 Clean Blog）
 
@@ -217,7 +220,7 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 **如果你可以理解 `_include/` 和 `_layouts/`文件夹下的代码（这里是整个界面布局的地方），你就可以使用 Jekyll 使用的模版引擎 [Liquid](https://github.com/Shopify/liquid/wiki)的语法直接修改/添加代码，来进行更有创意的自定义界面啦！**
 
-#### Header Image
+#### 标题底图
 
 标题底图是可以自己选的，看看几篇示例post你就知道如何设置了。在
   [issue #6 ](https://github.com/Huxpro/huxpro.github.io/issues/6) 中我被问到：怎么样才能让标题底图好看呢？
@@ -226,7 +229,7 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 但是需要注意的是本模板的标题是**白色**的，所以背景色要设置为**灰色**或者**黑色**，总之深色系就对了。当然你还可以自定义修改字体颜色，总之，用github pages就是可以完全的个性定制自己的博客。
 
-#### SEO Title
+#### 搜索展示标题-头文件
 
 我的博客标题是 **“Jlcao Blog”** 但是我想要在搜索的时候显示 **“曹杰乐的博客 | Jlcao Blog”** ，这个就需要SEO Title来定义了。
 
@@ -249,7 +252,7 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 ## 致谢
 
-1. 这个模板是从这里[IronSummitMedia/startbootstrap-clean-blog-jekyll](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)  fork 的。 感谢这个作者
+1. 这个模板是从这里[IronSummitMedia/startbootstrap-clean-blog-jekyll](https://github.com/IronSummitMedia/startbootstrap-clean-blog-jekyll)  fork 的。 感谢这个作者！
 
 2. 感谢 Jekyll、Github Pages 和 Bootstrap!
 
