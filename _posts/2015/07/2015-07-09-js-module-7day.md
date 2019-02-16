@@ -2,7 +2,7 @@
 layout:     keynote
 title:      "JavaScript 模块化七日谈"
 subtitle:   "🎞  Slides:JavaScript Modularization Journey"
-iframe:     "//caojiele.com/js-module-7day/"
+iframe:     "//www.caojiele.com/js-module-7day/"
 date:       2015-07-09
 author:     "Hux"
 tags:
