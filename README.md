@@ -51,7 +51,7 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 	* [标题底图](#标题底图)
 	* [搜索展示标题-头文件](#搜索展示标题-头文件)
 * 关于其他
-	* [关于收到"Page Build Warning"的email](#关于收到"Page Build Warning"的email)
+	* [关于收到页面构建警告的email](#关于收到"Page Build Warning"的email)
 
 #### 环境要求
 
