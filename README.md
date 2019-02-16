@@ -34,7 +34,7 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 ## 说明文档
 
 * 开始
-	* [环境要求](#environment)
+	* [环境要求](#环境要求)
 	* [开始](#get-started)
 	* [写一篇博文](#write-posts)
 * 组件
@@ -51,7 +51,7 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 	* [标题底图](#header-image)
 	* [搜索展示标题-头文件](#seo-title)
 
-#### Environment
+#### 环境要求
 
 如果你安装了jekyll，那你只需要在命令行输入`jekyll serve`就能在本地浏览器预览主题。你还可以输入`jekyll serve --watch`，这样可以边修改边自动运行修改后的文件。
 
