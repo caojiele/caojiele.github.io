@@ -501,7 +501,7 @@ pre code {
   }
   /**
 	 * Animation
-	 * GJXSBlog-Navbar using genuine Material Design Animation
+	 * jlcaoBlog-Navbar using genuine Material Design Animation
 	 */
   #GJXSblog_navbar {
     /**
@@ -563,7 +563,7 @@ pre code {
   left: 0;
   width: 100%;
   z-index: 3;
-  /* GJXS learn from
+  /* jlcao learn from
      *     TypeIsBeautiful,
      *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
      */
@@ -714,7 +714,7 @@ pre code {
 }
 .intro-header .site-heading .subheading,
 .intro-header .page-heading .subheading {
-  /* GJXS learn from
+  /* jlcao learn from
      *     TypeIsBeautiful,
      *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
      */
@@ -742,7 +742,7 @@ pre code {
   display: block;
 }
 .intro-header .post-heading .subheading {
-  /* GJXS learn from
+  /* jlcao learn from
      *     TypeIsBeautiful,
      *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
      */
@@ -1123,7 +1123,7 @@ img::-moz-selection {
 }
 .one-tag-list .tag-text {
   font-weight: 200;
-  /* GJXS learn from
+  /* jlcao learn from
      *     TypeIsBeautiful,
      *     [This Post](http://zhuanlan.zhihu.com/ibuick/20186806) etc.
      */
@@ -1172,7 +1172,7 @@ img::-moz-selection {
   height: auto;
   margin: 1.5em auto 1.6em auto;
 }
-/* GJXS Optimize UserExperience */
+/* jlcao Optimize UserExperience */
 .navbar-default .navbar-toggle:focus,
 .navbar-default .navbar-toggle:hover {
   background-color: inherit;
@@ -1197,7 +1197,7 @@ img::-moz-selection {
 .navbar-default .navbar-toggle .icon-bar + .icon-bar {
   margin-top: 3px;
 }
-/* GJXS customize Style for Duoshuo */
+/* jlcao customize Style for Duoshuo */
 .comment {
   margin-top: 20px;
 }
