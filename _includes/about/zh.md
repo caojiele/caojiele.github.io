@@ -4,7 +4,7 @@
 
 - QQ：312236308
 - 微信：CJL33333
-- 微信公众号：xiaomage_freestyle
+    - 微信公众号：xiaomage_freestyle
 - [Github](http://github.com/caojiele)：[http://github.com/caojiele](http://github.com/caojiele)
 
 
@@ -24,7 +24,6 @@
 
 - Apache
     - [incubator-dubbo-website](https://github.com/apache/incubator-dubbo-website)
-
 
 
 ## 社区交流
