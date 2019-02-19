@@ -22,7 +22,6 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 * `-apple-system`被添加到了字体规则里面了，这套字体格式能将iOS9默认的新字体**San Francisco**表现的非常漂亮。
 * 解决了代码过长自动换行的bug,替换为横向滚动条。详情请见[issue#15](https://github.com/Huxpro/huxpro.github.io/issues/15)
 
-###### 其他历史版本个人觉得没有必要了解，看看英文就行了。
 
 
 
