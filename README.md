@@ -1,6 +1,6 @@
 # Jlcao Blog
 
-### [我的博客在这里 &rarr;](https://www.caojiele.com)
+### [我的博客传送门 &rarr;](https://www.caojiele.com)
 
 ![](https://www.caojiele.com/img/root/blog-desktop.jpg)
 
@@ -33,7 +33,7 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 ## 说明文档
 
 * 开始
-	* [环境要求](#环境要求)
+	* [火环境要求](#环境要求)
 	* [开始](#开始)
 	* [写一篇博文](#写一篇博文)
 * 组件
