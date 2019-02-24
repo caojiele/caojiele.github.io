@@ -33,7 +33,7 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 ## 说明文档
 
 * 开始
-	* [环境要求](#ss_qq)
+	* [环境要求](#环境要求)
 	* [开始](#开始)
 	* [写一篇博文](#写一篇博文)
 * 组件
