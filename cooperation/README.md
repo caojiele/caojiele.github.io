@@ -12,9 +12,9 @@
 
 #### 我们的服务流程可以很简单
 
-![](assets/service-process1.png)
+![](https://raw.githubusercontent.com/caojiele/caojiele.github.io/master/cooperation/assets/service-process1.jpg)
 
 #### 我们的服务内容丰富多彩
 ![](assets/service-content.png)
 
-![](assets/service-content1.png)
+![](https://raw.githubusercontent.com/caojiele/caojiele.github.io/master/cooperation/assets/service-content1.jpeg)
