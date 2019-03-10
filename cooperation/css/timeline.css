@@ -145,12 +145,12 @@ body, html {
 }
 
 /** Venders Logo **/
-.i-vue:before {
+.i-hulianwang:before {
 	content: "";
     display: block;
     width: 40px;
     height: 40px;
-    background: url("../images/logo-vue.png") 50% 50% no-repeat;
+    background: url("../images/logo-hulianwang.png") 50% 50% no-repeat;
     background-size: 20px;
 }
 
@@ -163,21 +163,21 @@ body, html {
 	background-size: 20px;
 }
 
-.i-jquery:before {
+.i-sourcecode:before {
 	content: "";
 	display: block;
 	width: 40px;
 	height: 40px;
-	background: url("../images/logo-jquery.png") 50% 50% no-repeat;
+	background: url("../images/logo-sourcecode.png") 50% 50% no-repeat;
 	background-size: 20px;
 }
 
-.i-react:before {
+.i-xiangmu:before {
 	content: "";
 	display: block;
 	width: 40px;
 	height: 40px;
-	background: url("../images/logo-react.png") 50% 50% no-repeat;
+	background: url("../images/logo-xiangmu.png") 50% 50% no-repeat;
 	background-size: 22px;
 }
 
