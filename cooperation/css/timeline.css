@@ -25,12 +25,12 @@ body, html {
 }
 
 @font-face {
-	font-family: 'huxico';
-	src:url('../fonts/huxico.eot');
-	src:url('../fonts/huxico.eot?#iefix') format('embedded-opentype'),
-		url('../fonts/huxico.woff') format('woff'),
-		url('../fonts/huxico.ttf') format('truetype'),
-		url('../fonts/huxico.svg#huxico') format('svg');
+	font-family: 'jlcaoico';
+	src:url('../fonts/jlcaoico.eot');
+	src:url('../fonts/jlcaoico.eot?#iefix') format('embedded-opentype'),
+		url('../fonts/jlcaoico.woff') format('woff'),
+		url('../fonts/jlcaoico.ttf') format('truetype'),
+		url('../fonts/jlcaoico.svg#huxico') format('svg');
 	font-weight: normal;
 	font-style: normal;
 } /* Made with http://icomoon.io/ */
@@ -99,7 +99,7 @@ body, html {
 .cbp_tmtimeline > li .cbp_tmicon {
 	width: 40px;
 	height: 40px;
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -141,7 +141,7 @@ body, html {
 
 .cbp_tmicon-font:before {
 	content: "\e003";
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 }
 
 /** Venders Logo **/
@@ -181,7 +181,7 @@ body, html {
 	background-size: 22px;
 }
 
-/******* Hux Branch *****/
+/******* Jlcao Branch *****/
 
 /* navbar - dark mode */
 .navbar-custom .nav li a,
@@ -224,12 +224,12 @@ header img{
 	width: 175px;
 }
 
-.cbp_tmlabel .hux_ul{
+.cbp_tmlabel .jlcao_ul{
 	border:none;
 	padding:0;
 	margin:0;
 }
-.cbp_tmlabel .hux_ul li{
+.cbp_tmlabel .jlcao_ul li{
 	padding:0;
 	margin: 0;
 	list-style: none;
