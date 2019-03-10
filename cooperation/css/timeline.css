@@ -121,22 +121,22 @@ body, html {
 
 .cbp_tmicon-phone:before {
 	content: "\e004";
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 }
 
 .cbp_tmicon-screen:before {
 	content: "\e005";
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 }
 
 .cbp_tmicon-html:before {
 	content: "\e001";
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 }
 
 .cbp_tmicon-video:before {
 	content: "\e002";
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 }
 
 .cbp_tmicon-font:before {
