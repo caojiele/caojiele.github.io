@@ -5,7 +5,7 @@ Hi, I'm Jack Cao, now in a Internet medical high-tech company engaged in the bac
 - QQ：312236308
 - Wechat：CJL33333
     - Official Accounts：xiaomage_freestyle
-- [Github](http://github.com/caojiele)：[http://github.com/caojiele](http://github.com/caojiele)
+- Github：[http://github.com/caojiele](http://github.com/caojiele)
 
 
 
