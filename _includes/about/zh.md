@@ -5,7 +5,7 @@
 - QQ：312236308
 - 微信：CJL33333
     - 微信公众号：xiaomage_freestyle
-- [Github](http://github.com/caojiele)：[http://github.com/caojiele](http://github.com/caojiele)
+- Github：[http://github.com/caojiele](http://github.com/caojiele)
 
 
 ## 线上分享
