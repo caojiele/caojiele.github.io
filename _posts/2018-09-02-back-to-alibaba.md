@@ -1,8 +1,9 @@
 ---
-layout: post
-title: "阿里云道哥自述：重回阿里的29个月"
-subtitle: "Back to Alibaba's 29 months"
-author: "吴翰清"
+layout:     post
+title:      "阿里云道哥自述：重回阿里的29个月"
+subtitle:   "Back to Alibaba's 29 months"
+date:       2018-09-02
+author:     "吴翰清"
 header-img: "img/in-post/2018.09/02/post-bg-company.png"
 header-mask: 0.4
 tags:
