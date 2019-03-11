@@ -1,8 +1,8 @@
 # Jlcao Blog
 
-### [我的博客传送门 &rarr;](https://www.caojiele.com)
+### [我的博客传送门 &rarr;](https://caojiele.com)
 
-![](https://www.caojiele.com/img/root/blog-desktop.jpg)
+![](https://caojiele.com/img/root/blog-desktop.jpg)
 
 ## 关于模板(beta)
 
@@ -12,7 +12,7 @@
 $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 ```
 
-**[在这里预览模板 &rarr;](https://www.caojiele.com/Jlcaoblog-boilerplate/)**
+**[在这里预览模板 &rarr;](https://caojiele.com/Jlcaoblog-boilerplate/)**
 
 ## 各版本特性
 
@@ -102,7 +102,7 @@ tags:
 #### 侧边栏
 
 看右边:
-![](https://www.caojiele.com/img/root/blog-sidebar.jpg)
+![](https://caojiele.com/img/root/blog-sidebar.jpg)
 
 设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
 ```
@@ -160,7 +160,7 @@ friends: [
 
 HTML5幻灯片的排版：
 
-![](https://www.caojiele.com/img/root/blog-keynote.jpg)
+![](https://caojiele.com/img/root/blog-keynote.jpg)
 
 这部分是用于占用html格式的幻灯片的，一般用到的是 Reveal.js, Impress.js, Slides, Prezi 等等.我认为一个现代化的博客怎么能少了放html幻灯的功能呢~
 
@@ -169,7 +169,7 @@ HTML5幻灯片的排版：
 ```
 ---
 layout:     keynote
-iframe:     "https://www.caojiele.com/js-module-7day/"
+iframe:     "https://caojiele.com/js-module-7day/"
 ---
 ```
 
@@ -207,7 +207,7 @@ ba_track_id: 4cc1f2d8f3067386cc5cdb626a202900
 
 # Google Analytics
 ga_track_id: 'UA-49627206-1'            # 你用Google账号去注册一个就会给你一个这样的id
-ga_domain: huangxuan.me			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
+ga_domain: caojiele.com			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
 ```
 
 #### 自定义
