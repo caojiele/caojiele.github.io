@@ -1,11 +1,12 @@
 ---
-layout: post
-title: "在Github Pages上部署简历"
-subtitle: 'Making Github Pages on your resume'
-author: "Jlcao"
+layout:       post
+title:       "在Github Pages上部署简历"
+subtitle:    'Making Github Pages on your resume'
+date:        2018-12-07
+author:      "Jlcao"
 header-img: "img/in-post/2018.12/07/post-bg-infinity.jpg"
 header-mask: 0.3
-mathjax: true
+mathjax:     true
 tags:
   - Github Pages
   - 简历
