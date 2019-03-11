@@ -30,8 +30,8 @@
     - [nacos](https://github.com/alibaba/nacos)
     - [nacos-group.github.io](https://github.com/nacos-group/nacos-group.github.io): [https://nacos.io](https://nacos.io)
 - Personal
-    - [Jlcaoblog-boilerplate](https://github.com/caojiele/Jlcaoblog-boilerplate): [https://www.caojiele.com/Jlcaoblog-boilerplate/](https://www.caojiele.com/Jlcaoblog-boilerplate/)
-    - [resume](https://github.com/caojiele/resume): [https://www.caojiele.com/resume/](https://www.caojiele.com/resume/)
+    - [Jlcaoblog-boilerplate](https://github.com/caojiele/Jlcaoblog-boilerplate): [https://caojiele.com/Jlcaoblog-boilerplate/](https://caojiele.com/Jlcaoblog-boilerplate/)
+    - [resume](https://github.com/caojiele/resume): [https://caojiele.com/resume/](https://caojiele.com/resume/)
 
 
 ## 社区交流
