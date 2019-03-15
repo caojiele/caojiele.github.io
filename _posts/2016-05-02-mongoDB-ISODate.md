@@ -14,13 +14,7 @@ tags:
 
 原数据为：
 ```mongoDB
-Person 
-[
-id=11188, 
-name=doctorwho, 
-age=888888,
-birth=2016-01-01 13:55:00
-]
+Person [id=11188, name=doctorwho, age=888888, birth=2016-01-01 13:55:00]
 ```
  mongoDB数据库中为：
 ```mongoDB
