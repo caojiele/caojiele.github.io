@@ -28,17 +28,14 @@ tags:
   
  那我们用时间查询数据的时候，看下java 驱动如何做的（部分日志）：
  
-```mongoDB
+```java
 package com.alibaba.dubbo.demo;
-
 public interface DemoService {
-
     String sayHello(String name);
-
 }
 ```
 
-time query
+time query:
 
 * 01-02 22:12:37.195 main  DEBUG org.springframework.data.mongodb.core.MongoTemplate - find using query: { "birth" : { "$date" : "2016-01-01T05:55:00.000Z"}} fields: null for class: class com.doctor.domain.Person in collection: person
 
