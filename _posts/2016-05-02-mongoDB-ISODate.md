@@ -16,7 +16,7 @@ tags:
 `Person [id=11188, name=doctorwho, age=888888,birth=2016-01-01 13:55:00]`
  
  mongoDB数据库中为：
-```
+```mongoDB
 { 
     "_id" : "11188", 
     "_class" : "com.doctor.domain.Person", 
@@ -28,7 +28,7 @@ tags:
   
  那我们用时间查询数据的时候，看下java 驱动如何做的：（部分日志）：
  
- ```
+ ```java
 package com.doctor.springdoc;
  
 import java.time.LocalDateTime;
@@ -101,9 +101,9 @@ Person [id=11188, name=doctorwho, age=888888,birth=2016-01-01 13:55:00]
 { "birth" : { "$date" : "2016-01-01T05:55:00.000Z"}}查询语句按我们的相差时间查询，返回的数据确实是我们需要的，即使数据库中我们看到的iso date相差8个小时。其实java 驱动帮我们做了转换。
 
 
-#### com.mongodb.util.JSONSerializers.LegacyDateSerializer代码：
+com.mongodb.util.JSONSerializers.LegacyDateSerializer代码：
 
-```
+```java
  private static class LegacyDateSerializer extends CompoundObjectSerializer {
  
         LegacyDateSerializer(ObjectSerializer serializer) {
