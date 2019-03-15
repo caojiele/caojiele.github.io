@@ -93,11 +93,12 @@ public class SavingUpdatingRemovingDocuments {
 ```
 
 time query:
+```
+01-02 22:12:37.195 main  DEBUG org.springframework.data.mongodb.core.MongoTemplate - find using query: { "birth" : { "$date" : "2016-01-01T05:55:00.000Z"}} fields: null for class: class com.doctor.domain.Person in collection: person
 
-* 01-02 22:12:37.195 main  DEBUG org.springframework.data.mongodb.core.MongoTemplate - find using query: { "birth" : { "$date" : "2016-01-01T05:55:00.000Z"}} fields: null for class: class com.doctor.domain.Person in collection: person
-
-* 01-02 22:12:37.196 main  DEBUG org.springframework.data.mongodb.core.MongoDbUtils - Getting Mongo Database name=[sdcuike]
+01-02 22:12:37.196 main  DEBUG org.springframework.data.mongodb.core.MongoDbUtils - Getting Mongo Database name=[sdcuike]
 Person [id=11188, name=doctorwho, age=888888,birth=2016-01-01 13:55:00]
+```
 
 { "birth" : { "$date" : "2016-01-01T05:55:00.000Z"}}查询语句按我们的相差时间查询，返回的数据确实是我们需要的，即使数据库中我们看到的iso date相差8个小时。其实java 驱动帮我们做了转换。
 
