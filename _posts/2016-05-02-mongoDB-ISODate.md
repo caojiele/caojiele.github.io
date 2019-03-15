@@ -28,7 +28,7 @@ tags:
   
  那我们用时间查询数据的时候，看下java 驱动如何做的（部分日志）：
  
-```java
+```mongoDB
 package com.alibaba.dubbo.demo;
 
 public interface DemoService {
