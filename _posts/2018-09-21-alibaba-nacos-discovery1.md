@@ -82,7 +82,7 @@ spring-cloud-alibaba-nacos-discovery 作为 Spring Cloud Alibaba 服务发现的
 ### 增加第三方依赖
 
 3. 首先，修改 pom.xml 文件，引入 Nacos Discovery Starter。
-```xml
+```mongoDB
 	<dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
