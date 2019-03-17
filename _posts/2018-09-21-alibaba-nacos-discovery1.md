@@ -16,32 +16,32 @@ tags:
 []()
 在现行的 Spring Cloud 服务发现技术体系中，以 Spring Cloud Eureka 为典型代表，它作为官方推荐解决方案，被业 界广泛运用，然而其设计缺陷也非常之明显。还有Spring Cloud Zookeeper和Spring Cloud Consul。那么先介绍三种的特点吧
 
-#### Spring Cloud Eureka 特点
-##### 优点：
+### Spring Cloud Eureka 特点
+#### 优点：
 * Spring Cloud 背书 - 推荐服务发现方案
 * CAP 理论 - AP模型，数据最终一致
 * 简单易用 - 开箱即用，控制台管理
 
-##### 缺点：
+#### 缺点：
 * 内存限制 - 客户端上报完整注册信息，造成服务端内存浪费
 * 单一调度更新 - 客户端简单轮训更新，增加服务器压力
 * 集群伸缩性限制 - 广播式复制模型，增加服务器压力
 
-#### Spring Cloud Zookeeper 特点
-##### 优点：
+### Spring Cloud Zookeeper 特点
+#### 优点：
 * 成熟协调系统 - Dubbo、Spring Cloud等适配方案
 * CAP理论 - CP模型，ZAB算法，强数据一致性
 
-##### 缺点：
+#### 缺点：
 * 维护成本 - 客户端、Session状态、网络故障
 * 伸缩性限制 - 内存、GC、连接
 
-#### Spring Cloud Consul 特点
-##### 优点：
+### Spring Cloud Consul 特点
+#### 优点：
 * 通用方案 - 适用于 Service Mesh、 Java 生态
 * CAP理论 - AP 模型，Raft+Gossip 算法，数据最终一致
 
-##### 缺点：
+#### 缺点：
 * 可靠性无法保证 - 未经过大规模验证
 * 非 Java 生态 - 维护和问题排查困难
 
