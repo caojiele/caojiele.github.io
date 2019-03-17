@@ -11,11 +11,11 @@ tags:
     - Java
 ---
 
-最近在从零接触Alibaba 开源项目Nacos,学习的是小马哥(mercyblitz)的每周的技术周报，之前看了后忘记总结，导致也没有什么印象。所以现在决定学习一章，写一篇学习感悟，并且持续更新下去。首先这一章节主要讲得是服务发现(Service Discovery)，作为 Spring Cloud 最核心功能特性之一，受到业界的广泛关注。
+最近在从零接触Alibaba 开源项目Nacos,学习的是[小马哥(mercyblitz)](https://github.com/mercyblitz)Modify the document error的每周的技术周报，之前看了后忘记总结，导致也没有什么印象。所以现在决定学习一章，写一篇学习感悟，并且持续更新下去。首先这一章节主要讲得是服务发现(Service Discovery)，作为 Spring Cloud 最核心功能特性之一，受到业界的广泛关注。
 []()
 ## Spring Cloud 整体架构
 []()
-在现行的 Spring Cloud 服务发现技术体系中，以 Spring Cloud Eureka 为典型代表，它作为官方推荐解决方案，被业 界广泛运用，然而其设计缺陷也非常之明显。还有Spring Cloud Zookeeper和Spring Cloud Consul。那么先介绍三种的特点吧
+在现行的 Spring Cloud 服务发现技术体系中，以 Spring Cloud Eureka 为典型代表，它作为官方推荐解决方案，被业 界广泛运用，然而其设计缺陷也非常之明显。还有Spring Cloud Zookeeper和Spring Cloud Consul。那么先介绍这三种的特点吧。
 
 ### Spring Cloud Eureka 特点
 #### 优点：
@@ -52,7 +52,7 @@ tags:
 那么这三种服务发现的基本模式是怎样的呢？现在来谈谈Spring cloud 服务器发现模式。
 * 首先都是服务器启动 - 启动注册中心
 * 然后增加客户端依赖 - `sping-cloud-start-*`
-* 最后就是客户端注册 - 记得在XXApplication.java文件中添加`@EnableDiscoveryClient`，注解开启服务注册与发现功能。
+* 最后就是客户端注册 - 记得在`XXApplication.java`文件中添加`@EnableDiscoveryClient`，注解开启服务注册与发现功能。
 
 以下我以Eureka发现模式为例：</br>
 * 首先去[Spring Initializr](https://start.spring.io)快速创建Eureka服务端和客户端应用程序，然后导入自己的IDE。当然你如果嫌麻烦，也可以直接导入我的已经写好的工程[]()。
@@ -60,11 +60,11 @@ tags:
 * 最后我们就直接可以run`XXApplication.java`了，像我的服务端端口是`12345`，就访问[localhost:12345](localhost:12345)。页面跳转如下图所示，恭喜你的Eureka服务已经起来了。
 * Eureka-client亦如此，成功run起来后，在之前的服务端页面，也就是[localhost:12345](localhost:12345)，刷新下会在`Instances currently registered with Eureka`出现`EUREKA-CLIENT`的状态信息。
 
-spring-cloud-alibaba-nacos-discovery 作为 Spring Cloud Alibaba 服务发现的核心模块，其架构基础与 Spring Cloud 现行方案相同，均构建在 Spring Cloud Commons 抽象。因此，它在 Spring Cloud 服务 发现的使用上，开发人员将不会心存任何的违和感。
+spring-cloud-alibaba-nacos-discovery 作为 Spring Cloud Alibaba 服务发现的核心模块，其架构基础与 Spring Cloud 现行方案相同，均构建在 Spring Cloud Commons 抽象。因此，它在 Spring Cloud 服务发现的使用上，开发人员将不会心存任何的违和感。
 
 ## Alibaba Nacos 生态介绍
-从功能特性而言，spring-cloud-alibaba-nacos-discovery 仅是 Nacos 在 Spring Cloud 服务发现的解决方案，Nacos 在 Spring Cloud 中还支持分布式配置的特性。与开源产品不同的是，Nacos 曾经历过中国特色的超大流量考验，以及巨型规模的集群实施，无论从经验积累还是技术沉淀，现行 Spring Cloud 解决方案 都是无法比拟的。然而这并非说明它完美无缺，在内部的评估和讨论中，也发现其中差距和文化差异。为了解 决这些问题，讨论将从整体架构和设计思考两个方面，介绍 Nacos 与 Spring 技术栈整合情况，以及与其他开 源方案的适配思考，整体上，降低 Nacos 使用门槛，使迁移成本接近为零，达到“一次开发，到处运行”的目 的。</br>
-那么接下来我们通过Github上Spring Cloud Alibaba项目中 官方给出的指导文档来配置启动Nacos。</br>
+从功能特性而言，spring-cloud-alibaba-nacos-discovery 仅是 Nacos 在 Spring Cloud 服务发现的解决方案，Nacos 在 Spring Cloud 中还支持分布式配置的特性。与开源产品不同的是，Nacos 曾经历过中国特色的超大流量考验，以及巨型规模的集群实施，无论从经验积累还是技术沉淀，现行 Spring Cloud 解决方案 都是无法比拟的。然而这并非说明它完美无缺，在内部的评估和讨论中，也发现其中差距和文化差异。为了解决这些问题，讨论将从整体架构和设计思考两个方面，介绍 Nacos 与 Spring 技术栈整合情况，以及与其他开源方案的适配思考，整体上，降低 Nacos 使用门槛，使迁移成本接近为零，达到“一次开发，到处运行”的目的。
+那么接下来我们通过Github上，Spring Cloud Alibaba项目中官方给出的指导文档来配置启动 Nacos吧。
 
 ### 下载注册中心
 
@@ -115,16 +115,17 @@ spring-cloud-alibaba-nacos-discovery 作为 Spring Cloud Alibaba 服务发现的
 				}
 			}
 		}
-```		
+```
+
 ### 应用启动
 
-1. 增加配置，在 nacos-discovery-provider-example 项目的 /src/main/resources/application.properties 中添加基本配置信息
+6. 增加配置，在 nacos-discovery-provider-example 项目的 /src/main/resources/application.properties 中添加基本配置信息
 ```mongoDB	
 		spring.application.name=service-provider
 		server.port=18082
 ```
 		
-2. 启动应用，支持 IDE 直接启动和编译打包后启动。
+7. 启动应用，支持 IDE 直接启动和编译打包后启动。
 
 	1. IDE直接启动：找到 nacos-discovery-provider-example 项目的主类 `ProviderApplication`，执行 main 方法启动应用。
 	2. 打包编译后启动：在 nacos-discovery-provider-example 项目中执行 `mvn clean package` 将工程编译打包，然后执行 `java -jar nacos-discovery-provider-example.jar`启动应用。
@@ -132,6 +133,6 @@ spring-cloud-alibaba-nacos-discovery 作为 Spring Cloud Alibaba 服务发现的
 ### 验证
 
 #### 检验服务发现
-在浏览器输入此地址 `http://127.0.0.1:8848/nacos/v1/ns/instances?serviceName=service-provider`，并点击跳转，可以看到服务节点已经成功注册到 Nacos Server。
+在浏览器输入此地址[http://127.0.0.1:8848/nacos/v1/ns/instances?serviceName=service-provider](http://127.0.0.1:8848/nacos/v1/ns/instances?serviceName=service-provider) 并点击跳转，可以看到服务节点已经成功注册到 Nacos Server。
 
 ![查询服务](https://cdn.nlark.com/lark/0/2018/png/54319/1536986288092-5cf96af9-9a26-466b-85f6-39ad1d92dfdc.png)
