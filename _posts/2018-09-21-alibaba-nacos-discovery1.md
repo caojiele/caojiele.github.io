@@ -4,6 +4,7 @@ title:      "初识 Nacos(上）"
 subtitle:   "学习《Spring Cloud 服务发现新选择》"
 date:       2018-09-21
 author:     "caojiele"
+header-img: "img/in-post/2018.09/21/post-alibaba-nacos-discovery1.png"
 tags:
     - Spring Cloud
     - Nacos
