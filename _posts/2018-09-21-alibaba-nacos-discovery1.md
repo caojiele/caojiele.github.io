@@ -82,22 +82,22 @@ spring-cloud-alibaba-nacos-discovery 作为 Spring Cloud Alibaba 服务发现的
 ### 增加第三方依赖
 
 3. 首先，修改 pom.xml 文件，引入 Nacos Discovery Starter。
-
+```xml
 	    <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
         </dependency>
-
+```
 ### 外部化配置	
 
 4. 在应用的 /src/main/resources/application.properties 配置文件中配置 Nacos Server 地址
-	
+```mongoDB	
 		spring.cloud.nacos.discovery.server-addr=127.0.0.1:8848
-
+```
 ### 激活服务发现	
 
 5. 使用 @EnableDiscoveryClient 注解开启服务注册与发现功能（`SpringApplication.run`)
-		
+```mongoDB		
 		@SpringBootApplication
 		@EnableDiscoveryClient
 		public class ProviderApplication {
@@ -114,14 +114,14 @@ spring-cloud-alibaba-nacos-discovery 作为 Spring Cloud Alibaba 服务发现的
 				}
 			}
 		}
-		
+```		
 ### 应用启动
 
 1. 增加配置，在 nacos-discovery-provider-example 项目的 /src/main/resources/application.properties 中添加基本配置信息
-	
+```mongoDB	
 		spring.application.name=service-provider
 		server.port=18082
-
+```
 		
 2. 启动应用，支持 IDE 直接启动和编译打包后启动。
 
