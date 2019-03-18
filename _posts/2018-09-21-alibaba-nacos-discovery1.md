@@ -17,7 +17,7 @@ tags:
 ## Spring Cloud 整体架构
 
 在现行的 Spring Cloud 服务发现技术体系中，以 Spring Cloud Eureka 为典型代表，它作为官方推荐解决方案，被业 界广泛运用，然而其设计缺陷也非常之明显。还有Spring Cloud Zookeeper和Spring Cloud Consul。那么先介绍这三种的特点吧。
-![整体架构](https://github.com/Ross0101/caojiele.github.io/blob/master/img/in-post/2018.09/21/post-architecture.png)
+![整体架构](https://raw.githubusercontent.com/caojiele/caojiele.github.io/master/img/in-post/2018.09/21/post-architecture.png)
 
 ### Spring Cloud Eureka 特点
 #### 优点：
