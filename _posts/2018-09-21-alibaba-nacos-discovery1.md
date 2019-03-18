@@ -12,10 +12,12 @@ tags:
 ---
 
 最近在从零接触Alibaba 开源项目Nacos,学习的是[小马哥(mercyblitz)](https://github.com/mercyblitz)的技术周报，之前看了后忘记总结，导致也没有什么印象。所以现在决定学习一章，写一篇学习感悟，并且持续更新下去。首先这一章节主要讲得是服务发现(Service Discovery)，作为 Spring Cloud 最核心功能特性之一，受到业界的广泛关注。
-[]()
+![文章主题](https://github.com/Ross0101/caojiele.github.io/blob/master/img/in-post/2018.09/21/post-theme.png)
+
 ## Spring Cloud 整体架构
-[]()
+
 在现行的 Spring Cloud 服务发现技术体系中，以 Spring Cloud Eureka 为典型代表，它作为官方推荐解决方案，被业 界广泛运用，然而其设计缺陷也非常之明显。还有Spring Cloud Zookeeper和Spring Cloud Consul。那么先介绍这三种的特点吧。
+![整体架构](https://github.com/Ross0101/caojiele.github.io/blob/master/img/in-post/2018.09/21/post-architecture.png)
 
 ### Spring Cloud Eureka 特点
 #### 优点：
@@ -46,16 +48,16 @@ tags:
 * 可靠性无法保证 - 未经过大规模验证
 * 非 Java 生态 - 维护和问题排查困难
 
-综上所述，让我得出了Spring Cloud服务发现方案对比结果
-[]()
+综上所述，让我得出了Spring Cloud服务发现方案对比结果:
+![方案对比结果](https://github.com/Ross0101/caojiele.github.io/blob/master/img/in-post/2018.09/21/post-compare.png)
 
 那么这三种服务发现的基本模式是怎样的呢？现在来谈谈Spring cloud 服务器发现模式。
 * 首先都是服务器启动 - 启动注册中心
 * 然后增加客户端依赖 - `sping-cloud-start-*`
 * 最后就是客户端注册 - 记得在`XXApplication.java`文件中添加`@EnableDiscoveryClient`，注解开启服务注册与发现功能。
 
-以下我以Eureka发现模式为例：</br>
-* 首先去[Spring Initializr](https://start.spring.io)快速创建Eureka服务端和客户端应用程序，然后导入自己的IDE。当然你如果嫌麻烦，也可以直接导入我的已经写好的工程[]()。
+以下我以Eureka发现模式为例：
+* 首先去[Spring Initializr](https://start.spring.io)快速创建Eureka服务端和客户端应用程序，然后导入自己的IDE。当然你如果嫌麻烦，也可以直接导入已经写好的[工程](https://github.com/mercyblitz/tech-weekly/tree/master/2018.09.21%E3%80%8C%E5%B0%8F%E9%A9%AC%E5%93%A5%E6%8A%80%E6%9C%AF%E5%91%A8%E6%8A%A5%E3%80%8D-%20%E7%AC%AC%E4%B8%80%E6%9C%9F%E3%80%8ASpring%20Cloud%20%E6%9C%8D%E5%8A%A1%E5%8F%91%E7%8E%B0%E6%96%B0%E9%80%89%E6%8B%A9%20-%20Alibaba%20Nacos%20Discovery%E3%80%8B/%E4%BB%A3%E7%A0%81)。
 * 然后在`resources-application.properties`中分别配置好两者的端口号，像客户端这块还需要写好应用名称、以及Eureka 服务器地址。
 * 最后我们就直接可以run`XXApplication.java`了，像我的服务端端口是`12345`，就访问[localhost:12345](localhost:12345)。页面跳转如下图所示，恭喜你的Eureka服务已经起来了。
 * Eureka-client亦如此，成功run起来后，在之前的服务端页面，也就是[localhost:12345](localhost:12345)，刷新下会在`Instances currently registered with Eureka`出现`EUREKA-CLIENT`的状态信息。
