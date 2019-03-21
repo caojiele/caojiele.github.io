@@ -5,13 +5,13 @@
  */
 
  /*!
- * Jlcao Blog v1.6.0 (http://startbootstrap.com)
- * Copyright 2016 @caojiele
+ * Hux Blog v1.6.0 (http://startbootstrap.com)
+ * Copyright 2016 @huxpro
  * Licensed under Apache 2.0 
  */
 
 // Tooltip Init
-// Unuse by Jlcao since V1.6: Titles now display by default so there is no need for tooltip
+// Unuse by Hux since V1.6: Titles now display by default so there is no need for tooltip
 // $(function() {
 //     $("[data-toggle='tooltip']").tooltip();
 // });
@@ -19,7 +19,7 @@
 
 // make all images responsive
 /* 
- * Unuse by Jlcao
+ * Unuse by Hux
  * actually only Portfolio-Pages can't use it and only post-img need it.
  * so I modify the _layout/post and CSS to make post-img responsive!
  */
@@ -82,20 +82,3 @@ jQuery(document).ready(function($) {
             });
     }
 });
-
-// Search Settings
-$(document).ready(function() {
-  $('.search-icon').on('click', function(e){
-    e.preventDefault();
-    $('.search-box').toggleClass('search-active');
-
-    if ($('.search-box').hasClass('search-active')) {
-      $('.search-icon-close').on('click', function(e){
-        e.preventDefault();
-        $('.search-box').removeClass('search-active');
-      });
-      $('#search-input').focus();
-    }
-  });
-});
-
