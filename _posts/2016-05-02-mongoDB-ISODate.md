@@ -31,7 +31,7 @@ Person [id=11188, name=doctorwho, age=888888, birth=2016-01-01 13:55:00]
   
  那我们用时间查询数据的时候，看下java 驱动如何做的（部分日志）：
  
-```mongoDB
+```java
 package com.doctor.springdoc;
  
 import java.time.LocalDateTime;
