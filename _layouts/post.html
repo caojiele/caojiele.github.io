@@ -6,19 +6,6 @@ layout: default
 <!-- <img src="/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
-<!-- canvas-nest.min.js -->   
-<script type="text/javascript" color="238,205,205" opacity='0.7' zIndex="-2" count="99" src="../../../../js/canvas-nest.min.js"></script>
-
-<!-- gitalk -->
-<link rel="stylesheet" href="../../../../css/gitalk.css">
-<script src="../../../../js/gitalk.min.js"></script>
-
-<!-- prism -->
-<link rel="stylesheet" href="/css/prism.css" data-noprefix />
-<script src="/js/prism.js"></script>
-
-<link href="/css/reward.css?v=6.2.0" rel="stylesheet" type="text/css" />
-
 <!-- Post Header -->
 {% include intro-header.html type='post' %}
 
@@ -35,7 +22,6 @@ layout: default
 
                 <!-- Multi-Lingual -->
                 {% if page.multilingual %}
-
                 <!-- Language Selector -->
                 <select class="sel-lang" onchange= "onLanChange(this.options[this.options.selectedIndex].value)">
                     <option value="0" selected> 中文 Chinese </option>
@@ -43,47 +29,9 @@ layout: default
                 </select>
                 {% endif %}
 
+				{{ content }}
 
-                            {{ content }}
-                
-                
                 <hr style="visibility: hidden;">
-
-
-
-                 <!-- 打赏功能 -->
- <!--
-            <div>
-                <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
-                <div>☛兄dei，文章还行吧☚</div>
-                <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-                    <span>打赏</span>
-                </button>
-                <div id="QR" style="display: none;">
-
-    
-                <div id="wechat" style="display: inline-block">
-                <img id="wechat_qr" src="/img/payimg/weipayimg.jpg" alt="GJXS 微信支付"/>
-                <p>微信支付</p>
-                </div>
-    
-
-    
-                <div id="alipay" style="display: inline-block">
-                <img id="alipay_qr" src="/img/payimg/alipayimg.jpg" alt="GJXS 支付宝"/>
-                <p>支付宝</p>
-                </div>
-    
-
-    
-
-                </div>
-                </div>
-
-            </div>
- -->
- 
-            <!--  上一篇或者下一篇post按钮 -->
                 <ul class="pager">
                     {% if page.previous.url %}
                     <li class="previous">
@@ -111,22 +59,15 @@ layout: default
                 </div>
                 <!-- disqus 评论框 end -->
                 {% endif %}
-                
+
                 {% if site.netease_comment %}
                 <!-- 网易云跟帖 评论框 start -->
                 <div id="cloud-tie-wrapper" class="cloud-tie-wrapper"></div>
                 <!-- 网易云跟帖 评论框 end -->
                 {% endif %}
-                
-                {% if site.gitalk %}
-                <div class="comment">
-                    {% include comments.html %}
-                </div>
-                {% endif %}
+            </div>  
 
-            </div>
-
- <!-- Side Catalog Container -->
+    <!-- Side Catalog Container -->
         {% if page.catalog %}
             <div class="
                 col-lg-2 col-lg-offset-0
@@ -188,6 +129,7 @@ layout: default
     var disqus_shortname = "{{site.disqus_username}}";
     var disqus_identifier = "{{page.id}}";
     var disqus_url = "{{site.url}}{{page.url}}";
+
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
         dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
