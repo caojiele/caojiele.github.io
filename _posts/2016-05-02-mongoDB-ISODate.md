@@ -107,7 +107,7 @@ Person [id=11188, name=doctorwho, age=888888,birth=2016-01-01 13:55:00]
 
 com.mongodb.util.JSONSerializers.LegacyDateSerializer代码：
 
-```mongoDB
+```java
  private static class LegacyDateSerializer extends CompoundObjectSerializer {
  
         LegacyDateSerializer(ObjectSerializer serializer) {
