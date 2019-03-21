@@ -14,7 +14,7 @@ tags:
 在mongoDB数据库中，时间的保存是ISODate类型，orm关系映射为java.util.Date类型，其保存的时间与我们会有8小时的区别（保存的时间比我们早了8个小时）。
 
 原数据为：
-```mongoDB
+```js
 Person [id=11188, name=doctorwho, age=888888, birth=2016-01-01 13:55:00]
 ```
  mongoDB数据库中为：
