@@ -17,13 +17,13 @@ const PRECACHE_LIST = [
   "./offline.html",
   "./js/jquery.min.js",
   "./js/bootstrap.min.js",
-  "./js/jlcao-blog.min.js",
+  "./js/hux-blog.min.js",
   "./js/snackbar.js",
   "./img/root/icon_wechat.png",
   "./img/root/avatar-Jack.jpg",
   "./img/root/home-bg.jpg",
   "./img/404/404-bg.jpg",
-  "./css/jlcao-blog.min.css",
+  "./css/hux-blog.min.css",
   "./css/syntax.css",
   "./css/bootstrap.min.css"
   // "//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.6.3/css/font-awesome.min.css",
@@ -33,7 +33,6 @@ const PRECACHE_LIST = [
 const HOSTNAME_WHITELIST = [
   self.location.hostname,
   "caojiele.com",
-  "yanshuo.io",
   "cdnjs.cloudflare.com"
 ]
 const DEPRECATED_CACHES = ['precache-v1', 'runtime', 'main-precache-v1', 'main-runtime']
