@@ -200,57 +200,15 @@
 
 <!-- Search -->
  <script>
-     function onKeyPress(e) {
-         var keyCode = null;
-         if(e.which)
-             keyCode = e.which;
-         else if(e.keyCode)
-             keyCode = e.keyCode;
-         if(keyCode == 13) {
-             location.href="/search/?q=" + document.getElementById('search-input').value;
-             return false;
-         }
-         return true;
-     }
-     var url_string = window.location.href;
-    if (url_string.indexOf('search/?q') > 0){
-        document.getElementById('search-ic').classList.toggle('hidden');
-        var url = new URL(url_string);
-        var question = url.searchParams.get("q");
-        let title = document.getElementById('search-qs');
-        title.innerHTML = '"' + question + '"';
-        SimpleJekyllSearch({
-            searchtext: question,
-            resultsContainer: document.getElementById('results-container-list'),
-            json: '/search.json',
-            searchResultTemplate: '<li>\n' +
-                '                <div class="cbp_tmlabel result">\n' +
-                '                    <a href="{url}">\n' +
-                '                        <h2 id="boxoffice">{title}</h2>\n' +
-                '                        <ul>\n' +
-                '                            <li>\n' +
-                '                                {desc}' +
-                '                            </li>\n' +
-                '                        </ul>\n' +
-                '                        <br>\n' +
-                '                    </a>\n' +
-                '                </div>\n' +
-                '            </li>',
-            noResultsText: '',
-            fuzzy: false,
-            limit: 10000
-        });
-    } else {
-        SimpleJekyllSearch({
-            searchInput: document.getElementById('search-input'),
-            resultsContainer: document.getElementById('results-container'),
-            json: '/search.json',
-            searchResultTemplate: '<li><a href="{url}" style="display:block;width: 100%;padding-left:10px; padding-right:10px;"><i class="fa fa-angle-double-right fa-border" aria-hidden="true"></i>    {title}</a></li>',
-            noResultsText: '',
-            fuzzy: false
-        });
-    }
- </script>
+      SimpleJekyllSearch({
+          searchInput: document.getElementById('search-input'),
+          resultsContainer: document.getElementById('results-container'),
+          json: '/search.json',
+          searchResultTemplate: '<li><a href="{url}">{title}</a></li>',
+          noResultsText: 'No results found',
+          fuzzy: true
+      });
+  </script>
 
 
 <!-- Multi-Lingual -->
