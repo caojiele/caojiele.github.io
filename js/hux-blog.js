@@ -82,3 +82,68 @@ jQuery(document).ready(function($) {
             });
     }
 });
+
+// Search Settings
+let results = document.getElementById('results-container');
+
+// override enter event to do nothing but flesh the page
+function _keyDownDefault(){
+    var e = event || window.event || arguments.callee.caller.arguments[0];
+    if(e && e.keyCode==13){ // enter 键
+    }
+}
+
+$(document).ready(function() {
+    document.onkeydown = _keyDownDefault;
+    // handle search event
+  $('.search-icon').on('click', function(e){
+      // e.preventDefault();
+      if ($('.search-box').hasClass('hidden')) {
+          $('.search-box').removeClass('hidden');
+          setTimeout(function () {
+              $('.search-box').addClass('search-active');
+              if ($('.search-box').hasClass('search-active')) {
+                  // search-box enable;
+                  $('#search-input').val("");
+                  results.innerHTML = "";
+                  if (window.innerWidth > 932){
+                      // desktop
+                      $(document).on('click', function (e) {
+                          var x = e.pageX;
+                          var y = e.pageY - document.body.scrollTop || document.documentElement.scrollTop;
+                          if (x < 100 || x > 550 || y > 500){
+                              // closing search box
+                              // e.preventDefault();
+                              $('.search-box').removeClass('search-active');
+                              setTimeout(function () {
+                                  $('.search-box').addClass('hidden');
+                              },400)
+                          }
+                      });
+                  }else {
+                      // hide scorebar on mobile
+                      setTimeout(function () {
+                          document.body.style.overflow = "hidden";
+                      },500);
+                  }
+                  $('.search-icon-close').on('click', function(e){
+                      // click close btn
+                      // e.preventDefault();
+                      $('.search-box').removeClass('search-active');
+                      setTimeout(function () {
+                          $('.search-box').addClass('hidden');
+                      },400);
+                      document.body.style.overflow = "auto";
+                  });
+                  setTimeout(function () {
+                      $('#search-input').focus;
+                  },1000)
+                  // $('#search-input').focus();
+              }
+          },100)
+      }else {
+          $('.search-box').addClass('hidden');
+          $('.search-box').removeClass('search-active');
+      }
+  });
+});
