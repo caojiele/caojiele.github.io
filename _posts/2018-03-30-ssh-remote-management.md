@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      "如何在私网环境实现异地SSH远程管理"
-subtitle:   "The private network environment to realize long-distance SSH remote management."
+subtitle:   "The private network environment to realize long-distance SSH remote management"
 date:       2018-03-30
 author:     "caojiele"
 header-img: "img/in-post/2018.03/30/post-ssh-remote-management.png"
