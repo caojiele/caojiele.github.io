@@ -34,12 +34,12 @@ body, html {
 }
 
 @font-face {
-	font-family: 'huxico';
-	src:url('../portfolio/fonts/huxico.eot');
-	src:url('../portfolio/fonts/huxico.eot?#iefix') format('embedded-opentype'),
-	url('../portfolio/fonts/huxico.woff') format('woff'),
-	url('../portfolio/fonts/huxico.ttf') format('truetype'),
-	url('../portfolio/fonts/huxico.svg#huxico') format('svg');
+	font-family: 'jlcaoico';
+	src:url('../cooperation/fonts/jlcaoico.eot');
+	src:url('../cooperation/fonts/jlcaoico.eot?#iefix') format('embedded-opentype'),
+	url('../cooperation/fonts/jlcaoico.woff') format('woff'),
+	url('../cooperation/fonts/jlcaoico.ttf') format('truetype'),
+	url('../cooperation/fonts/jlcaoico.svg#jlcaoico') format('svg');
 	font-weight: normal;
 	font-style: normal;
 } /* Made with http://icomoon.io/ */
@@ -109,7 +109,7 @@ body, html {
 .cbp_tmtimeline > li .cbp_tmicon {
 	width: 40px;
 	height: 40px;
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 	speak: none;
 	font-style: normal;
 	font-weight: normal;
@@ -131,27 +131,27 @@ body, html {
 
 .cbp_tmicon-phone:before {
 	content: "\e004";
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 }
 
 .cbp_tmicon-screen:before {
 	content: "\e005";
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 }
 
 .cbp_tmicon-html:before {
 	content: "\e001";
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 }
 
 .cbp_tmicon-video:before {
 	content: "\e002";
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 }
 
 .cbp_tmicon-font:before {
 	content: "\e003";
-	font-family: 'huxico';
+	font-family: 'jlcaoico';
 }
 
 /******* Hux Branch *****/
