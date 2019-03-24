@@ -1653,7 +1653,7 @@ img::-moz-selection {
 }
 
 /* Search Styles */
-/* .search-box .wrapper {
+.search-box .wrapper {
   width: 960px;
   max-width: 90%;
   margin: 0 auto;
@@ -1855,4 +1855,3 @@ img::-moz-selection {
 .search-icon-close {
   font-size: 16px;
 }
- */
