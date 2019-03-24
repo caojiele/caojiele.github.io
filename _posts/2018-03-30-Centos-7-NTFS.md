@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "Centos 7系统挂载NTFS格式移动硬盘"
-subtitle:   "Centos 7 system mount NTFS format mobile hard disk."
+title:      "Centos 7 系统如何挂载NTFS格式移动硬盘"
+subtitle:   "How to quickly transfer large data"
 date:       2018-03-30
 author:     "caojiele"
 header-img: "img/in-post/2018.03/30/post-bg-unix-linux.jpg"
