@@ -1,7 +1,14 @@
 ---
-title: Dubbo2.7 三大新特性详解
-keywords: Dubbo2.7
-description: 异步化改造,三大中心改造,服务治理增强
+layout:     post
+title:      "Dubbo2.7 三大新特性详解"
+subtitle:   "异步化改造,三大中心改造,服务治理增强"
+date:       2019-03-22
+author:     "lexburner"
+header-img: "img/in-post/2019.03/22/post-dubbo-2.7.png"
+tags:
+    - Dubbo2.7
+    - RPC
+    - 微服务
 ---
 
 # 
