@@ -6,7 +6,7 @@ date:       2019-03-22
 author:     "lexburner"
 header-img: "img/in-post/2019.03/22/post-dubbo-2.7.png"
 tags:
-    - Dubbo2.7
+    - Dubbo
     - RPC
     - 微服务
 ---
