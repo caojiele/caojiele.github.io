@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      "面试经验"
-subtitle:   "大厂"
+title:      "面试经验总结"
+subtitle:   "三月大厂面试整理"
 date:       2019-04-01
 author:     "caojiele"
 header-img: "img/in-post/2019.04/01/post-interview-experience.png"
@@ -53,7 +53,9 @@ tags:
 一套J2EE+Oracle的笔试 大概有五六张纸 我依稀记得几道题
 
 * main方法中是否可以调用非静态方法
+
 可以，一种方法将main方法写成静态方法，另一种将当前类实例化再调用它的非静态方法 例如：
+
 ```java
 public class Test {
 private int a;
@@ -70,6 +72,7 @@ public static void main(String args[]){
 }
 ```
 改为：
+
 ```java
 public class Test {
     private int a;
@@ -92,6 +95,7 @@ public class Test {
 }
 ```
 * 解释下AOP和IOC的工作机制？
+
 AOP思想的实现一般都是基于代理模式 ，在JAVA中一般采用JDK动态代理模式，但是我们都知道，JDK动态代理模式只能代理接口而不能代理类。因此，Spring AOP 会这样子来进行切换，因为Spring AOP 同时支持 CGLIB、ASPECTJ、JDK动态代理。
 
 Spring IOC的初始化过程： 
@@ -112,18 +116,20 @@ Spring IOC的初始化过程：
 * 有三个线程t1、t2、t3。确保三个线程t1执行完后t2执行，t2执行完成后t3执行？
 
 * &和&&的区别？
-**电路问题总结：**
-对于：&   -- >  不管怎样，都会执行"&"符号左右两边的程序
 
-对于：&& -- >  只有当符号"&&"左边程序为真(true)后，才会执行符号"&&"右边的程序。
+**电路问题总结：**
+
+&：不管怎样，都会执行"&"符号左右两边的程序
+
+&&：只有当符号"&&"左边程序为真(true)后，才会执行符号"&&"右边的程序。
 
 **运算规则：**
 
-对于：&  -- >  只要左右两边有一个为false，则为false；只有全部都为true的时候，结果为true
+&：只要左右两边有一个为false，则为false；只有全部都为true的时候，结果为true
 
-对于：&& -- > 只要符号左边为false，则结果为false；当左边为true，同时右边也为true，则结果为true
+&&：只要符号左边为false，则结果为false；当左边为true，同时右边也为true，则结果为true
 
-* sql语句select、group by、order by、where 先后顺序？
+* sql语句`select`、`group by`、`order by`、`where`先后顺序？
 
 写的顺序：select ... from... where.... group by... having... order by..
 
@@ -146,16 +152,16 @@ Spring IOC的初始化过程：
 * 登录这块如何实现高可用？什么是高可用？
 * 你实际java开发多长时间？
 
-当问我这个问题的时候，我就知道前面答得并不是很好，所以面试官后面问的都是基础题。
+  当问我这个问题的时候，我就知道前面答得并不是很好，所以面试官后面问的都是基础题。
 * 抽象类和接口有什么区别？
 * 用过哪些集合？list和set的区别？
 * 用过哪些设计模式？
 * 你这边还有什么问题？
 
-因为这个项目是和杭州阿里系的大佬们一起开发盒马鲜生这款产品，所以着重问了下开发产品情况和团队架构。
+  因为这个项目是和杭州阿里系的大佬们一起开发盒马鲜生这款产品，所以着重问了下开发产品情况和团队架构。
 * 你现在的薪资和期望薪资？
 
-照实际的说，大厂一般都会查银行流水。
+  照实际的说，大厂一般都会查银行流水。
 
 **二面（终面）**
 整理中
