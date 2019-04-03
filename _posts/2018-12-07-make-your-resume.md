@@ -12,8 +12,6 @@ tags:
   - 简历
 ---
 
-> 本文来自于我的简书：[如何在Github Pages上生成部署简历](https://www.jianshu.com/p/d95443bfdf75)，转载请保留链接 ;)
-
 <!-- Chinese Version -->
 <div class="zh post-container">
     {% capture about_zh %}{% include posts/2018-12-07-make-your-resume/zh.md %}{% endcapture %}
