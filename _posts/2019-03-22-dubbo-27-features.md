@@ -11,6 +11,7 @@ tags:
     - 微服务
 ---
 
+> 本文来自于Dubbo官网，作者为@lexburner：[Dubbo2.7 三大新特性详解](http://dubbo.apache.org/zh-cn/blog/dubbo-27-features.html)，转载请保留链接 ;)
 
 ## 1 背景介绍
 
