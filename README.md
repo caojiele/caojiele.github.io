@@ -320,7 +320,7 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 
 #### 全局搜索
 
-在页面左上角添加搜索功能，请先参考[Soptq.github.io](https://github.com/Soptq/Soptq.github.io)，后续我会写该功能实现的文章，请关注我的[博客](https://caojiele.com)。
+在页面左上角添加搜索功能，请先参考[soptq.me 关于全局搜索功能](https://soptq.me/2019/04/03/implement-search/)，后续我会写该功能实现的文章，请关注我的[博客](https://caojiele.com)。
 
 #### 标题底图
 
