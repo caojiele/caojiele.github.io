@@ -11,6 +11,8 @@ tags:
     - Java
 ---
 
+> 本文来自于我的简书：[初识 Nacos(上） 学习《Spring Cloud 服务发现新选择》](https://www.jianshu.com/p/b374a7b10486)，转载请保留链接 ;)
+
 最近在从零接触Alibaba 开源项目Nacos,学习的是[小马哥(mercyblitz)](https://github.com/mercyblitz)的技术周报，之前看了后忘记总结，导致也没有什么印象。所以现在决定学习一章，写一篇学习感悟，并且持续更新下去。首先这一章节主要讲得是服务发现(Service Discovery)，作为 Spring Cloud 最核心功能特性之一，受到业界的广泛关注。
 ![文章主题](https://raw.githubusercontent.com/caojiele/caojiele.github.io/master/img/in-post/2018.09/21/post-theme.png)
 
