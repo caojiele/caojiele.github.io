@@ -11,6 +11,8 @@ tags:
     - linux
 ---
 
+> 本文来自于我的简书：[Centos 7 系统如何挂载NTFS格式移动硬盘](https://www.jianshu.com/p/b7d4f516c8df)，转载请保留链接 ;)
+
 有些时候做大数据量迁移时，为了快速迁移大数据，有可能在Linux服务器上临时挂载NTFS格式的移动硬盘， 一般情况下，linux是识别不了NTFS格式移动硬盘的（需要重编译Linux核心才能，加挂NTFS分区），这时候为了能让Linux服务器能够识别NTFS的移动硬盘，就必须安装ntfs-3g（Third Generation Read/Write NTFS Driver）的包。 
 
 ### 什么是`NTFS-3G`?
