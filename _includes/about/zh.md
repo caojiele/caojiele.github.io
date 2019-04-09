@@ -16,6 +16,9 @@ Hey，我是小码哥，Java 攻城狮，Apache Dubbo Committer、Alibaba、Apac
 - 知乎
     - [「小码哥个人主页」](https://www.zhihu.com/people/wang-le-6-62/activities)
 
+- 慕课网手记
+    - [「小码哥个人主页」](https://www.imooc.com/u/4024769/articles)
+
 - segmentfault
     - [「小码哥个人主页」](https://segmentfault.com/u/xiaomage_5c10d17d26987)
 
