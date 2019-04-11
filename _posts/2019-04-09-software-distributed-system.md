@@ -4,7 +4,7 @@ title:      "开篇-分布式系统中的那些开源软件"
 subtitle:   "讨论一个大型话题：分布式系统所能采用的主流软件"
 date:       2019-04-09
 author:     "caojiele"
-header-img: "img/in-post/2019.04/09/post-dubbo-hangzhou-meetup.jpg"
+header-img: "img/in-post/2019.04/09/post-bg-software-distributed-system.jpg"
 tags:
     - 分布式
     - Java
