@@ -218,7 +218,31 @@ XML ------> Resource ------> BeanDefinition ------> BeanFactory
   [sleep( ) 和 wait( ) 的这 5 个区别，你知道几个？](https://zhuanlan.zhihu.com/p/45666264)
   
 #### **有三个线程t1、t2、t3。确保三个线程t1执行完后t2执行，t2执行完成后t3执行？**
-  用 Thread 类的 join 方法实现这一效果。
+  用 Thread 类的 join 方法。
+  ```java
+private static void threadJoinOneByOne() throws InterruptedException {
+        Thread t1 = new Thread(ThreadExecutionQuestion::action, "t1");
+        Thread t2 = new Thread(ThreadExecutionQuestion::action, "t2");
+        Thread t3 = new Thread(ThreadExecutionQuestion::action, "t3");
+
+        // start() 仅是通知线程启动
+        t1.start();
+        // join() 控制线程必须执行完成
+        t1.join();
+
+        t2.start();
+        t2.join();
+
+        t3.start();
+        t3.join();
+    }
+
+    private static void action() {
+        System.out.printf("线程[%s] 正在执行...\n", Thread.currentThread().getName());  // 2
+    }
+}
+```
+而调整优先级并不能保证控制线程执行顺序
 
 #### **&和&&的区别？**
 
@@ -354,17 +378,51 @@ XML ------> Resource ------> BeanDefinition ------> BeanFactory
 #### **谈一谈 Dubbo 序列化**
   
 #### **谈一下 Dubbo 的整体架构中的网络传输层（Transport）？**
-  
+
+ [30 道 Dubbo 面试题及答案](https://segmentfault.com/a/1190000018438985)
+
 #### **说一下你最熟悉的项目中，遇到的印象最深刻的问题？是怎么解决的？**
+
+ [Springboot与shiro整合遇到的坑](https://zhuanlan.zhihu.com/p/29161098)
   
 #### **说一下在HashMap中遇到的hash冲突是如何解决的？**
   
 #### **谈一下List接口有哪些特性？**
+
+ [深入理解Java中的List、Set与Map集合](https://zhuanlan.zhihu.com/p/34518772)
   
 #### **说一下ArrayList和LinkedList区别？**
+
+ [Java中ArrayList和LinkedList区别](https://www.cnblogs.com/huzi007/p/5550440.html)
   
 #### **foreach循环里进行元素的remove/add操作，这样合理吗？**
   
 #### **当有线程 T1、T2 以及 T3，如何实现 T1 -> T2 -> T3 的执行顺序？以上问题请至少提供另外一种实现？**
   
-好像还有一个问题？是一个专有技术名词的解释？我真的没听过......
+  用 Thread 类的 join 方法。
+  ```java
+private static void threadJoinOneByOne() throws InterruptedException {
+        Thread t1 = new Thread(ThreadExecutionQuestion::action, "t1");
+        Thread t2 = new Thread(ThreadExecutionQuestion::action, "t2");
+        Thread t3 = new Thread(ThreadExecutionQuestion::action, "t3");
+
+        // start() 仅是通知线程启动
+        t1.start();
+        // join() 控制线程必须执行完成
+        t1.join();
+
+        t2.start();
+        t2.join();
+
+        t3.start();
+        t3.join();
+    }
+
+    private static void action() {
+        System.out.printf("线程[%s] 正在执行...\n", Thread.currentThread().getName());  // 2
+    }
+}
+```
+而调整优先级并不能保证控制线程执行顺序
+  
+#### **好像还有一个问题？是一个专有技术名词的解释？我真的没听过......**
