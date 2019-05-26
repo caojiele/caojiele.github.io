@@ -39,7 +39,7 @@ tags:
 
 这里借诸葛亮的出师表一句话结尾：”临表涕零，不知所言！“ 希望有付出就有收获，能拿回自己的血汗钱！也希望同行们找工作放大眼睛找，千万别入坑，只要一有不发工资的迹象，就赶紧走。
 
-* * *
+---
 
 ![法院退代管款截图](http://upload-images.jianshu.io/upload_images/6039661-4982fea4fc033d67.jpg?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 
