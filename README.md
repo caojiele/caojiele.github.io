@@ -1,6 +1,6 @@
 # Jlcao Blog
 
-### [中文文档](README_zh.md)
+### [中文文档](README.zh.md)
 
 ### [我的博客传送门 &rarr;](https://caojiele.com)
 
