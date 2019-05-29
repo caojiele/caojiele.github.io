@@ -113,9 +113,9 @@ tags:
 
   OutOfMemoryError，当JVM因为没有足够的内存来为对象分配空间并且垃圾回收器也已经没有空间可回收时，就会抛出这个error（注：非exception，因为这个问题已经严重到不足以被应用处理）。
   
-  [JVM 发生 OOM 的 8 种原因、及解决办法](https://zhuanlan.zhihu.com/p/63752449)
-  
   因为OutOfMemoryError是可以catch的。catch之后吞掉的话程序还能试着继续运行。例如说以前见过的一个案例是：一个Java服务器端应用，有段代码没写对导致有一个线程在疯狂创建大数组对象——直到OOM。这个线程注册的uncaught exception handler捕获到了这个异常，记录了日志，然后就把这个异常吞掉了。这样还能继续正常跑下去是因为：只是一个创建很大的数组对象的请求失败了而已，而出错的那个方法由于异常处理已经被退出了，程序的其它部分并没有受影响。
+  
+  [JVM 发生 OOM 的 8 种原因、及解决办法](https://zhuanlan.zhihu.com/p/63752449)
 
 #### **介绍下Java内存模型？**
 
@@ -242,7 +242,9 @@ private static void threadJoinOneByOne() throws InterruptedException {
     }
 }
 ```
-而调整优先级并不能保证控制线程执行顺序
+**CountDownLatch**也可以实现
+
+**调整优先级**并不能保证控制线程执行顺序
 
 #### **&和&&的区别？**
 
@@ -266,7 +268,11 @@ private static void threadJoinOneByOne() throws InterruptedException {
 
 #### **解释Java内存模型？**
 
-  见飞猪面试
+在 JDK1.2 之前，Java的内存模型实现总是从主存（即共享内存）读取变量，是不需要进行特别的注意的。而在当前的 Java 内存模型下，线程可以把变量保存本地内存比如机器的寄存器）中，而不是直接在主存中进行读写。这就可能造成一个线程在主存中修改了一个变量的值，而另外一个线程还继续使用它在寄存器中的变量值的拷贝，造成数据的不一致。
+  
+要解决这个问题，就需要把变量声明为volatile，这就指示 JVM，这个变量是不稳定的，每次使用它都到主存中进行读取。
+  
+说白了，volatile关键字的主要作用就是保证变量的可见性然后还有一个作用是防止指令重排序。
   
 #### **JDBC如何连接数据库？**
   [JDBC【介绍JDBC、使用JDBC连接数据库、简单的工具类】](https://zhuanlan.zhihu.com/p/33828916)
@@ -282,7 +288,7 @@ private static void threadJoinOneByOne() throws InterruptedException {
 #### **谈一下自己最熟悉的项目中的业务框架？**
 （登录+权限VIP服务绑定）
 
-#### **是怎样提交给前端接口的？**
+#### **开发过程中后端如何提交给前端接口？**
 
 #### **如何解决前后端token过期问题？**
 
@@ -354,6 +360,8 @@ private static void threadJoinOneByOne() throws InterruptedException {
 #### **谈一下乐观锁和悲观锁？**
 
   [面试必备之乐观锁与悲观锁](https://snailclimb.top/JavaGuide/#/./essential-content-for-interview/面试必备之乐观锁与悲观锁)
+  
+  [面试官：什么是乐观锁请举例 程序员：瑟瑟发抖 不懂啊](https://www.toutiao.com/a6674394835207586311/?timestamp=1559090888&app=news_article&group_id=6674394835207586311&req_id=20190529084808010019054222417A028)
 
 #### **谈一下守护线程？用到过哪种？**
   
@@ -375,9 +383,13 @@ private static void threadJoinOneByOne() throws InterruptedException {
   
 ### **一面**
   
-#### **谈一谈 Dubbo 序列化**
-  
+#### **谈一谈 Dubbo 序列化协议**
+
+Dubbo 支持 [Hessian](https://zhuanlan.zhihu.com/p/44787200)、[Java 二进制序列化](https://www.zhihu.com/question/47794528/answer/672095170)、json、SOAP 文本序列化多种序列化协议。但是 **Hessian** 是其默认的序列化协议。
+
 #### **谈一下 Dubbo 的整体架构中的网络传输层（Transport）？**
+
+抽象 mina 和 netty 为统一接口，以 Message 为中心，扩展接口为Channel、Transporter、Client、Server和Codec
 
  [30 道 Dubbo 面试题及答案](https://segmentfault.com/a/1190000018438985)
 
@@ -386,6 +398,14 @@ private static void threadJoinOneByOne() throws InterruptedException {
  [Springboot与shiro整合遇到的坑](https://zhuanlan.zhihu.com/p/29161098)
   
 #### **说一下在HashMap中遇到的hash冲突是如何解决的？**
+
+[HashMap？面试？我是谁？我在哪](https://zhuanlan.zhihu.com/p/62854712)
+
+原理：HashMap基于哈希表实现的，通过put和get方法存储和获取对象。当调用put方法时，通过键对象的hashCode找到在数组中的位置来存储值对象。当获取对象时的时候，先通过键对象的hashCode找到数组中的位置，然后通过键对象的equals()方法找到正确的值对象。
+
+HashMap使用LinkedList来解决碰撞冲突，当两个对象的hashCode相等时它们在数组的位置相同就会发生碰撞冲突，这个时候对象将会存储在LinkedList的下一个节点中。获取对象的时候通过键对象的equals方法遍历LinkedList直到找到正确的值对象。
+
+
   
 #### **谈一下List接口有哪些特性？**
 
@@ -395,8 +415,12 @@ private static void threadJoinOneByOne() throws InterruptedException {
 
  [Java中ArrayList和LinkedList区别](https://www.cnblogs.com/huzi007/p/5550440.html)
   
-#### **foreach循环里进行元素的remove/add操作，这样合理吗？**
-  
+#### **foreach循环里进行元素的remove/add操作，这样合理吗？为什么？**
+
+不合理
+
+[为什么阿里巴巴禁止在 foreach 循环里进行元素的 remove/add 操作](https://juejin.im/entry/5c7c7cae518825620677eebb)
+
 #### **当有线程 T1、T2 以及 T3，如何实现 T1 -> T2 -> T3 的执行顺序？以上问题请至少提供另外一种实现？**
   
   用 Thread 类的 join 方法。
@@ -423,6 +447,92 @@ private static void threadJoinOneByOne() throws InterruptedException {
     }
 }
 ```
-而调整优先级并不能保证控制线程执行顺序
+CountDownLatch也可以实现
+
+调整优先级并不能保证控制线程执行顺序
   
 #### **好像还有一个问题？是一个专有技术名词的解释？我真的没听过......**
+
+## 御家汇股份有限公司（御泥坊）
+
+这个也是一个朋友内推，工资要砍半，细节我就不说了，直接上干货。
+
+#### **说一下你最熟悉的项目中，遇到的印象最深刻的问题？是怎么解决的？**
+
+ [Springboot与shiro整合遇到的坑](https://zhuanlan.zhihu.com/p/29161098)
+
+#### **说一下TCP/IP 协议**
+
+ [HTTP协议—— 简单认识TCP/IP协议](https://www.cnblogs.com/roverliang/p/5176456.html)
+
+#### **如何让Redis与Mysql数据保持同步？**
+
+[如何保持mysql和redis中数据的一致性？](https://www.zhihu.com/question/319817091/answer/653985863)
+
+#### **如何查询Hashmap里面的元素？(增删改查）**
+
+[【面向对象版】HashMap（增删改查）](https://www.cnblogs.com/liupengpengg/p/6101091.html)
+
+#### **说一下Hashmap 扩容机制？第一次扩容到达的阈值是多少？**
+
+JDK 1.7: [深入理解HashMap的扩容机制](https://www.cnblogs.com/yanzige/p/8392142.html)
+
+JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.csdn.net/u010890358/article/details/80496144)
+
+默认大小为16，负载因子0.75，阈值12
+
+
+## 拓维信息系统股份有限公司
+这个是Boss直聘找的，本来是另一个HR先跟我聊得，后面他出差了，来了个小姐姐找我。
+
+### **一面**
+
+#### **说一下Spring boot(工作机制，和spring mvc对比优缺点)**
+
+ [这10道springboot常见面试题你需要了解下](https://zhuanlan.zhihu.com/p/58402413)
+
+#### **说一下Spring MVC框架**
+
+ [Spring MVC框架](https://snailclimb.top/JavaGuide/#/./system-design/framework/SpringMVC%20工作原理详解?id=springmvc-简单介绍)
+
+#### **工作中有没有遇到过Mysql优化，请谈一谈**
+
+ [巧用这19条MySQL优化，效率至少提高3倍](https://zhuanlan.zhihu.com/p/60249139)
+
+ [最全 MySQL 优化方法，从此优化不再难](https://zhuanlan.zhihu.com/p/59818056)
+ 
+#### **Mysql一般什么情况查询容易出现索引失效？怎么解决？**
+
+ 关联查询
+ 
+ [Mysql之索引失效](https://blog.csdn.net/student__software/article/details/82078786)
+ 
+ [MySQL避免索引失效](https://blog.csdn.net/zsx157326/article/details/79406491)
+ 
+#### **说一下在工作项目中如何运用Redis的？**
+
+ [Redis](https://snailclimb.top/JavaGuide/#/./database/Redis/Redis)
+
+#### **工作中使用Java多态多吗？请简单说一下**
+
+ [浅谈java多态](https://zhuanlan.zhihu.com/p/50190390)
+ 
+ [浅谈Java的多态](https://zhuanlan.zhihu.com/p/29088148)
+
+#### **工作中用过哪些接口？其中List有哪些类？谈一下它们的区别？**
+
+ [工作3年出去面试Java，被鄙视spring的接口有哪些都不清楚](https://www.toutiao.com/a6694111343538078222/?timestamp=1559054464&app=news_article&group_id=6694111343538078222&req_id=20190528224104010152032099253E81B)
+ 
+ [深入理解Java中的List、Set与Map集合](https://zhuanlan.zhihu.com/p/34518772)
+ 
+#### **有使用过Spring Cloud吗？有了解过微服务吗？**
+
+#### **对前端技术有了解吗？**
+
+#### **你这边有什么问题？**
+
+
+## 陆金所（电话面试） 上海
+
+待整理
+  
