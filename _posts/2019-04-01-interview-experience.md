@@ -76,6 +76,8 @@ tags:
 #### **Springboot 2.0.0和Springboot 1.5.6的区别？**
  
   [https://github.com/spring-projects/spring-boot/wiki](https://github.com/spring-projects/spring-boot/wiki)
+  
+  [Spring Boot 2.x 与 1.x 的区别，以及如何做版本迁移](https://zhuanlan.zhihu.com/p/63596771)
 
 #### **有没有看过Springboot的源码？（很尴尬，没有研究过）**
 
@@ -84,6 +86,8 @@ tags:
 #### **Springboot中遇到的一些坑及解决方法？**
  
   [Springboot与shiro整合遇到的坑](https://zhuanlan.zhihu.com/p/29161098)
+  
+  [Spring Boot 从1.0 升级到 2.0 所踩的坑](https://zhuanlan.zhihu.com/p/42678472)
 
 #### **有没有看过Spring的源码？（很尴尬，了解过）**
 
@@ -531,8 +535,5 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
 
 #### **你这边有什么问题？**
 
-
 ## 陆金所（电话面试） 上海
-
 待整理
-  
