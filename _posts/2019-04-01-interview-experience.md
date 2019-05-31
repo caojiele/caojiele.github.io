@@ -41,6 +41,8 @@ tags:
 
 #### **用过Spring boot哪些版本？新版本相对于旧版本有哪些改变？**
   [https://github.com/spring-projects/spring-boot/wiki](https://github.com/spring-projects/spring-boot/wiki)
+  
+  [Spring Boot 2.x 与 1.x 的区别，以及如何做版本迁移](https://zhuanlan.zhihu.com/p/63596771)
 
 #### **web.xml中DispatcherServlet的作用？**
 
@@ -211,7 +213,7 @@ XML ------> Resource ------> BeanDefinition ------> BeanFactory
 
   可重入是通过记录锁的持有线程和持有数量来实现的，当调用synchronized保护的代码时，检查对象是否已被锁，如果是，再检查是否被当前线程锁定，如果是，增加持有数量，如果不是被当前线程锁定，才加入等待队列，当释放锁时，减少持有数量，当数量为0时才释放整个锁。
 
-  https://snailclimb.top/JavaGuide/#/./java/Multithread/JavaConcurrencyAdvancedCommonInterviewQuestions?id=_1-synchronized-关键字
+  [synchronized 关键字](https://snailclimb.top/JavaGuide/#/./java/Multithread/JavaConcurrencyAdvancedCommonInterviewQuestions?id=_1-synchronized-关键字)
 
 #### **RuntimeException和Exception的区别？**
 
@@ -381,7 +383,7 @@ private static void threadJoinOneByOne() throws InterruptedException {
   
 ## 湖南兴盛优先电子商务有限公司
   
-说下面试前奏，我和这个公司互相鸽了一次，第一次我是因为那次在地铁里，信号不好怕影响面试效果，就提前说明了；结果第二次本来约的是晚上8：00，结果9：15分打电话过来面试，fuck，我还在洗衣服。面试官说只要20分钟，如果不方便可以下次约，好像这个面试官是已经下班了，在家里跟我打得电话，我觉得都不容易，还是同意面了。
+说下面试前奏，我和这个公司互相鸽了一次，第一次我是因为那次在地铁里，信号不好怕影响面试效果，就提前说明了；结果第二次本来约的是晚上8：00，结果9：15分打电话过来面试，*** ，我还在洗衣服。面试官说只要20分钟，如果不方便可以下次约，好像这个面试官是已经下班了，在家里跟我打得电话，我觉得都不容易，还是同意面了。
 
 说来也奇怪，竟然没让我自我介绍，直接上来就跟我聊参与的开源项目 Dubbo,问我为这个项目贡献了哪一块？我轻描淡写的描述了主要负责 Dubbo的哪些生态，和如何管理控制版本的发布等等。因为我主要负责官网的迭代和维护，而Apache项目之间的沟通都是英文交流，老外喜欢用邮件列表的形式来讨论，不会像国内的开源项目，任务认领的方式是在社交软件上进行沟通，老外根本就不用。顺便问了下我英语怎么样？我讲完后，顺便介绍了下我自己。接下来正式进入面试环节。
   
@@ -409,8 +411,6 @@ Dubbo 支持 [Hessian](https://zhuanlan.zhihu.com/p/44787200)、[Java 二进制�
 
 HashMap使用LinkedList来解决碰撞冲突，当两个对象的hashCode相等时它们在数组的位置相同就会发生碰撞冲突，这个时候对象将会存储在LinkedList的下一个节点中。获取对象的时候通过键对象的equals方法遍历LinkedList直到找到正确的值对象。
 
-
-  
 #### **谈一下List接口有哪些特性？**
 
  [深入理解Java中的List、Set与Map集合](https://zhuanlan.zhihu.com/p/34518772)
@@ -485,7 +485,6 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
 
 默认大小为16，负载因子0.75，阈值12
 
-
 ## 拓维信息系统股份有限公司
 这个是Boss直聘找的，本来是另一个HR先跟我聊得，后面他出差了，来了个小姐姐找我。
 
@@ -497,7 +496,7 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
 
 #### **说一下Spring MVC框架**
 
- [Spring MVC框架](https://snailclimb.top/JavaGuide/#/./system-design/framework/SpringMVC%20工作原理详解?id=springmvc-简单介绍)
+  [Spring MVC框架](https://snailclimb.top/JavaGuide/#/./system-design/framework/spring/SpringMVC-Principle?id=%E5%85%88%E6%9D%A5%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF-mvc-%E6%A8%A1%E5%BC%8F)
 
 #### **工作中有没有遇到过Mysql优化，请谈一谈**
 
