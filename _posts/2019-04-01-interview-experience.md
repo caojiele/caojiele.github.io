@@ -548,7 +548,7 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
 
   [G1 收集器原理理解与分析](https://zhuanlan.zhihu.com/p/52841787)
 
-#### **为啥你们公司在使用Mysql,还要使用MongDB?
+#### **为啥你们公司在使用Mysql,还要使用MongDB?**
 
   [我为什么放弃MySQL？选择了MongoDB](https://zhuanlan.zhihu.com/p/52810103)
   
@@ -557,3 +557,78 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
   [平衡二叉树、B树、B+树、B*树 理解其中一种你就都明白了](https://zhuanlan.zhihu.com/p/27700617)
   
 #### **你对索引有了解吗？说一下A ='a',B='b', AB='ab'?**(这个题说实话没听清面试官的意思，应该是问的是否会造成索引失效)。
+
+
+## 长沙蜜獾信息（辰运软件）科技有限公司
+
+### **一面**
+
+#### **说一下最近做过的项目**
+
+#### **你使用过哪些JDK版本？**
+
+#### **用过哪些集合包？**
+
+  ArrayList、LinkedList、Vector、Stack、HashSet、TreeSet、HashMap、TreeMap
+  
+  [深入理解Java中的List、Set与Map集合](https://zhuanlan.zhihu.com/p/34518772)
+
+#### **说一下ArrayList、LinkedList、HashMap 底层数据结构**
+
+  [Arraylist 与 LinkedList 区别?](https://snailclimb.top/JavaGuide/#/./java/collection/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98?id=arraylist-%E4%B8%8E-linkedlist-%E5%8C%BA%E5%88%AB)
+
+  [一篇文章搞定ArrayList和LinkedList所有面试问题](https://zhuanlan.zhihu.com/p/45967570)
+
+  [HashMap底层实现原理（上）](https://zhuanlan.zhihu.com/p/28501879)
+  
+  [HashMap底层实现原理（下）](https://zhuanlan.zhihu.com/p/28587782)
+
+#### **Arraylist 是有序还是无序？**
+有序
+
+#### **有哪些方式可以实现多线程？**
+
+  [Java多线程实现的四种方式](https://zhuanlan.zhihu.com/p/47401636)
+  
+#### **用过哪些并发包（我反问面试官是不是JUC，为何他说不是？）**
+
+  [java并发包、线程池、锁](https://zhuanlan.zhihu.com/p/43618142)
+  
+#### **说一下sleep( ) 和 wait( )的区别？**
+
+  [sleep( ) 和 wait( ) 的这 5 个区别，你知道几个？](https://zhuanlan.zhihu.com/p/45666264)
+
+#### **开发过程中遇到过哪些异常？/Exception 与 error的区别？/说一下error层次结构？**
+
+  [Java异常处理](https://zhuanlan.zhihu.com/p/37072375)
+  
+#### **用过哪些数据库？/说一下Mysql 四种事务隔离级别/哪种级别最高？为什么？**
+
+  [真正理解Mysql的四种事务隔离级别](https://www.jianshu.com/p/75187e19faf2)
+  
+#### **用过索引吧？在使用索引需要注意什么？（如何避免索引失效？）**
+
+  [如何理解并正确使用MySql索引](https://zhuanlan.zhihu.com/p/27835355)
+  
+  [Mysql索引简明教程](https://zhuanlan.zhihu.com/p/40820574)
+  
+  [Mysql之索引失效](https://blog.csdn.net/student__software/article/details/82078786)
+ 
+  [MySQL避免索引失效](https://blog.csdn.net/zsx157326/article/details/79406491)
+
+#### **说一下Spring MVC框架**
+
+ [Spring MVC框架](https://snailclimb.top/JavaGuide/#/./system-design/framework/spring/SpringMVC-Principle?id=%E5%85%88%E6%9D%A5%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF-mvc-%E6%A8%A1%E5%BC%8F)
+ 
+#### **http 和 https 的区别？**
+
+  [http 和 https 有何区别？如何灵活使用？](https://www.zhihu.com/question/19577317/answer/103499193)
+  
+  [http和https到底有什么区别？](https://zhuanlan.zhihu.com/p/38400365)
+
+#### **一般数据都是以什么形式传给前端？**
+json格式
+
+  [前后端数据交互之前端传值到后台](https://blog.csdn.net/henouren/article/details/78282406)
+
+#### **你这边还有什么问题？**
