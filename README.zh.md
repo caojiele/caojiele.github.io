@@ -24,7 +24,6 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 * 当你看完一篇文章，想及时发表自己的观点和意见时，不要着急，每个文章底部都有评论系统，但是要用Github账号登录。
 * 当然还有一些比较人性化的小插件，比如：打赏功能、站点访问量统计等等。
 
-
 ## 支持
 
 * 你可以自由的fork。如果你能将主题作者和 github 的地址保留在你的页面底部，我将非常感谢你。
@@ -42,7 +41,7 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 	* [推荐标签](#推荐标签)
 	* [好友链接](#好友链接)
 	* [演示文档布局](#演示文档布局)
-* 评论与 Gitalk
+* 评论与分析
 	* [评论](#评论)
 	* [打赏](#打赏)
 	* [网站分析](#网站分析) 
@@ -61,7 +60,6 @@ $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 如果你安装了jekyll，那你只需要在命令行输入`jekyll serve`就能在本地浏览器预览主题。你还可以输入`jekyll serve --watch`，这样可以边修改边自动运行修改后的文件。
 
 经 [@BrucZhaoR](https://github.com/BruceZhaoR)的测试，好像两个命令都是可以自动运行修改后的文件的，刷新后可以实时预览。官方文件是建议安装`bundler`，这样你在本地的效果就跟在github上面是一样的。详情请见这里：https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll
-
 
 #### 开始
 
@@ -118,7 +116,6 @@ sidebar-avatar: /img/avatar-Jack.jpg     #你的大头贴，请使用绝对地�
 
 侧边栏是响应式布局的，当屏幕尺寸小于992px的时候，侧边栏就会移动到底部。具体请见bootstrap栅格系统 <http://v3.bootcss.com/css/>
 
-
 #### 关于我
 
 Mini-About-Me 这个模块将在你的头像下面，展示你所有的社交账号。这个也是响应式布局，当屏幕变小时候，会将其移动到页面底部，只不过会稍微有点小变化，具体请看代码。
@@ -137,7 +134,6 @@ featured-condition-size: 1     # A tag will be featured if the size of it is mor
 唯一需要注意的是`featured-condition-size`: 如果一个标签的 SIZE，也就是使用该标签的文章数大于上面设定的条件值，这个标签就会在首页上被推荐。
  
 内部有一个条件模板 `{% if tag[1].size > {{site.featured-condition-size}} %}` 是用来做筛选过滤的.
-
 
 #### 好友链接
 
@@ -177,7 +173,6 @@ iframe:     "https://caojiele.com/js-module-7day/"
 ```
 
 iframe在不同的设备中，将会自动的调整大小。保留内边距是为了让手机用户可以向下滑动，以及添加更多的内容。
-
 
 #### 评论
 
@@ -232,6 +227,7 @@ gitalk.render('gitalk-container')
 </div>
 {% endif %}
 ```
+
 **最后**添加鉴权代码，在`_config.yml`中添加如下代码：
 ```
 # gitalk settings
@@ -303,7 +299,10 @@ JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加�
 **如果你可以理解 `_include/` 和 `_layouts/`文件夹下的代码（这里是整个界面布局的地方），你就可以使用 Jekyll 使用的模版引擎 [Liquid](https://github.com/Shopify/liquid/wiki)的语法直接修改/添加代码，来进行更有创意的自定义界面啦！**
 
 #### 返回顶部
-**首先**将`rocket.css`、`signature.css`和`toc.css`clone到`css`的目录下。**然后**在 `include`目录下的`head.html`文件的头部添加下面代码：
+
+**首先**将`rocket.css`、`signature.css`和`toc.css`clone到`css`的目录下。
+
+**然后**在 `include`目录下的`head.html`文件的头部添加下面代码：
 ```
     <link rel="stylesheet" href="/css/rocket.css">
     <link rel="stylesheet" href="/css/signature.css">
