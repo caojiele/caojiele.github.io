@@ -2,94 +2,95 @@
 
 ### [中文文档](README.zh.md)
 
-### [我的博客传送门 &rarr;](https://caojiele.com)
+### [View Live Jlcao Blog &rarr;](https://caojiele.com)
 
 ![blog-desktop](https://caojiele.com/img/root/blog-desktop.jpg)
 
-## 关于模板(beta)
+## Boilerplate (beta)
 
-我的博客仓库——`caojiele.github.io`，是经常修改的，而且还会有人乱提交代码，因此给大家做了一个稳定版的模板。大家可以直接fork模板——`Jlcaoblog-boilerplate`,要改的地方我都说明了。或者可以直接下载zip到本地自己去修改。
+Want to clone a boilerplate instead of my buzz blog? Here comes this!
 
 ```
 $ git clone git@github.com:caojiele/Jlcaoblog-boilerplate.git
 ```
 
-**[在这里预览模板 &rarr;](https://caojiele.com/Jlcaoblog-boilerplate/)**
+**[View Boilerplate Here &rarr;](https://caojiele.com/Jlcaoblog-boilerplate/)**
 
-## 新版本特性
+## Version
 
 ##### New Feature
 
-* 当你fork了我的仓库之后，还要删掉里面关于我的文档是不是感到烦躁呢？**Boilerplate** 模板将帮助你快速开始，方便合并与更新。
-* 当你非常急迫的想看一篇文章，而不知道文章具体位置在哪里的时候，请不要急，新特性里面加了全局搜索（在页面左上角），可以搜索到你想看得内容。
-* 当你浏览一个页面太久，想回到顶部时，请不要移动鼠标滑轮，每个页面右下角都有返回顶部的小火箭在等着你。
-* 当你看完一篇文章，想及时发表自己的观点和意见时，不要着急，每个文章底部都有评论系统，但是要用Github账号登录。
-* 当然还有一些比较人性化的小插件，比如：打赏功能、站点访问量统计等等。
+* When you fork in my project, but also delete the inside feel upset about my documents? **Boilerplate** templates will help you to quickly start, facilitate mergers and update.
+* When very urgent you want to see an article, but don't know where the article location, please don't worry, new features added in global search (on the left upper corner of the page), can search to you want to see more content.
+* When you visit a page for too long, want to go back to the top, please don't move the mouse wheel, every page at the bottom right corner has returned to the top of the small rockets are waiting for you.
+* When you finish reading an article, want to express their own opinions and standpoints in time, don't try so hard, at the bottom of each article has a review system, but with a lot to login.
+* Of course there are also some more humanized widgets, such as: reward function, site traffic statistics etc.
+
+## Support
+
+- **Feel free to fork. I'll Appreciate it if you keep the Author & Github link at footer**
+- Give it a **Star** if you like, fork or just clone to use ;)
+- If any problem or requirement, just open an issue here and I will help you.
+
+## Document
+
+* Get Started
+	* [Environment](#environment)
+	* [Get Started](#get-started)
+	* [Write Posts](#write-posts)
+* Components
+	* [SideBar](#sidebar)
+	* [Mini About Me](#mini-about-me)
+	* [Featured Tags](#featured-tags)
+	* [Friends](#friends)
+	* [Keynote Layout](#keynote-layout)
+* Comment & Analysis
+	* [Comment](#comment)
+	* [Reward](#reward)
+	* [Analytics](#analytics) 
+* Advanced
+	* [Customization](#customization)
+	* [Back to top](#back-to-top)
+	* [Search](#search)
+	* [Header Image](#header-image)
+	* [Statistics](#statistics)
+	* [SEO Title](#seo-title)
+* Other
+	* [Page Build Warning](#page-build-warning)
+
+#### Environment
+
+If you have jekyll installed, simply run `jekyll serve` in Command Line
+and preview the themes in your browser. You can use `jekyll serve --watch` to watch for changes in the source files as well.
+
+According to the test of [@BrucZhaoR](https://github.com/BruceZhaoR), like two commands can be run automatically modified files, can real-time preview after refresh. Official documents is suggested to install `bundler`, so you in the local effect is the same as in making the above. Please see here: https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll
 
 
-## 支持
+#### Get Started
 
-* 你可以自由的fork。如果你能将主题作者和 github 的地址保留在你的页面底部，我将非常感谢你。
-* 如果你喜欢我的这个博客模板，请在`caojiele.github.io`这个repository点个赞——右上角**star**一下。
-
-## 说明文档
-
-* 开始
-	* [环境要求](#环境要求)
-	* [开始](#开始)
-	* [写一篇博文](#写一篇博文)
-* 组件
-	* [侧边栏](#侧边栏)
-	* [关于我](#关于我)
-	* [推荐标签](#推荐标签)
-	* [好友链接](#好友链接)
-	* [演示文档布局](#演示文档布局)
-* 评论与 Gitalk
-	* [评论](#评论)
-	* [打赏](#打赏)
-	* [网站分析](#网站分析) 
-* 高级部分
-	* [自定义](#自定义)
-	* [返回顶部](#返回顶部)
-	* [全局搜索](#全局搜索)
-	* [标题底图](#标题底图)
-	* [站点访问量统计](#站点访问量统计)
-	* [搜索展示标题-头文件](#搜索展示标题-头文件)
-* 其它
-	* [关于收到页面构建警告](#关于收到页面构建警告)
-
-#### 环境要求
-
-如果你安装了jekyll，那你只需要在命令行输入`jekyll serve`就能在本地浏览器预览主题。你还可以输入`jekyll serve --watch`，这样可以边修改边自动运行修改后的文件。
-
-经 [@BrucZhaoR](https://github.com/BruceZhaoR)的测试，好像两个命令都是可以自动运行修改后的文件的，刷新后可以实时预览。官方文件是建议安装`bundler`，这样你在本地的效果就跟在github上面是一样的。详情请见这里：https://help.github.com/articles/using-jekyll-with-pages/#installing-jekyll
-
-
-#### 开始
-
-你可以通用修改 `_config.yml`文件来轻松的开始搭建自己的博客:
+You can easily get started by modifying `_config.yml`:
 
 ```
 # Site settings
-title: Jlcao Blog           # 你的博客网站标题
-SEOTitle: Jack Blog         # 在后面会详细谈到
-description: "Cool Blog"    # 随便说点，描述一下
+title: Jlcao Blog           # title of your website
+SEOTitle: Jack Blog         # check out docs for more detail
+description: "Cool Blog"    # ...
 
 # SNS settings      
-github_username: caojiele   # 你的github账号
-weibo_username: caojiele    # 你的微博账号，底部链接会自动更新的。
+github_username: caojiele   # modify this account to yours
+weibo_username: caojiele    # the footer woule be auto-updated.
 
 # Build settings
-# paginate: 10              # 一页你准备放几篇文章
+# paginate: 10              # nums of posts in one page
 ```
 
-Jekyll官方网站还有很多的参数可以调，比如设置文章的链接形式...网址在这里：[Jekyll - Official Site](http://jekyllrb.com/) 中文版的在这里：[Jekyll中文](http://jekyllcn.com/).
+There are more options you can check out in the [Jekyll - Official Site](http://jekyllrb.com/), or you can directly dive into code to find more.
 
-#### 写一篇博文
+#### Write Posts
 
-要发表的文章一般以markdown的格式放在这里`_posts/`，你只要看看这篇模板里的文章你就立刻明白该如何设置。
+Feel free to checkout Markdown files in the `_posts/`, you will quickly realized how to post your articles with magical markdown plus this nice theme.
 
-yaml 头文件(SEO)长这样:
+The **front-matter** of a post looks like that:
 
 ```
 ---
@@ -105,30 +106,32 @@ tags:
 
 ```
 
-#### 侧边栏
+#### SideBar
 
-看右边:
 ![blog-sideba](https://caojiele.com/img/root/blog-sidebar.jpg)
 
-设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
+Seeing more information may be necessary for you to display, from V1.1, a clean, gorgeous **SideBar** is added for you, which provide more area for displaying possible modules. You can enable *(it is default enable)* this feature by simply config:
+
 ```
 # Sidebar settings
-sidebar: true                            #添加侧边栏
+sidebar: true                            #add sidebar
 sidebar-about-description: "简单的描述一下你自己"
-sidebar-avatar: /img/avatar-Jack.jpg     #你的大头贴，请使用绝对地址.
+sidebar-avatar: /img/avatar-Jack.jpg     # use absolute URL.
 ```
 
-侧边栏是响应式布局的，当屏幕尺寸小于992px的时候，侧边栏就会移动到底部。具体请见bootstrap栅格系统 <http://v3.bootcss.com/css/>
+We default support *[Featured Tags](#featured-tags)*, *[Mini About Me](#mini-about-me)* and *[Friends](#friends)* these three modules and you can add your own. The sidebar is naturally responsive and would be push to bottom in a small screen size (`<= 992px`, according to [Bootstarp Grid System](http://getbootstrap.com/css/#grid))  
+More details of these three separate modules are talking below.
 
+#### Mini About Me
 
-#### 关于我
+Mini-About-Me module display all your SNS buttons also your avatar and the description if you set `sidebar-avatar` and `sidebar-about-description` which is very useful and common for a sidebar so it is default with your sidebar.
 
-Mini-About-Me 这个模块将在你的头像下面，展示你所有的社交账号。这个也是响应式布局，当屏幕变小时候，会将其移动到页面底部，只不过会稍微有点小变化，具体请看代码。
+It is really nice-looking and well-designed. It would be hidden in a small screen seeing the sidebar would be push to bottom and there is already a footer including SNS feature which is similar.
 
-#### 推荐标签
+#### Featured Tags
 
-看到这个网站 [Medium](http://medium.com) 的推荐标签非常的炫酷，所以我将他加了进来。
-这个模块现在是独立的，可以呈现在所有页面，包括主页和发表的每一篇文章标题的头上。
+Considering the Featured-Tags feature in [Medium](http://medium.com) is pretty cool, so I add it in my blog theme also.   
+This module is independent of sidebar from V1.4, so it can definitely live without enable sidebar, which would be displayed in the bottom when `sidebar` set to false, and it is not only displayed in home page but also every post page bottom.
 
 ```
 # Featured Tags
@@ -136,16 +139,16 @@ featured-tags: true
 featured-condition-size: 1     # A tag will be featured if the size of it is more than this condition value
 ```
 
-唯一需要注意的是`featured-condition-size`: 如果一个标签的 SIZE，也就是使用该标签的文章数大于上面设定的条件值，这个标签就会在首页上被推荐。
- 
-内部有一个条件模板 `{% if tag[1].size > {{site.featured-condition-size}} %}` 是用来做筛选过滤的.
+The only one thing need to be paid attention to is the `featured-condition-size`: A tag will be featured if the size of it is more than this condition value.  
+Internally, a condition template `{% if tag[1].size > {{site.featured-condition-size}} %}` is used to do the filter.
 
 
-#### 好友链接
+#### Friends
 
-好友链接部分。这会在全部页面显示。
+Friends is a very common feature of a blog seeing the SEO, so I add it in V1.1 release to help that.   
+Friends can also live without enable sidebar, also be displayed in the bottom when sidebar unable, and be displayed in every post page bottom.
 
-设置是在 `_config.yml`文件里面的`Friends`那块，自己加吧。
+You can just add your friends information in `_config.yml` with a familiar JSON syntax and everything is done, very easy:
 
 ```
 # Friends
@@ -161,15 +164,13 @@ friends: [
 ]
 ```
 
-#### 演示文档布局
+#### Keynote Layout
 
-HTML5幻灯片的排版：
+![HTML5幻灯片的排版](https://caojiele.com/img/root/blog-keynote.jpg)
 
-![](https://caojiele.com/img/root/blog-keynote.jpg)
+There is a increasing tendency to use Open Web technology to create keynotes, presentations, like Reveal.js, Impress.js, Slides, Prezi etc. I consider a modern blog should have abilities to post these HTML based presentation easily also abilities to play it directly.
 
-这部分是用于占用html格式的幻灯片的，一般用到的是 Reveal.js, Impress.js, Slides, Prezi 等等.我认为一个现代化的博客怎么能少了放html幻灯的功能呢~
-
-其主要原理是添加一个 `iframe`，在里面加入外部链接。你可以直接写到头文件里面去，详情请见下面的yaml头文件的写法。
+Under the hood, a `iframe` is used to include webpage from outer source, so the only things left is to give a url in the **front-matter**:
 
 ```
 ---
@@ -178,26 +179,25 @@ iframe:     "https://caojiele.com/js-module-7day/"
 ---
 ```
 
-iframe在不同的设备中，将会自动的调整大小。保留内边距是为了让手机用户可以向下滑动，以及添加更多的内容。
+The iframe will be automatically resized to adapt different form factors also the device orientation. A padding is left to imply user that there has more content below, also to ensure that there is a area for user to scroll down in mobile device seeing most of the keynote framework prevent the browser default scroll behavior.
 
+#### Comment
 
-#### 评论
+Do before commenting system, research several mature plug-ins：
+* Duoshuo：closed;
+* changyan：Need **ICP** for the record;
+* wangyiyuntie：Has been as a substitute for "Duoshuo", but the official reported on August 1, 2017 to close;
+* disqus：Foreign comparative review system to the fire, but in the domestic wall, so it does not consider.
+* gitalk：Support the markdown, similar issue, based on Github, is unlikely to be closed;
 
-做评论系统之前，调研了几个比较成熟的插件：
-* 多说：已经关闭;
-* 畅言：需要ICP备案;
-* 网易云跟贴：曾被当作“多说”的替代品，可惜官方通报说在2017/08/01关闭;
-* disqus：国外比较火的评论系统，但在国内墙了，故也不考虑。
-* gitalk：支持 markdown,类似 issue,依托 github,不太可能被和谐;
+So can only use `gitalk`.
 
-综上所述，那么只能用gitalk了。
+**First**,to apply for a Github OAuth Application。
+> Head of Github the drop-down menu > Settings > Developer settings > OAuth Application > Register a new application,fill in the relevant information
 
-**首先**申请一个Github OAuth Application。
-> Github头像下拉菜单 > Settings > 左边Developer settings下的OAuth Application > Register a new application，填写相关信息
+**ps**: Blog site callback address, be sure to fill in the domain name of your blog.Such as my domain name is: https://caojiele.com, so `Homepage URL`&`Authorization callback URL` fill in this domain address，Please refer to this [article](https://jacobpan3g.github.io/cn/2017/07/17/gitment-in-jekyll/)。
 
-**ps**:博客网站的回调地址，一定要填写博客的域名。比如我的是域名是：https://caojiele.com，其中`Homepage URL`&`Authorization callback URL`都填这个域名地址，具体可以参考这篇[文章](https://jacobpan3g.github.io/cn/2017/07/17/gitment-in-jekyll/)。
-
-**然后**将 gitalk 配置的代码,抽离成一个文件 `comments.html`，路径: `_includes/comments`；具体内容如下：
+**Second**, Will `gitalk` configuration code, pulling away into one file `comments.html`, url: `_includes/comments`; as follows:
 ```
 <div id="gitalk-container"></div>
 <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
@@ -216,25 +216,26 @@ gitalk.render('gitalk-container')
 </script> 
 ```
 
-**接着** 需要在`_layouts`目录下的`post.html`中添加关键代码：
+**third**, need in `_layouts` directory `post.html` add key code:
 ```
-<!-- 添加评论系统 -->
+<!-- Add comments system -->
 <link rel="stylesheet" href="../../../../css/gitalk.css">
 <script src="../../../../js/gitalk.min.js"></script>
 ```
 
-两个脚本文件`gitalk.css`与`gitalk.min.js`都在我项目对应的`css`和`js`文件中，clone下来直接用即可。
+Two script files `gitalk.css` and `gitalk.min.js`in my project corresponding `css` and `js` file, clone down can be used directly.
 
-然后再在`post.html`加个评论框，因为之前抽离出去一个`comments.html`，所以可以这样写：
+And then in `post.html` add a comment box, because before pulled out a `comments.html`, so you can write like this:
 ```
-<!-- gitalk评论框-->
+<!-- gitalk comment box-->
 {% if site.gitalk %}
 <div class="comment">
 {% include comments.html %}
 </div>
 {% endif %}
 ```
-**最后**添加鉴权代码，在`_config.yml`中添加如下代码：
+
+**Finally**, add the authentication code, in `_config.yml` add the following code:
 ```
 # gitalk settings
 gitalk:
@@ -245,27 +246,27 @@ gitalk:
    clientSecret: ****406b08f33cc8118d02eb9332cfb707f13bf0
    admin: caojiele
 ```
-里面的参数和第一步申请的`Github OAuth Application`有关。
+The inside of the parameters and the first step in the Application of `Github OAuth Application`.
 
-#### 打赏
+#### Reward
 
-打赏这个功能之前尝试了几种方法，但是都没有直接扫收款码直观，同时也是代码量最少，最简单的方法。
+Exceptional tried several methods before this functionality, but no direct payment code directly, and amount of code the least, the most simple way.
 
-**首先**在`_layouts`目录下的`post.html`中添加关键代码：
+**First**, in `_layouts` directory `post.html` add key code:
 ```
-<!-- 添加打赏 -->
+<!-- add reward -->
 <link href="/css/reward.css?v=6.2.0" rel="stylesheet" type="text/css" />
 ```
-其中`reward.css`在我项目对应的`css`文件中，clone下来直接用即可。
+so `reward.css` in my project corresponding`css`file, clone down can be used directly.
 
-**最后**还是在`_layouts`目录下的`post.html`中添加如下代码：
+**Finally**, in `_layouts` directory `post.html` add key code:
 ```
-     <!-- 打赏功能 -->
+     <!-- reward function -->
             <div>
                 <div style="padding: 10px 0; margin: 20px auto; width: 90%; text-align: center;">
                 <div>☛小礼物走一走，来Github关注我☚</div>
                 <button id="rewardButton" disable="enable" onclick="var qr = document.getElementById('QR'); if (qr.style.display === 'none') {qr.style.display='block';} else {qr.style.display='none'}">
-                    <span>打 赏</span>
+                    <span>reward</span>
                 </button>
                 <div id="QR" style="display: none;">
                      
@@ -281,11 +282,11 @@ gitalk:
          </div>         
      </div>
 ```
-**ps**：当然微信和支付宝收款码记得提前上传到项目中。
+**ps**：of course remember WeChat and zhifubao payment code uploaded to the project ahead of time.
 
-#### 网站分析
+#### Analytics
 
-网站分析，现在支持百度统计和Google Analytics。需要去官方网站注册一下，然后将返回的code贴在下面：
+We support Google Analytics and Baidu Tongji officially with a deathly simple config:
 
 ```
 # Baidu Analytics
@@ -296,69 +297,75 @@ ga_track_id: 'UA-49627206-1'            # 你用Google账号去注册一个就�
 ga_domain: caojiele.com			# 默认的是 auto, 这里我是自定义了的域名，你如果没有自己的域名，需要改成auto。
 ```
 
-#### 自定义
+Just checkout the code offered by Google/Baidu, and copy paste here, all the rest is already done for you.
 
-如果你喜欢折腾，你可以去自定义我的这个模板的 code，[Grunt](gruntjs.com)已经为你准备好了。（感谢 Clean Blog）
+(Google might ask for meta tag "google-site-verification")
 
-JavaScript 的压缩混淆、Less 的编译、Apache 2.0 许可通告的添加与 watch 代码改动，这些任务都揽括其中。简单的在命令行中输入 `grunt` 就可以执行默认任务来帮你构建文件了。如果你想搞一搞 JavaScript 或 Less 的话，`grunt watch` 会帮助到你的。
+#### Customization
 
-**如果你可以理解 `_include/` 和 `_layouts/`文件夹下的代码（这里是整个界面布局的地方），你就可以使用 Jekyll 使用的模版引擎 [Liquid](https://github.com/Shopify/liquid/wiki)的语法直接修改/添加代码，来进行更有创意的自定义界面啦！**
+如If you wanna do more customization and change code yourself, a [Grunt](gruntjs.com) environment is also included. (Thanks to Clean Blog.)
 
-#### 返回顶部
-**首先**将`rocket.css`、`signature.css`和`toc.css`clone到`css`的目录下。**然后**在 `include`目录下的`head.html`文件的头部添加下面代码：
+There are a number of tasks it performs like minification of the JavaScript, compiling of the LESS files, adding banners to keep the Apache 2.0 license intact, and watching for changes. Run the grunt default task by entering `grunt ` into your command line which will build the files. You can use `grunt watch` if you are working on the JavaScript or the LESS.
+
+**Try to understand code in `_include/` and `_layouts/`, then you can modify Jekyll [Liquid](https://github.com/Shopify/liquid/wiki) template directly to do more creative customization.**
+
+#### Back to top
+**First**, `rocket.css`、`signature.css` and `toc.css` clone to `css` directory.
+
+**And then**, in `include` directory `head.html` file head to add the following code:
 ```
     <link rel="stylesheet" href="/css/rocket.css">
     <link rel="stylesheet" href="/css/signature.css">
     <link rel="stylesheet" href="/css/toc.css">
 ```
 
-**最后**将`totop.js`和`toc.js`clone到`js`的目录下，**然后**在`include`目录下的`footer.html`的最后添加下面代码：
+**Finally**, `totop.js` and `toc.js`clone to `js` directory, **and then** in `include` directory, the end of the `footer.html` to add the following code:
 ```
 <a id="rocket" href="#top" class=""></a>
 <script type="text/javascript" src="/js/totop.js?v=1.0.0" async=""></script>
 <script type="text/javascript" src="/js/toc.js?v=1.0.0" async=""></script>
 ```
 
-#### 全局搜索
+#### Search
 
-在页面左上角添加搜索功能，请先参考[soptq.me 关于全局搜索功能](https://soptq.me/2019/04/03/implement-search/)，后续我会写该功能实现的文章，请关注我的[博客](https://caojiele.com)。
+In the left upper corner of the page to add search functionality, please refer to: [soptq.me-implement search](https://soptq.me/2019/04/03/implement-search/).
 
-#### 标题底图
+#### Header Image
 
-标题底图是可以自己选的，看看几篇示例post你就知道如何设置了。在
-  [issue #6 ](https://github.com/Huxpro/huxpro.github.io/issues/6) 中我被问到：怎么样才能让标题底图好看呢？
-  
-标题底图的选取完全是看个人的审美了，我也帮不了你。每一篇文章可以有不同的底图，你想放什么就放什么，最后宽度要够，大小不要太大，否则加载慢啊。
+Change header images of any pages or any posts is pretty easy as mentioned above. But, thanks to [issue #6 (in Chinese)](https://github.com/Huxpro/huxpro.github.io/issues/6) asked, **how to make it looks great?**
 
-但是需要注意的是本模板的标题是**白色**的，所以背景色要设置为**灰色**或者**黑色**，总之深色系就对了。当然你还可以自定义修改字体颜色，总之，用github pages就是可以完全的个性定制自己的博客。
+**Well...it is actually a design issue**, not a coding stuff. It is better that you have basic design knowledge, but not is ok, let me told you how to make it well-designed:
 
-#### 站点访问量统计
+Seeing the title text above image is **white**, the image should be **dark** to emphasize the contract. so we can easily add a **black overlay with fews of opacity**, which is depends on the brightness of the original images you used. you can process it in Photoshop, Sketch etc.
 
-每个页面底部都有对应的访问量统计，具体参考:[不蒜子](http://ibruce.info/2015/04/04/busuanzi/)。后续请关注我的[博客](https://caojiele.com)。
+In technical views, it can be done with CSS. However, the opacity of the black overlay is really hard to assigned, **every image has different brightness so the  degree it should be adjusted is different so it is impossible to hard code it.**
 
-#### 搜索展示标题-头文件
+#### Statistics
 
-我的博客标题是 **“Jlcao Blog”** 但是我想要在搜索的时候显示 **“曹杰乐的博客 | Jlcao Blog”** ，这个就需要SEO Title来定义了。
+At the bottom of each page has a corresponding traffic statistics, refer to: [ibruce](http://ibruce.info/2015/04/04/busuanzi/).
 
-其实这个SEO Title就是定义了<head><title>标题</title></head>这个里面的东西和多说分享的标题，你可以自行修改的。
+#### SEO Title
 
-#### 关于收到页面构建警告
+It's possible that you want the two things different. For me, my site-title is **“Jlcao Blog”** but I want the title shows in search engine is **“曹杰乐的博客 | Jlcao Blog”** which is multi-language.
 
-由于jekyll升级到3.0.x，对原来的pygments代码高亮不再支持，现只支持一种-rouge，所以你需要在 `_config.yml`文件中修改`highlighter: rouge`。另外还需要在`_config.yml`文件中加上`gems: [jekyll-paginate]`。
+So, the SEO Title is introduced to solve this problem, you can set `SEOTitle` different from `title`, and it would be only used to generate HTML `<title>` and setting DuoShuo Sharing.
 
-同时，你需要更新你的本地jekyll环境。
+#### Page Build Warning
 
-使用`jekyll server`的同学需要这样：
+There are many possible reasons to cause a "Page Build Warning" email or similar error.
 
-1. `gem update jekyll` # 更新jekyll
-2. `gem update github-pages` #更新依赖的包
+One of these is that github changes its build environment.
 
-使用`bundle exec jekyll server`的同学在更新jekyll后，需要输入`bundle update`来更新依赖的包。
+> You are attempting to use the 'pygments' highlighter, which is currently unsupported on GitHub Pages. Your site will use 'rouge' for highlighting instead. To suppress this warning, change the 'highlighter' value to 'rouge' in your '_config.yml'.
 
-参考文档：[using jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/) & [Upgrading from 2.x to 3.x](http://jekyllrb.com/docs/upgrading/2-to-3/)
+So, just edit `_config.yml`, find `highlighter: pygments`, change it to `highlighter: rouge` and the warning will be gone.
 
-## 致谢
+For other circumstances, check out existing issues or create a new one!
 
-1. 这个模板是从这里[Huxpro/huxpro.github.io](https://github.com/huxpro/huxpro.github.io/)  fork 的， 感谢作者黄玄！
+Reference:[using jekyll with pages](https://help.github.com/articles/using-jekyll-with-pages/) & [Upgrading from 2.x to 3.x](http://jekyllrb.com/docs/upgrading/2-to-3/)
 
-2. 感谢 Jekyll、Github Pages 和 Bootstrap!
+## Thx
+
+1. This template from [Huxpro/huxpro.github.io](https://github.com/huxpro/huxpro.github.io/) of the fork,thanks Huxpro！
+
+2. Thanks Jekyll、Github Pages and Bootstrap!
