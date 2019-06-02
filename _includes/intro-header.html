@@ -10,6 +10,7 @@
         background-image: url('{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}');
         background: {{ page.header-bg-css }};
     }
+
     {% if page.header-mask %}
     header.intro-header .header-mask{
         width: 100%;
@@ -36,7 +37,7 @@
                 <div class="post-heading">
                     <div class="tags">
                         {% for tag in page.tags %}
-                        <a class="tag" href="{{ site.baseurl }}/tags/?tag={{ tag | url_encode }}" title="{{ tag }}">{{ tag }}</a>
+                        <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}" title="{{ tag }}">{{ tag }}</a>
                         {% endfor %}
                     </div>
                     <h1>{{ page.title }}</h1>
@@ -74,7 +75,7 @@
                 <div class="post-heading">
                     <div class="tags">
                         {% for tag in page.tags %}
-                        <a class="tag" href="{{ site.baseurl }}/tags/?tag={{ tag | url_encode }}" title="{{ tag }}">{{ tag }}</a>
+                        <a class="tag" href="{{ site.baseurl }}/archive/?tag={{ tag | url_encode }}" title="{{ tag }}">{{ tag }}</a>
                         {% endfor %}
                     </div>
                     <h1>{{ page.title }}</h1>

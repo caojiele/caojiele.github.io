@@ -6,17 +6,18 @@ date:       2016-05-02
 author:     "caojiele"
 header-img: "img/in-post/2016.05/02/post-bg-miui6.jpg"
 tags:
+    - 数据库
     - mongoDB
-    - ISODate
     - Java
 ---
 
 在mongoDB数据库中，时间的保存是ISODate类型，orm关系映射为java.util.Date类型，其保存的时间与我们会有8小时的区别（保存的时间比我们早了8个小时）。
 
 原数据为：
-```mongoDB
+```Bash
 Person [id=11188, name=doctorwho, age=888888, birth=2016-01-01 13:55:00]
 ```
+
  mongoDB数据库中为：
 ```mongoDB
 { 
@@ -30,7 +31,7 @@ Person [id=11188, name=doctorwho, age=888888, birth=2016-01-01 13:55:00]
   
  那我们用时间查询数据的时候，看下java 驱动如何做的（部分日志）：
  
-```mongoDB
+```java
 package com.doctor.springdoc;
  
 import java.time.LocalDateTime;
@@ -106,7 +107,7 @@ Person [id=11188, name=doctorwho, age=888888,birth=2016-01-01 13:55:00]
 
 com.mongodb.util.JSONSerializers.LegacyDateSerializer代码：
 
-```mongoDB
+```java
  private static class LegacyDateSerializer extends CompoundObjectSerializer {
  
         LegacyDateSerializer(ObjectSerializer serializer) {

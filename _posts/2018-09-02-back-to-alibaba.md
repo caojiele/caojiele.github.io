@@ -13,7 +13,7 @@ tags:
 
 > 本文来自于我的微信公众号：闪兔网络工作室，作者为阿里云首席安全研究员吴翰清。 [阿里云道哥自述：重回阿里的29个月](https://mp.weixin.qq.com/s/cMJYnQxfmSzrwGq2xICCnQ)，转载请保留链接 ;)
 
-![](https://raw.githubusercontent.com/caojiele/caojiele.github.io/master/img/in-post/2018.09/02/post-avator-dao.jpg)
+![吴翰清](https://raw.githubusercontent.com/caojiele/caojiele.github.io/master/img/in-post/2018.09/02/post-avator-dao.jpg)
 
 > 无欲则刚
 

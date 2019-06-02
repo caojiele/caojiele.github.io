@@ -11,13 +11,15 @@ tags:
     - Java
 ---
 
+> 本文来自于我的简书：[初识 Nacos(上） 学习《Spring Cloud 服务发现新选择》](https://www.jianshu.com/p/b374a7b10486)，转载请保留链接 ;)
+
 最近在从零接触Alibaba 开源项目Nacos,学习的是[小马哥(mercyblitz)](https://github.com/mercyblitz)的技术周报，之前看了后忘记总结，导致也没有什么印象。所以现在决定学习一章，写一篇学习感悟，并且持续更新下去。首先这一章节主要讲得是服务发现(Service Discovery)，作为 Spring Cloud 最核心功能特性之一，受到业界的广泛关注。
-![文章主题](https://github.com/Ross0101/caojiele.github.io/blob/master/img/in-post/2018.09/21/post-theme.png)
+![文章主题](https://raw.githubusercontent.com/caojiele/caojiele.github.io/master/img/in-post/2018.09/21/post-theme.png)
 
 ## Spring Cloud 整体架构
 
 在现行的 Spring Cloud 服务发现技术体系中，以 Spring Cloud Eureka 为典型代表，它作为官方推荐解决方案，被业 界广泛运用，然而其设计缺陷也非常之明显。还有Spring Cloud Zookeeper和Spring Cloud Consul。那么先介绍这三种的特点吧。
-![整体架构](https://github.com/Ross0101/caojiele.github.io/blob/master/img/in-post/2018.09/21/post-architecture.png)
+![整体架构](https://raw.githubusercontent.com/caojiele/caojiele.github.io/master/img/in-post/2018.09/21/post-architecture.png)
 
 ### Spring Cloud Eureka 特点
 #### 优点：
@@ -49,7 +51,7 @@ tags:
 * 非 Java 生态 - 维护和问题排查困难
 
 综上所述，让我得出了Spring Cloud服务发现方案对比结果:
-![方案对比结果](https://github.com/Ross0101/caojiele.github.io/blob/master/img/in-post/2018.09/21/post-compare.png)
+![方案对比结果](https://raw.githubusercontent.com/caojiele/caojiele.github.io/master/img/in-post/2018.09/21/post-compare.png)
 
 那么这三种服务发现的基本模式是怎样的呢？现在来谈谈Spring cloud 服务器发现模式。
 * 首先都是服务器启动 - 启动注册中心

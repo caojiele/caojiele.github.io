@@ -1,5 +1,9 @@
 <!-- Navigation -->
+{% if page.nav-style == "invert" or page.header-style == "text" %}
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top invert">
+{% else %}
 <nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+{% endif %}
     <div class="container-fluid">
         <!-- Brand and toggle get grouped for better mobile display -->
         <div class="navbar-header page-scroll">
@@ -9,11 +13,19 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
+            
+            {% if page.collection == "posts" %}
+            <a href="javascript:history.back()" style="font-size:28px" class="fa fa-angle-left navbar-brand"></a>
+            {% endif %}
+            
             <a class="navbar-brand" href="{{ site.baseurl }}/">{{ site.title }}</a>
+            
+             <a href="javascript:void(0)" class="fa fa-search navbar-brand search-icon" id="search-ic"></a>
+            
         </div>
 
         <!-- Collect the nav links, forms, and other content for toggling -->
-        <div id="jlcaoblog_navbar">
+        <div id="huxblog_navbar">
             <div class="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
@@ -26,45 +38,47 @@
                     </li>
                     {% endif %}
                     {% endfor %}
+                    
                     {% if site.nightMode %}
                     <li><a id="night-mode">Night Mode</a></li>
                     {% endif %}
-                    <li class="search-icon">
-                    <a href="javascript:void(0)" class="fa fa-search"></a>
-                    </li>
-                </ul>
+                    
+                </ul>    
             </div>
         </div>
         <!-- /.navbar-collapse -->
     </div>
     <!-- /.container -->
 </nav>
+    
 <!-- Search Box -->
-<div class="search-box">
+<div class="search-box hidden">
   <div class="wrapper">
     <div class="search-grid">
       <form class="search-form">
         <div id="search-container">
-          <input type="text" id="search-input" class="search" placeholder="Search">
+          <input type="text" autocomplete="off" id="search-input" class="search" placeholder="Search..." maxlength="20" onkeypress="return onKeyPress(event)">
         </div>
       </form>
-      <ul id="results-container" class="results-search"></ul>
+      <ul id="results-container" class="results-search">
+      </ul>
       <div class="icon-close-container">
         <span class="search-icon-close"><i class="fa fa-times" aria-hidden="true"></i></span>
       </div>
     </div>
   </div>
 </div>
+    
 <script>
     // Drop Bootstarp low-performance Navbar
     // Use customize navbar with high-quality material design animation
     // in high-perf jank-free CSS3 implementation
     var $body   = document.body;
     var $toggle = document.querySelector('.navbar-toggle');
-    var $navbar = document.querySelector('#jlcaoblog_navbar');
+    var $navbar = document.querySelector('#huxblog_navbar');
     var $collapse = document.querySelector('.navbar-collapse');
 
-    var __jlcaoNav__ = {
+    var __HuxNav__ = {
         close: function(){
             $navbar.className = " ";
             // wait until animation end.
@@ -84,26 +98,26 @@
     // Bind Event
     $toggle.addEventListener('click', function(e){
         if ($navbar.className.indexOf('in') > 0) {
-            __jlcaoNav__.close()
+            __HuxNav__.close()
         }else{
-            __jlcaoNav__.open()
+            __HuxNav__.open()
         }
     })
 
     /**
      * Since Fastclick is used to delegate 'touchstart' globally
      * to hack 300ms delay in iOS by performing a fake 'click',
-     * Using 'e.stopPropagation' to stop 'touchstart' event from
+     * Using 'e.stopPropagation' to stop 'touchstart' event from 
      * $toggle/$collapse will break global delegation.
-     *
+     * 
      * Instead, we use a 'e.target' filter to prevent handler
-     * added to document close GJXSNav.
+     * added to document close HuxNav.  
      *
      * Also, we use 'click' instead of 'touchstart' as compromise
      */
     document.addEventListener('click', function(e){
         if(e.target == $toggle) return;
         if(e.target.className == 'icon-bar') return;
-        __jlcaoNav__.close();
+        __HuxNav__.close();
     })
 </script>

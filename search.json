@@ -3,13 +3,31 @@ layout: null
 ---
 [
   {% for post in site.posts %}
+  {% if post.password %}
     {
       "title"    : "{{ post.title | escape }}",
       "title-lower"    : "{{ post.title | escape | downcase}}",
+      "sub-titile" : "{{ post.subtitle | escape }}",
+      "sub-titile-lower" : "{{ post.subtitle | escape | downcase}}",
       "categories" : "{{ post.categories }}",
       "tags"     : "{{ post.tags | join: ', ' }}",
       "url"      : "{{ site.baseurl }}{{ post.url }}",
-      "date"     : "{{ post.date }}"
+      "date"     : "{{ post.date }}",
+      "desc"     : "权限不足, 需要输入密钥才能访问 | Unauthorized, Enter Passphrase to unlock 密钥请咨询相关网站管理员 | Please consult the relevant webmaster for the key"
     } {% unless forloop.last %},{% endunless %}
+  {% else %}
+    {
+      "title"    : "{{ post.title | escape }}",
+      "title-lower"    : "{{ post.title | escape | downcase}}",
+      "sub-titile" : "{{ post.subtitle | escape }}",
+      "sub-titile-lower" : "{{ post.subtitle | escape | downcase}}",
+      "categories" : "{{ post.categories }}",
+      "tags"     : "{{ post.tags | join: ', ' }}",
+      "url"      : "{{ site.baseurl }}{{ post.url }}",
+      "date"     : "{{ post.date }}",
+      "content": {{ post.content | jsonify }},
+      "desc"     : "{{ post.content | strip_html | strip_newlines | remove_chars | escape | truncate:200 }}"
+} {% unless forloop.last %},{% endunless %}
+  {% endif %}
   {% endfor %}
 ]
