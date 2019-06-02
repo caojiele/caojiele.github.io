@@ -115,7 +115,7 @@ Seeing more information may be necessary for you to display, from V1.1, a clean,
 ```
 # Sidebar settings
 sidebar: true                            #add sidebar
-sidebar-about-description: "简单的描述一下你自己"
+sidebar-about-description: "introduce myself"
 sidebar-avatar: /img/avatar-Jack.jpg     # use absolute URL.
 ```
 
