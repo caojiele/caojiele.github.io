@@ -127,11 +127,7 @@ tags:
 
 #### **介绍下Java内存模型？**
 
-  在 JDK1.2 之前，Java的内存模型实现总是从主存（即共享内存）读取变量，是不需要进行特别的注意的。而在当前的 Java 内存模型下，线程可以把变量保存本地内存比如机器的寄存器）中，而不是直接在主存中进行读写。这就可能造成一个线程在主存中修改了一个变量的值，而另外一个线程还继续使用它在寄存器中的变量值的拷贝，造成数据的不一致。
-  
-  要解决这个问题，就需要把变量声明为volatile，这就指示 JVM，这个变量是不稳定的，每次使用它都到主存中进行读取。
-  
-  说白了，volatile关键字的主要作用就是保证变量的可见性然后还有一个作用是防止指令重排序。
+[Java内存模型（JMM）总结](https://zhuanlan.zhihu.com/p/29881777)
 
 #### **你这边还有什么问题？**
 
@@ -277,11 +273,7 @@ private static void threadJoinOneByOne() throws InterruptedException {
 
 #### **解释Java内存模型？**
 
-在 JDK1.2 之前，Java的内存模型实现总是从主存（即共享内存）读取变量，是不需要进行特别的注意的。而在当前的 Java 内存模型下，线程可以把变量保存本地内存比如机器的寄存器）中，而不是直接在主存中进行读写。这就可能造成一个线程在主存中修改了一个变量的值，而另外一个线程还继续使用它在寄存器中的变量值的拷贝，造成数据的不一致。
-  
-要解决这个问题，就需要把变量声明为volatile，这就指示 JVM，这个变量是不稳定的，每次使用它都到主存中进行读取。
-  
-说白了，volatile关键字的主要作用就是保证变量的可见性然后还有一个作用是防止指令重排序。
+[Java内存模型（JMM）总结](https://zhuanlan.zhihu.com/p/29881777)
   
 #### **JDBC如何连接数据库？**
   [JDBC【介绍JDBC、使用JDBC连接数据库、简单的工具类】](https://zhuanlan.zhihu.com/p/33828916)
@@ -640,3 +632,67 @@ json格式
   [前后端数据交互之前端传值到后台](https://blog.csdn.net/henouren/article/details/78282406)
 
 #### **你这边还有什么问题？**
+
+## 深圳市丰巢科技有限公司 (武汉岗)
+
+#### **自我介绍**
+看到我说的和简历上的没差别，就没让我继续说了
+
+#### **你平时是怎么学习技术的？**
+
+#### **有中间件开发经验吗？**
+
+#### **如何搭建Nacos/dubbo平台？**
+
+#### **说一下Spring MVC框架**
+
+ [Spring MVC框架](https://snailclimb.top/JavaGuide/#/./system-design/framework/spring/SpringMVC-Principle?id=%E5%85%88%E6%9D%A5%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF-mvc-%E6%A8%A1%E5%BC%8F)
+ 
+#### **Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？**
+
+第一种是使用<resultMap>标签，逐一定义列名和对象属性名之间的映射关系。第二种是使用sql列的别名功能，将列别名书写为对象属性名，比如T_NAME AS NAME，对象属性名一般是name，小写，但是列名不区分大小写，Mybatis会忽略列名大小写，智能找到与之对应对象属性名，你甚至可以写成T_NAME AS NaMe，Mybatis一样可以正常工作。
+有了列名与属性名的映射关系后，Mybatis通过反射创建对象，同时使用反射给对象的属性逐一赋值并返回，那些找不到映射关系的属性，是无法完成赋值的。
+
+[十道常见的mybatis面试题](https://zhuanlan.zhihu.com/p/61432692)
+
+#### **谈一谈公平锁和非公平锁？**
+
+[最全Java锁详解：独享锁/共享锁+公平锁/非公平锁+乐观锁/悲观锁](https://zhuanlan.zhihu.com/p/54551800)
+
+[两程序员玩“锁”，一人抢救无效身亡](https://zhuanlan.zhihu.com/p/34510121)
+
+#### **简单聊下线程池？**
+
+[线程池你真不来了解一下吗？](https://zhuanlan.zhihu.com/p/36475103)
+
+[当面试官问线程池时，你应该知道些什么？](https://zhuanlan.zhihu.com/p/62132884)
+
+#### **简单说一下Java内存模型（JMM)**
+
+[Java内存模型（JMM）总结](https://zhuanlan.zhihu.com/p/29881777)
+
+#### **工作中有没有Mysql优化的经验，请谈一谈**
+
+ [巧用这19条MySQL优化，效率至少提高3倍](https://zhuanlan.zhihu.com/p/60249139)
+
+ [最全 MySQL 优化方法，从此优化不再难](https://zhuanlan.zhihu.com/p/59818056)
+
+#### **谈一下索引数据结构**
+
+[数据库索引数据结构总结](https://zhuanlan.zhihu.com/p/47046781)
+
+#### **简述 B+Tree**
+
+[二叉树学习笔记之B树、B+树、B*树](https://yq.aliyun.com/articles/38345)
+
+#### **谈一谈单链表和双链表的区别？**
+
+**单链表**：单链表只有一个指向下一节点的指针，也就是只能next。
+
+**双链表**：双链表除了有一个指向下一节点的指针外，还有一个指向前一结点的指针，可以通过prev快速找到前一结点。一般我们都构造双向循环链表。
+
+[数据结构与算法-链表(上)](https://zhuanlan.zhihu.com/p/52878334)
+
+#### **谈谈 synchronized 和 ReentrantLock 的区别**
+
+[谈谈 synchronized 和 ReentrantLock 的区别](https://snailclimb.top/JavaGuide/#/./essential-content-for-interview/PreparingForInterview/美团面试常见问题总结?id=_3-谈谈-synchronized-和-reentrantlock-的区别)
