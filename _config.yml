@@ -81,7 +81,7 @@ baidu_analytics: 'f449fbb4d143d156c197d3a7a38a779d'
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
 sidebar-about-description: " When you look long into an abyss,the abyss looks into you<br> 当你凝视深渊时,深渊也在凝视你"
-sidebar-avatar: https://cdn.nlark.com/yuque/0/2019/png/338441/1561298973285-725f5a6f-9de4-4836-aaf3-7da6d2663dc1.png      # use absolute URL, seeing it's used in both `/` and `/about/`
+sidebar-avatar: https://cdn.nlark.com/yuque/0/2019/png/338441/1561299591438-3b1dd3a3-08db-4199-a7b6-bdacfe42266d.png      # use absolute URL, seeing it's used in both `/` and `/about/`
 
 # Featured Tags
 featured-tags: true                     # whether or not using Feature-Tags
