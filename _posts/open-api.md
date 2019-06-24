@@ -6,7 +6,7 @@ description: Open API Guide
 # Open API Guide
 
 - Configuration Management
-  - [Get configurations](#Get configurations)
+  - [Get configurations](#Get-configurations)
   - [Listen for configurations](#1.2)
   - [Publish configuration](#1.3)
   - [Delete configuration](#1.4)
