@@ -4,7 +4,7 @@ title:      "小马哥Java面试题课程总结"
 subtitle:   "面试虐我千百遍，Java 并发真讨厌"
 date:       2019-04-14
 author:     "caojiele"
-header-img: "https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1561518957710-7f50a0a3-4cdf-49d8-9694-ee6d9a3e90ea.jpeg"
+header-img: "img/in-post/2019.04/14/post-java-interview.jpg"
 tags:
     - Java
     - 面试
@@ -458,7 +458,7 @@ Java 线程有哪些状态，分别代表什么含义？
 
 在虚拟机内执行的。运行中状态，可能里面还能看到locked字样，表明它获得了某把锁。
 
-**BLOCKE**: Thread state for a thread blocked waiting for a monitor lock. A thread in the blocked state is waiting for a monitor lock to enter a synchronized block/method or reenter a synchronized block/method after calling {@link Object#wait() Object.wait}.
+**BLOCKE**: Thread state for a thread blocked waiting for a monitor lock. A thread in the blocked state is waiting for a monitor lock to enter a synchronized block/method or reenter a synchronized block/method after calling `{@link Object#wait() Object.wait}`.
 
 受阻塞并等待监视器锁。被某个锁(synchronizers)給block住了。
 
@@ -470,9 +470,9 @@ Java 线程有哪些状态，分别代表什么含义？
     <li>{@link LockSupport#park() LockSupport.park}</li>
 </ul>
 ```
-<p>A thread in the waiting state is waiting for another thread to perform a particular action.
+A thread in the waiting state is waiting for another thread to perform a particular action.
 
-For example, a thread that has called <tt>Object.wait()</tt> on an object is waiting for another thread to call <tt>Object.notify()</tt> or <tt>Object.notifyAll()</tt> on that object. A thread that has called <tt>Thread.join()</tt> is waiting for a specified thread to terminate.
+For example, a thread that has called Object.wait() on an object is waiting for another thread to call Object.notify() or Object.notifyAll() on that object. A thread that has called Thread.join() is waiting for a specified thread to terminate.
 
 无限期等待另一个线程执行特定操作。等待某个condition或monitor发生，一般停留在park(), wait(), sleep(),join() 等语句里。
 
@@ -1081,3 +1081,83 @@ queue.offer(3) = false
 queue.size() = 0
 ```
 queue.take() 方法会被阻塞
+
+## Java 并发框架
+
+### 1、锁 LOCK
+
+#### 基本版
+请说明 ReentranLock 与 ReentrantReadWriteLock 的区别？
+
+
+#### 进阶版
+请解释 ReentrantLock 为什么命名为重进入？
+
+#### 劝退版
+请说明 Lock#lock() 与 Lock#lockInterruptibly() 的区别？
+
+### 2、条件变量 CONDITION
+
+#### 基本版
+请举例说明 Condition 使用场景？
+
+#### 进阶版
+请使用 Condition 实现 “生产者-消费者问题”？
+
+#### 劝退版
+请解释 Condition await() 和 signal() 与 Object wait () 和 notify() 的相同与差异？
+
+### 3、屏障 BARRIERS
+
+#### 基本版
+请说明 CountDownLatch 与 CyclicBarrier 的区别？
+
+#### 进阶版
+请说明 Semaphore 的使用场景？
+
+#### 劝退版
+请通过 Java 1.4 的语法实现一个 CountDownLatch?
+
+### 4、线程池 THREAD POOL
+
+#### 基本版
+请问 J.U.C 中内建了几种 ExceptionService 实现？
+
+#### 进阶版
+请分别解释 ThreadPoolExecutor 构造器参数在运行时的作用？
+
+#### 劝退版
+如何获取 ThreadPoolExecutor 正在运行的线程？
+
+### 5、FUTURE
+
+#### 基本版
+如何获取 Future 对象？
+
+#### 进阶版
+请举例 Future get() 以及 get(Long,TimeUnit) 方法的使用场景？
+
+#### 劝退版
+如何利用 Future 优雅地取消一个任务的执行？
+
+### 6、VOLATILE 变量
+
+#### 基本版
+在 Java 中，volatile 保证的是可见性还是原子性？
+
+#### 进阶版
+在 Java 中，volatile long 和 double 是线程安全的吗？
+
+#### 劝退版
+在 Java 中，volatile 底层实现是基于什么机制？
+
+### 7、原子操作 ATOMIC
+
+#### 基本版
+为什么 AtomicBoolean 内部变量使用 int 实现，而非 boolean?
+
+#### 进阶版
+在变量原子操作时，Atomic* CAS 操作比 synchronized 关键字哪个更重？
+
+#### 劝退版
+Atomic* CAS 的底层是如何实现？
