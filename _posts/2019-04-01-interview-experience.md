@@ -24,6 +24,9 @@ tags:
 - [陆金所](#陆金所)
 - [蜜獾信息](#蜜獾信息)
 - [丰巢科技](#丰巢科技)
+- [SAP](#思爱普)
+- [房多多](#房多多)
+- [DellEMC](#戴尔易安信)
 
 
 ## 平安产险
@@ -709,3 +712,118 @@ json格式
 #### **谈谈 synchronized 和 ReentrantLock 的区别**
 
 [谈谈 synchronized 和 ReentrantLock 的区别](https://snailclimb.top/JavaGuide/#/./essential-content-for-interview/PreparingForInterview/美团面试常见问题总结?id=_3-谈谈-synchronized-和-reentrantlock-的区别)
+
+## 思爱普
+
+#### **String 和 StringBuilder 有何异同？**
+
+[JAVA中String与StringBuffer，StringBuilder的区别](http://blog.chinaunix.net/uid-20767210-id-1849811.html)
+
+#### **开发完后一般用什么测试工具测试？还是有人测试？**
+[说说Java单元测试](https://zhuanlan.zhihu.com/p/33710816)
+
+[JAVA 程序员需要用到 10 个测试框架和库](https://zhuanlan.zhihu.com/p/43154938)
+
+#### **比较 checked exception 与 unchecked exception**
+
+[Java异常：选择Checked Exception还是Unchecked Exception?](https://blog.csdn.net/kingzone_2008/article/details/8535287)
+
+#### **ClassNotFoundException 和 NoClassDefFoundErr区别？**
+
+[ClassNotFoundException和NoClassDefFoundError的区别](https://www.cnblogs.com/duke2016/p/9153241.html)
+
+#### **谈一下 Threadlocal 和 ThreadLocalMap**
+
+[深度揭秘ThreadLocal](https://zhuanlan.zhihu.com/p/34494674)
+
+[ThreadLocal-面试必问深度解析](https://www.jianshu.com/p/98b68c97df9b)
+
+#### **说一下 Mysql 中的 JOIN**
+
+[图解 SQL 里的各种 JOIN](https://zhuanlan.zhihu.com/p/29234064)
+
+#### **说一下 Mysql 中的事物隔离级别**
+
+[MySQL的四种事务隔离级别](https://www.cnblogs.com/huanongying/p/7021555.html)
+
+[互联网项目中mysql应该选什么事务隔离级别](https://zhuanlan.zhihu.com/p/59061106)
+
+#### **MongDB 中有哪些事物隔离级别？**
+
+[MongoDB是如何实现事务的ACID？](https://blog.csdn.net/popvip44/article/details/71487425)
+
+#### **如何保持 Mysql 和 redis中数据的一致性？**
+
+[如何保持mysql和redis中数据的一致性？](https://www.zhihu.com/question/319817091/answer/653985863)
+
+#### **说一下 redis 运用场景**
+
+[Redis常见的应用场景解析](https://zhuanlan.zhihu.com/p/29665317)
+
+#### **Mysql 有哪些优化方式？**
+
+[巧用这19条MySQL优化，效率至少提高3倍](https://zhuanlan.zhihu.com/p/60249139)
+
+[最全 MySQL 优化方法，从此优化不再难](https://zhuanlan.zhihu.com/p/59818056)
+
+#### **Mysql中除了主键约束（primary key），还有哪些约束？**
+
+[MySQL——约束(constraint)详解](https://blog.csdn.net/w_linux/article/details/79655073)
+
+#### **请用英文介绍“温尔宝贝”项目？**
+
+* 温尔宝贝 app
+
+The project is for continuous monitoring of user's body temperature, real-time temperature, prompt the user and through the cyclical temperature data analysis of the user's health.Using Springboot + mybatis architecture, mybatis - plus to simplify the development of the dao layer, and extract the universal service;Swagger document automatically generated interface, convenient interface test;Gradle management jar package, solve the jars conflict;Use redis for middle pressure to reduce database cache.
+
+* 温尔宝贝 pad
+
+The project on the basis of previous app, joint development with offline clinics and hospitals, and VIP card binding through mobile phones, on the pad for continuous monitoring of the user's temperature display.Springboot + mongo framework, using the swagger automatically generated interface documents, convenient interface test;Taiwan before and after data interaction using the vue to simplify the dom manipulation;Neginx reverse proxy server, the data flow, split into multiple servers to improve the whole performance of the server system.
+
+#### **在Win系统中如何运行.sh文件？**
+
+[win10下安装bash+运行.sh文件](http://blog.sina.com.cn/s/blog_64ac3a9a0102xrr6.html)
+
+## 房多多
+
+#### **自我介绍**
+
+#### **说一下项目中登录模块业务**
+
+在登录模块中，主要负责注册、登录功能。在注册模块中，我们使用hibernate-validator依赖完成后台POJO的校验，可以防止用户跳过前端的js校验。在登录模块中，通过Controller，Service和Dao三层架构查询用户在数据库中是否存在信息，如果存在，则通过当前时间戳及用户id生成一个token，将token存入的redis中，然后把toekn存入到cookie中，发送给前端。
+
+#### **在多节点登录的前提下，如何防止同一账号，同时在多个不同设备登录**
+
+[WEB系统防止同一账号，同时在多个不同设备登录](https://blog.csdn.net/qq_17505335/article/details/70173261)
+
+#### **为什么要用redis存储token**
+
+1、token具有时效性，redis处理有优势。
+
+2、在API领域，由于请求数比较多，redis也有优势。
+
+3、登录信息一般不需要长效储存，所以可以减少DB的压力，直接用redis。
+
+还有其他的看项目情形来定。
+
+#### **谈一下垃圾回收（GC 算法）**
+
+[浅析JAVA的垃圾回收机制（GC）](https://www.jianshu.com/p/5261a62e4d29)
+
+#### **说一下分布式锁**
+
+[分布式锁看这篇就够了](https://zhuanlan.zhihu.com/p/42056183)
+
+#### **说一下分布式事物以及应用场景**
+
+[分布式事务？No, 最终一致性](https://zhuanlan.zhihu.com/p/25933039)
+
+#### **工作中有用到过幂等吗？简单说一下**
+
+[分布式高并发系统如何保证对外接口的幂等性？](https://www.zhihu.com/question/27744795/answer/51790688)
+
+[什么是分布式系统中的幂等性](https://zhuanlan.zhihu.com/p/30493445)
+
+#### **你这边还有什么问题？**
+
+## 戴尔易安信
