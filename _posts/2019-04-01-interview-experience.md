@@ -27,7 +27,7 @@ tags:
 - [SAP](#思爱普)
 - [房多多](#房多多)
 - [DellEMC](#戴尔易安信)
-
+- [Amazon](#亚马逊)
 
 ## 平安产险
 先通过邮件发了一份线上测评（EQ+IQ), 做完达到要求后才能有后续的面试机会，没有通过`两年之内`不能进平安任何一家公司。
@@ -57,6 +57,7 @@ tags:
   [用户态和内核态的理解和区别](https://blog.csdn.net/qq_39823627/article/details/78736650)
 
 #### **用过Spring boot哪些版本？新版本相对于旧版本有哪些改变？**
+
   [https://github.com/spring-projects/spring-boot/wiki](https://github.com/spring-projects/spring-boot/wiki)
   
   [Spring Boot 2.x 与 1.x 的区别，以及如何做版本迁移](https://zhuanlan.zhihu.com/p/63596771)
@@ -135,7 +136,7 @@ tags:
   
 #### **介绍下OOM?开发过程中遇到过哪些OOM,怎样解决的？**
 
-  OutOfMemoryError，当JVM因为没有足够的内存来为对象分配空间并且垃圾回收器也已经没有空间可回收时，就会抛出这个error（注：非exception，因为这个问题已经严重到不足以被应用处理）。
+  OutOfMemoryError，当JVM因为没有足够的内存来为对象分配空间，并且垃圾回收器也已经没有空间可回收时，就会抛出这个error（注：非exception，因为这个问题已经严重到不足以被应用处理）。
   
   因为OutOfMemoryError是可以catch的。catch之后吞掉的话程序还能试着继续运行。例如说以前见过的一个案例是：一个Java服务器端应用，有段代码没写对导致有一个线程在疯狂创建大数组对象——直到OOM。这个线程注册的uncaught exception handler捕获到了这个异常，记录了日志，然后就把这个异常吞掉了。这样还能继续正常跑下去是因为：只是一个创建很大的数组对象的请求失败了而已，而出错的那个方法由于异常处理已经被退出了，程序的其它部分并没有受影响。
   
@@ -296,7 +297,8 @@ private static void threadJoinOneByOne() throws InterruptedException {
 
 两位技术负责人+部长（周）简单聊了一下，自己的项目和经验，遇到过哪些问题？怎么解决的？怎么设计数据库模型？
 
-## 浩鲸科技（电话面试） 杭州
+
+## 浩鲸科技
 
 ### **一面**
 
@@ -392,9 +394,10 @@ private static void threadJoinOneByOne() throws InterruptedException {
 
   [java基本类型与引用类型](https://blog.csdn.net/chengbinbbs/article/details/78973453#%E4%B8%80%E5%9F%BA%E6%9C%AC%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B)
   
+  
 ## 兴盛优先
   
-说下面试前奏，我和这个公司互相鸽了一次，第一次我是因为那次在地铁里，信号不好怕影响面试效果，就提前说明了；结果第二次本来约的是晚上8：00，结果9：15分打电话过来面试，*** ，我还在洗衣服。面试官说只要20分钟，如果不方便可以下次约，好像这个面试官是已经下班了，在家里跟我打得电话，我觉得都不容易，还是同意面了。
+说下面试前奏，我和这个公司互相鸽了一次，第一次我是因为那次在地铁里，信号不好怕影响面试效果，就提前说明了；结果第二次本来约的是晚上8：00，结果9：15分打电话过来面试，fuck，我还在洗衣服。面试官说只要20分钟，如果不方便可以下次约，好像这个面试官是已经下班了，在家里跟我打得电话，我觉得都不容易，还是同意面了。
 
 说来也奇怪，竟然没让我自我介绍，直接上来就跟我聊参与的开源项目 Dubbo,问我为这个项目贡献了哪一块？我轻描淡写的描述了主要负责 Dubbo的哪些生态，和如何管理控制版本的发布等等。因为我主要负责官网的迭代和维护，而Apache项目之间的沟通都是英文交流，老外喜欢用邮件列表的形式来讨论，不会像国内的开源项目，任务认领的方式是在社交软件上进行沟通，老外根本就不用。顺便问了下我英语怎么样？我讲完后，顺便介绍了下我自己。接下来正式进入面试环节。
   
@@ -462,9 +465,9 @@ private static void threadJoinOneByOne() throws InterruptedException {
     }
 }
 ```
-CountDownLatch也可以实现
+**CountDownLatch**也可以实现；
 
-调整优先级并不能保证控制线程执行顺序
+**调整优先级**并不能保证优先级高的线程先执行。
   
 #### **好像还有一个问题？是一个专有技术名词的解释？我真的没听过......**
 
@@ -509,7 +512,7 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
 
 #### **说一下Spring MVC框架**
 
-  [Spring MVC框架](https://snailclimb.top/JavaGuide/#/./system-design/framework/spring/SpringMVC-Principle?id=%E5%85%88%E6%9D%A5%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF-mvc-%E6%A8%A1%E5%BC%8F)
+ [Spring MVC框架](https://snailclimb.top/JavaGuide/#/./system-design/framework/spring/SpringMVC-Principle?id=%E5%85%88%E6%9D%A5%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF-mvc-%E6%A8%A1%E5%BC%8F)
 
 #### **工作中有没有遇到过Mysql优化，请谈一谈**
 
@@ -546,7 +549,6 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
 #### **对前端技术有了解吗？**
 
 #### **你这边有什么问题？**
-
 
 ## 陆金所
 
@@ -711,9 +713,18 @@ json格式
 
 #### **谈谈 synchronized 和 ReentrantLock 的区别**
 
+- 两者都是可重入锁
+- synchronized 依赖于 JVM 而 ReentrantLock 依赖于 API
+- ReentrantLock 比 synchronized 增加了一些高级功能
+
+相比synchronized，ReentrantLock增加了一些高级功能。主要来说主要有三点：①等待可中断；②可实现公平锁；③可实现选择性通知（锁可以绑定多个条件）
+- 两者的性能已经相差无几
+
 [谈谈 synchronized 和 ReentrantLock 的区别](https://snailclimb.top/JavaGuide/#/./essential-content-for-interview/PreparingForInterview/美团面试常见问题总结?id=_3-谈谈-synchronized-和-reentrantlock-的区别)
 
 ## 思爱普
+
+### **一面**
 
 #### **String 和 StringBuilder 有何异同？**
 
@@ -772,11 +783,11 @@ json格式
 
 #### **请用英文介绍“温尔宝贝”项目？**
 
-* 温尔宝贝 app
+* wener baby app
 
 The project is for continuous monitoring of user's body temperature, real-time temperature, prompt the user and through the cyclical temperature data analysis of the user's health.Using Springboot + mybatis architecture, mybatis - plus to simplify the development of the dao layer, and extract the universal service;Swagger document automatically generated interface, convenient interface test;Gradle management jar package, solve the jars conflict;Use redis for middle pressure to reduce database cache.
 
-* 温尔宝贝 pad
+* wener baby pad
 
 The project on the basis of previous app, joint development with offline clinics and hospitals, and VIP card binding through mobile phones, on the pad for continuous monitoring of the user's temperature display.Springboot + mongo framework, using the swagger automatically generated interface documents, convenient interface test;Taiwan before and after data interaction using the vue to simplify the dom manipulation;Neginx reverse proxy server, the data flow, split into multiple servers to improve the whole performance of the server system.
 
@@ -827,3 +838,113 @@ The project on the basis of previous app, joint development with offline clinics
 #### **你这边还有什么问题？**
 
 ## 戴尔易安信
+
+#### **解释下 final 关键字**
+
+[final,static,this,super 关键字总结](https://gitee.com/SnailClimb/JavaGuide/blob/master/docs/java/Basis/final、static、this、super.md#final-关键字)
+
+#### **Volatile 和 Synchronized 的区别？**
+
+[volatile和synchronized的区别](https://blog.csdn.net/suifeng3051/article/details/52611233)
+
+#### **如何设计 RESTful API？说一下幂等性？HTTP常用方法接触过哪些？分别是干什么的？**
+
+[RESTful API最佳实践](https://zhuanlan.zhihu.com/p/25647039)
+
+[如何更好的设计RESTful API](https://zhuanlan.zhihu.com/p/24592119)
+
+#### **说一下用过哪些排序算法？**
+
+[九种排序算法的可视化及比较](https://zhuanlan.zhihu.com/p/34421623)
+
+#### **Mysql事务的基本要素(ACID)?一致性的业务场景？数据库中如何做到一致性？事务隔离级别？用例子说明不可重复读（read-committed）**
+
+[MySQL的四种事务隔离级别](https://www.cnblogs.com/huanongying/p/7021555.html)
+
+#### **进程和线程的区别？**
+
+[简述线程、程序、进程的基本概念。以及他们之间关系是什么？](https://snailclimb.top/JavaGuide/#/java/Java基础知识?id=_29-简述线程、程序、进程的基本概念%E3%80%82以及他们之间关系是什么)
+
+[图解进程和线程的关](https://snailclimb.top/JavaGuide/#/java/Multithread/JavaConcurrencyBasicsCommonInterviewQuestionsSummary?id=_21-图解进程和线程的关系)
+
+#### **接触过哪些数据库索引数据结构？什么是 B+Tree？**
+
+[数据库索引数据结构总结](https://zhuanlan.zhihu.com/p/47046781)
+
+#### **简单说一下数据库中的索引？**
+
+[通俗易懂 索引、单列索引、复合索引、主键、唯一索引、聚簇索引、非聚簇索引、唯一聚簇索引 的区别与联系](https://zhuanlan.zhihu.com/p/66553466)
+
+#### **说一下你工作中遇到哪些内存泄露**
+
+[面试题：什么是内存泄漏？内存溢出？](https://zhuanlan.zhihu.com/p/69151763)
+
+#### **谈一下垃圾回收机制（GC）？垃圾回收是回收的什么？**
+垃圾回收(Garbage Collection)是Java虚拟机(JVM)垃圾回收器提供的一种用于在空闲时间不定时回收无任何对象引用的对象占据的内存空间的一种机制。
+
+注意：垃圾回收回收的是无任何引用的对象占据的内存空间而不是对象本身。换言之，垃圾回收只会负责释放那些对象占有的内存。对象是个抽象的词，包括引用和其占据的内存空间。当对象没有任何引用时其占据的内存空间随即被收回备用，此时对象也就被销毁。但不能说是回收对象，可以理解为一种文字游戏。
+
+[浅析JAVA的垃圾回收机制](https://www.jianshu.com/p/5261a62e4d29)
+
+#### **如何实现多线程中的同步？**
+
+[java中实现线程同步的7种方法](https://blog.csdn.net/QQQQQQ654/article/details/70144050)
+
+#### **说一下线程同步中的读写锁？**
+
+[Java 种15种锁的介绍：公平锁，可重入锁，独享锁，互斥锁，乐观锁，分段锁，自旋锁等](https://zhuanlan.zhihu.com/p/60775568)
+
+[java中的读写锁](https://www.jianshu.com/p/ab836f5e501e)
+
+#### **用英语介绍你最熟悉的项目？**
+
+wener baby (pad)
+
+The project on the basis of previous app, joint development with offline clinics and hospitals, and VIP card binding through mobile phones, on the pad for continuous monitoring of the user's temperature display.Springboot + mongo framework, using the swagger document automatically generated interface, convenient interface test;Taiwan before and after data interaction using the vue to simplify the dom manipulation;Neginx reverse proxy server, the data flow split into multiple server implementation, improve the performance of the entire server system.
+
+#### **你这边还有什么问题？**
+
+## 亚马逊
+
+### **简历筛选测试**
+
+#### **Test3 :**
+
+Note: if you cannot finish the test, you may still get the chance to next step of the hiring process if some shinning points were identified from your work: if you finish the work, you may still fail because your outcome did not meet the hiring bar.
+Background: we want to build a solution to hire the right people quickly. The development work of this solution is part of the solution. As a candidate, please contribute your idea and finish the assignment.
+Common requirements:
+1. Use Java as the main development language unless there is a solid reason for other choice.
+2. Provide test evidence (like the snapshot of the output of your solution) to easy the reviewer.
+3. The UT coverage must > 80% if not 100%.
+4. Please try to leverage the existing functionality of this project although it's always fine to refactor them.
+
+Test Description: for any key words, please get the 1st non-AD search result from baidu.com.
+
+Definition of done:
+1. Define a mechanism for the user to provide the key words.
+2. The result will be shown on a web page (you may define the URL) of this project.
+---
+
+为了考核众多面试者的技术能力，请review一下该面试者的code：[https://github.com/yingjil/JPHire/pull/6/commits/7b12ee650a15375a0b444f4374d0923e398bd02f]([https://github.com/yingjil/JPHire/pull/6/commits/7b12ee650a15375a0b444f4374d0923e398bd02f) 。他的任务是在`Test3`中描述的。对你的要求是用最高标准找到代码缺陷并提出修改意见。如果接受任务，请告知估计完成时间。
+
+**备注：** 这个练习只是简历预审核的一步。完成任务不代表肯定能获得面试机会（HR依然可能拒绝简历）。拒绝参加本任务也不会留下任何不良记录。
+
+---
+
+#### **个人理解**
+
+#### **一、任务需求实现角度**
+
+1、需要定义一种提供用户输入搜索关键字的机制。我的理解是应该有一个简单的web页面，提供一个输入框，一个搜索按钮。而代码里这部分是缺失的。
+
+2、搜索的结果需要展示在web页面中。这个也没看到对应的页面代码。
+
+3、单元测试覆盖率要达到80%以上代码里测试用例过于简单，覆盖率远远低于80%。
+
+#### **二、代码实现角度**
+
+1、baidu.com 网站的页面元素规则是可变的，建议“第一个非广告搜索结果”的匹配规则设计成可配置，而不是写死在代码里。
+
+2、`WebPageUtil`类的职责建议设计成通用工具类，而不是耦合具体业务代码。
+
+3、考虑到扩展性，`KeyWordSearchService`应设计成接口，以支持不同搜索网站的各自实现。
