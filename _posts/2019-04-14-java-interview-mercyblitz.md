@@ -11,7 +11,7 @@ tags:
     - 慕课网手记
 ---
 
-前段时间在慕课网直播上听[小马哥](https://www.imooc.com/t/5387391)面试劝退（"面试虐我千百遍，Java 并发真讨厌"），发现讲得东西比自己拿到offer还要高兴，于是自己在线下做了一点小笔记，文章还没更新完，供各位参考。
+前段时间在慕课网直播上听[小马哥](https://www.imooc.com/t/5387391)面试劝退（"面试虐我千百遍，Java 并发真讨厌"），发现讲得东西比自己拿到offer还要高兴，于是自己在线下做了一点小笔记，供各位参考。
 
 课程地址：[https://www.bilibili.com/video/av49124110](https://www.bilibili.com/video/av49124110)
 
@@ -1083,81 +1083,644 @@ queue.size() = 0
 queue.take() 方法会被阻塞
 
 ## Java 并发框架
+## Java 并发框架
 
 ### 1、锁 LOCK
 
 #### 基本版
 请说明 ReentranLock 与 ReentrantReadWriteLock 的区别？
 
+jdk 1.5 以后，ReentranLock(重进入锁)与 ReentrantReadWriteLock 都是可重进入的锁，ReentranLock 都是互斥的，而 ReentrantReadWriteLock 是共享的，其中里面有两个类，一个是 ReadLock（共享，并行，强调数据一致性或者说可见性），另一个是 WriteLock(互斥，串行)。
 
 #### 进阶版
 请解释 ReentrantLock 为什么命名为重进入？
 
+```java
+public class ReentrantLockQuestion {
+
+    /**
+     * T1 , T2 , T3
+     *
+     * T1(lock) , T2(park), T3(park)
+     * Waited Queue -> Head-> T2 next -> T3
+     * T1(unlock) -> unpark all
+     * Waited Queue -> Head-> T2 next -> T3
+     * T2(free), T3(free)
+     *
+     * -> T2(lock) , T3(park)
+     * Waited Queue -> Head-> T3
+     * T2(unlock) -> unpark all
+     * T3(free)
+     */
+
+
+    private static ReentrantLock lock = new ReentrantLock();
+
+    public static void main(String[] args) {
+        // thread[main] ->
+        // lock     lock           lock
+        // main -> action1() -> action2() -> action3()
+        synchronizedAction(ReentrantLockQuestion::action1);
+    }
+
+
+    private static void action1() {
+        synchronizedAction(ReentrantLockQuestion::action2);
+
+    }
+
+    private static void action2() {
+        synchronizedAction(ReentrantLockQuestion::action3);
+    }
+
+    private static void action3() {
+        System.out.println("Hello,World");
+    }
+
+    private static void synchronizedAction(Runnable runnable) {
+        lock.lock();
+        try {
+            runnable.run();
+        } finally {
+            lock.unlock();
+        }
+    }
+}
+```
 #### 劝退版
 请说明 Lock#lock() 与 Lock#lockInterruptibly() 的区别？
+
+```java
+    /**
+     * java.util.concurrent.locks.AbstractQueuedSynchronizer.acquireQueued
+     * 如果当前线程已被其他线程调用了 interrupt() 方法时，这时会返回 true
+     * acquireQueued 执行完时，interrupt 清空（false）
+     * 再通过 selfInterrupt() 方法将状态恢复（interrupt=true）
+     */
+         public static void main(String[] args) {
+         lockVsLockInterruptibly();
+     }
+     
+        private static void lockVsLockInterruptibly() {
+
+        try {
+            lock.lockInterruptibly();
+            action1();
+        } catch (InterruptedException e) {
+            // 显示地恢复中断状态
+            Thread.currentThread().interrupt();
+            // 当前线程并未消亡，线程池可能还在存活
+        } finally {
+            lock.unlock();
+        }
+    }
+```
+
+**lock()**  优先考虑获取锁，待获取锁成功后，才响应中断。
+
+**lockInterruptibly() ** 优先考虑响应中断，而不是响应锁的普通获取或重入获取。
+
+**ReentrantLock.lockInterruptibly** 允许在等待时由其它线程调用等待线程的 Thread.interrupt 方法来中断等待线程的等待而直接返回，这时不用获取锁，而会抛出一个 InterruptedException。
+
+**ReentrantLock.lock** 方法不允许 Thread.interrupt 中断,即使检测到 Thread.isInterrupted ,一样会继续尝试获取锁，失败则继续休眠。只是在最后获取锁成功后再把当前线程置为 interrupted 状态,然后再中断线程。
 
 ### 2、条件变量 CONDITION
 
 #### 基本版
 请举例说明 Condition 使用场景？
 
+1. CoutDownLatch (condition 变种)
+2. CyclicBarrier (循环屏障)
+3. 信号量/灯（Semaphore) java 9
+4. 生产者和消费者
+5. 阻塞队列
+
 #### 进阶版
 请使用 Condition 实现 “生产者-消费者问题”？
 
+[使用Condition实现生产者消费者](https://blog.csdn.net/u014082714/article/details/83927697)
+
 #### 劝退版
 请解释 Condition await() 和 signal() 与 Object wait () 和 notify() 的相同与差异？
+
+相同：阻塞和释放
+
+差异：Java Thread 对象和实际 JVM 执行的 OS Thread 不是相同对象，JVM Thread 回调 Java Thread.run() 方法，同时 Thread 提供一些 native 方法来获取 JVM Thread 状态，当JVM thread 执行后，自动 notify()了。
+
+```java
+        while (thread.isAlive()) { // Thread 特殊的 Object
+            // 当线程 Thread isAlive() == false 时，thread.wait() 操作会被自动释放
+            synchronized (thread) {
+                try {
+                    thread.wait(); // 到底是谁通知 Thread -> thread.notify();
+//                    LockSupport.park(); // 死锁发生
+                } catch (Exception e) {
+                    throw new RuntimeException(e);
+                }
+            }
+```
 
 ### 3、屏障 BARRIERS
 
 #### 基本版
 请说明 CountDownLatch 与 CyclicBarrier 的区别？
 
+**CountDownLatch** : 不可循环的，一次性操作（倒计时）。
+
+```java
+public class CountDownLatchQuestion {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        // 倒数计数 5
+        CountDownLatch latch = new CountDownLatch(5);
+
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+
+        for (int i = 0; i < 4; i++) {
+            executorService.submit(() -> {
+                action();
+                latch.countDown(); // -1
+            });
+        }
+
+        // 等待完成
+        // 当计数 > 0，会被阻塞
+        latch.await();
+
+        System.out.println("Done");
+
+        // 关闭线程池
+        executorService.shutdown();
+    }
+
+    private static void action() {
+        System.out.printf("线程[%s] 正在执行...\n", Thread.currentThread().getName());  // 2
+    }
+
+}
+```
+
+**CyclicBarrier**：可循环的， 先计数 -1，再判断当计数 > 0 时候，才阻塞。
+
+```java
+public class CyclicBarrierQuestion {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        CyclicBarrier barrier = new CyclicBarrier(5); // 5
+
+        ExecutorService executorService = Executors.newFixedThreadPool(5); // 3
+
+        for (int i = 0; i < 20; i++) {
+            executorService.submit(() -> {
+                action();
+                try {
+                    // CyclicBarrier.await() = CountDownLatch.countDown() + await()
+                    // 先计数 -1，再判断当计数 > 0 时候，才阻塞
+                    barrier.await();
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } catch (BrokenBarrierException e) {
+                    e.printStackTrace();
+                }
+            });
+        }
+
+        // 尽可能不要执行完成再 reset
+        // 先等待 3 ms
+        executorService.awaitTermination(3, TimeUnit.MILLISECONDS);
+        // 再执行 CyclicBarrier reset
+        // reset 方法是一个废操作
+        barrier.reset();
+
+        System.out.println("Done");
+
+        // 关闭线程池
+        executorService.shutdown();
+    }
+
+    private static void action() {
+        System.out.printf("线程[%s] 正在执行...\n", Thread.currentThread().getName());  // 2
+    }
+
+}
+
+```
+
 #### 进阶版
-请说明 Semaphore 的使用场景？
+请说明 Semaphore（信号量/灯） 的使用场景？
+
+Semaphore 和Lock类似，比Lock灵活。其中有 acquire() 和 release() 两种方法，arg 都等于 1。acquire() 会抛出 InterruptedException，同时从 `sync.acquireSharedInterruptibly(arg:1)`可以看出是读模式（shared)； release()中可以计数，可以控制数量，permits可以传递N个数量。
+
+[Java中Semaphore(信号量)的使用](https://blog.csdn.net/zbc1090549839/article/details/53389602)
 
 #### 劝退版
 请通过 Java 1.4 的语法实现一个 CountDownLatch?
+
+```java
+public class LegacyCountDownLatchDemo {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        // 倒数计数 5
+        MyCountDownLatch latch = new MyCountDownLatch(5);
+
+        ExecutorService executorService = Executors.newFixedThreadPool(5);
+
+        for (int i = 0; i < 5; i++) {
+            executorService.submit(() -> {
+                action();
+                latch.countDown(); // -1
+            });
+        }
+
+        // 等待完成
+        // 当计数 > 0，会被阻塞
+        latch.await();
+
+        System.out.println("Done");
+
+        // 关闭线程池
+        executorService.shutdown();
+    }
+
+    private static void action() {
+        System.out.printf("线程[%s] 正在执行...\n", Thread.currentThread().getName());  // 2
+    }
+
+    /**
+     * Java 1.5+ Lock 实现
+     */
+    private static class MyCountDownLatch {
+
+        private int count;
+
+        private final Lock lock = new ReentrantLock();
+
+        private final Condition condition = lock.newCondition();
+
+        private MyCountDownLatch(int count) {
+            this.count = count;
+        }
+
+        public void await() throws InterruptedException {
+            // 当 count > 0 等待
+            if (Thread.interrupted()) {
+                throw new InterruptedException();
+            }
+
+            lock.lock();
+            try {
+                while (count > 0) {
+                    condition.await(); // 阻塞当前线程
+                }
+            } finally {
+                lock.unlock();
+            }
+        }
+
+        public void countDown() {
+
+            lock.lock();
+            try {
+                if (count < 1) {
+                    return;
+                }
+                count--;
+                if (count < 1) { // 当数量减少至0时，唤起被阻塞的线程
+                    condition.signalAll();
+                }
+            } finally {
+                lock.unlock();
+            }
+        }
+    }
+
+    /**
+     * Java < 1.5 实现
+     */
+    private static class LegacyCountDownLatch {
+
+        private int count;
+
+        private LegacyCountDownLatch(int count) {
+            this.count = count;
+        }
+
+        public void await() throws InterruptedException {
+            // 当 count > 0 等待
+            if (Thread.interrupted()) {
+                throw new InterruptedException();
+            }
+
+            synchronized (this) {
+                while (count > 0) {
+                    wait(); // 阻塞当前线程
+                }
+            }
+        }
+
+        public void countDown() {
+            synchronized (this) {
+                if (count < 1) {
+                    return;
+                }
+                count--;
+                if (count < 1) { // 当数量减少至0时，唤起被阻塞的线程
+                    notifyAll();
+                }
+            }
+        }
+    }
+}
+
+```
 
 ### 4、线程池 THREAD POOL
 
 #### 基本版
 请问 J.U.C 中内建了几种 ExceptionService 实现？
 
+1.5：ThreadPoolExecutor、ScheduledThreadPoolExecutor
+
+1.7：ForkJoinPool
+```java
+public class ExecutorServiceQuestion {
+
+    public static void main(String[] args) {
+        /**
+         * 1.5
+         *  ThreadPoolExecutor
+         *  ScheduledThreadPoolExecutor :: ThreadPoolExecutor
+         * 1.7
+         *  ForkJoinPool
+         */
+        ExecutorService executorService = Executors.newFixedThreadPool(2);
+
+        executorService = Executors.newScheduledThreadPool(2);
+
+        // executorService 不再被引用，它会被 GC -> finalize() -> shutdown()
+        ExecutorService executorService2 = Executors.newSingleThreadExecutor();
+    }
+}
+```
+
 #### 进阶版
 请分别解释 ThreadPoolExecutor 构造器参数在运行时的作用？
 
+```java
+/**
+ * Creates a new {@code ThreadPoolExecutor} with the given initial
+ * parameters.
+ *
+ * @param corePoolSize the number of threads to keep in the pool, even
+ *        if they are idle, unless {@code allowCoreThreadTimeOut} is set
+ * @param maximumPoolSize the maximum number of threads to allow in the
+ *        pool
+ * @param keepAliveTime when the number of threads is greater than
+ *        the core, this is the maximum time that excess idle threads
+ *        will wait for new tasks before terminating.
+ * @param unit the time unit for the {@code keepAliveTime} argument
+ * @param workQueue the queue to use for holding tasks before they are
+ *        executed.  This queue will hold only the {@code Runnable}
+ *        tasks submitted by the {@code execute} method.
+ * @param threadFactory the factory to use when the executor
+ *        creates a new thread
+ * @param handler the handler to use when execution is blocked
+ *        because the thread bounds and queue capacities are reached
+ * @throws IllegalArgumentException if one of the following holds:<br>
+ *         {@code corePoolSize < 0}<br>
+ *         {@code keepAliveTime < 0}<br>
+ *         {@code maximumPoolSize <= 0}<br>
+ *         {@code maximumPoolSize < corePoolSize}
+ * @throws NullPointerException if {@code workQueue}
+ *         or {@code threadFactory} or {@code handler} is null
+ */
+public ThreadPoolExecutor(int corePoolSize,
+                          int maximumPoolSize,
+                          long keepAliveTime,
+                          TimeUnit unit,
+                          BlockingQueue<Runnable> workQueue,
+                          ThreadFactory threadFactory,
+                          RejectedExecutionHandler handler);
+```
+
+**corePoolSize**: 核心线程池大小。这个参数是否生效取决于allowCoreThreadTimeOut变量的值，该变量默认是false，即对于核心线程没有超时限制，所以这种情况下，corePoolSize参数是起效的。如果allowCoreThreadTimeOut为true，那么核心线程允许超时，并且超时时间就是keepAliveTime参数和unit共同决定的值，这种情况下，如果线程池长时间空闲的话最终存活的线程会变为0，也即corePoolSize参数失效。
+
+**maximumPoolSize**: 线程池中最大的存活线程数。这个参数比较好理解，对于超出corePoolSize部分的线程，无论allowCoreThreadTimeOut变量的值是true还是false，都会超时，超时时间由keepAliveTime和unit两个参数算出。
+
+**keepAliveTime**: 超时时间。
+
+**unit**: 超时时间的单位，秒，毫秒，微秒，纳秒等，与keepAliveTime参数共同决定超时时间。
+
+**workQueue**: 线程等待队列。当调用execute方法时，如果线程池中没有空闲的可用线程，那么就会把这个Runnable对象放到该队列中。这个参数必须是一个实现BlockingQueue接口的阻塞队列，因为要保证线程安全。有一个要注意的点是，只有在调用execute方法是，才会向这个队列中添加任务，那么对于submit方法呢，难道submit方法提交任务时如果没有可用的线程就直接扔掉吗？当然不是，看一下AbstractExecutorService类中submit方法实现，其实submit方法只是把传进来的Runnable对象或Callable对象包装成一个新的Runnable对象，然后调用execute方法，并将包装后的FutureTask对象作为一个Future引用返回给调用者。Future的阻塞特性实际是在FutureTask中实现的，具体怎么实现感兴趣的话可以看一下FutureTask的源码。
+
+**threadFactory**: 线程创建工厂。用于在需要的时候生成新的线程。默认实现是Executors.defaultThreadFactory()，即new 一个Thread对象，并设置线程名称，daemon等属性。
+
+**handler**: 拒绝策略。这个参数的作用是当提交任务时既没有空闲线程，任务队列也满了，这时候就会调用handler的rejectedExecution方法。默认的实现是抛出一个RejectedExecutionException异常。
+
 #### 劝退版
 如何获取 ThreadPoolExecutor 正在运行的线程？
+
+```java
+public class ThreadPoolExecutorThreadQuestion {
+
+    public static void main(String[] args) throws InterruptedException {
+
+        // main 线程启动子线程，子线程的创造来自于 Executors.defaultThreadFactory()
+
+        ExecutorService executorService = Executors.newCachedThreadPool();
+        // 之前了解 ThreadPoolExecutor beforeExecute 和 afterExecute 能够获取当前线程数量
+
+        Set<Thread> threadsContainer = new HashSet<>();
+
+        setThreadFactory(executorService, threadsContainer);
+        for (int i = 0; i < 9; i++) { // 开启 9 个线程
+            executorService.submit(() -> {
+            });
+        }
+
+        // 线程池等待执行 3 ms
+        executorService.awaitTermination(3, TimeUnit.MILLISECONDS);
+
+        threadsContainer.stream()
+                .filter(Thread::isAlive)
+                .forEach(thread -> {
+                    System.out.println("线程池创造的线程 : " + thread);
+                });
+
+        Thread mainThread = Thread.currentThread();
+
+        ThreadGroup mainThreadGroup = mainThread.getThreadGroup();
+
+        int count = mainThreadGroup.activeCount();
+        Thread[] threads = new Thread[count];
+        mainThreadGroup.enumerate(threads, true);
+
+        Stream.of(threads)
+                .filter(Thread::isAlive)
+                .forEach(thread -> {
+                    System.out.println("线程 : " + thread);
+                });
+
+        // 关闭线程池
+        executorService.shutdown();
+
+    }
+
+    private static void setThreadFactory(ExecutorService executorService, Set<Thread> threadsContainer) {
+
+        if (executorService instanceof ThreadPoolExecutor) {
+            ThreadPoolExecutor threadPoolExecutor = (ThreadPoolExecutor) executorService;
+            ThreadFactory oldThreadFactory = threadPoolExecutor.getThreadFactory();
+            threadPoolExecutor.setThreadFactory(new DelegatingThreadFactory(oldThreadFactory, threadsContainer));
+        }
+    }
+
+    private static class DelegatingThreadFactory implements ThreadFactory {
+
+        private final ThreadFactory delegate;
+
+        private final Set<Thread> threadsContainer;
+
+        private DelegatingThreadFactory(ThreadFactory delegate, Set<Thread> threadsContainer) {
+            this.delegate = delegate;
+            this.threadsContainer = threadsContainer;
+        }
+
+        @Override
+        public Thread newThread(Runnable r) {
+            Thread thread = delegate.newThread(r);
+            // cache thread
+            threadsContainer.add(thread);
+            return thread;
+        }
+    }
+}
+```
 
 ### 5、FUTURE
 
 #### 基本版
 如何获取 Future 对象？
 
+submit()
+
 #### 进阶版
 请举例 Future get() 以及 get(Long,TimeUnit) 方法的使用场景？
 
+**超时等待**
+
+**InterruptedException**
+
+**ExcutionException**
+
+**TimeOutException**
+
 #### 劝退版
 如何利用 Future 优雅地取消一个任务的执行？
+
+```java
+public class CancellableFutureQuestion {
+
+    public static void main(String[] args) {
+
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+
+        Future future = executorService.submit(() -> { // 3秒内执行完成，才算正常
+            action(5);
+        });
+
+        try {
+            future.get(3, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            // Thread 恢复中断状态
+            Thread.currentThread().interrupt();
+        } catch (ExecutionException e) {
+            throw new RuntimeException(e);
+        } catch (TimeoutException e) {
+            // 执行超时，适当地关闭
+            Thread.currentThread().interrupt(); // 设置中断状态
+            future.cancel(true); // 尝试取消
+        }
+
+        executorService.shutdown();
+    }
+
+    private static void action(int seconds) {
+        try {
+            Thread.sleep(TimeUnit.SECONDS.toMillis(seconds)); // 5 - 3
+            // seconds - timeout = 剩余执行时间
+            if (Thread.interrupted()) { // 判断并且清除中断状态
+                return;
+            }
+            action();
+        } catch (InterruptedException e) {
+        }
+    }
+
+    private static void action() {
+        System.out.printf("线程[%s] 正在执行...\n", Thread.currentThread().getName());  // 2
+    }
+}
+```
 
 ### 6、VOLATILE 变量
 
 #### 基本版
 在 Java 中，volatile 保证的是可见性还是原子性？
 
+**volatile** 既有可见性又有原子性（非我及彼），可见性是一定的，原子性是看情况的。对象类型和原生类型都是可见性，原生类型是原子性。
+
 #### 进阶版
 在 Java 中，volatile long 和 double 是线程安全的吗？
 
+volatile long 和 double 是线程安全的。
+
 #### 劝退版
 在 Java 中，volatile 底层实现是基于什么机制？
+
+**内存屏障**（变量 Lock）机制：一个变量的原子性的保证。
 
 ### 7、原子操作 ATOMIC
 
 #### 基本版
 为什么 AtomicBoolean 内部变量使用 int 实现，而非 boolean?
 
+操作系统有 X86 和 X64，在虚拟机中，基于boolean 实现就是用 int 实现的，用哪一种实现都可以。虚拟机只有32位和64位的，所以用32位的实现。
+
 #### 进阶版
 在变量原子操作时，Atomic* CAS 操作比 synchronized 关键字哪个更重？
 
+[Synchronization](https://wiki.openjdk.java.net/display/HotSpot/Synchronization)
+
+同线程的时候，synchronized 刚快；而多线程的时候则要分情况讨论。
+
+```java
+public class AtomicQuestion {
+
+    private static int actualValue = 3;
+
+    public static void main(String[] args) {
+        AtomicInteger atomicInteger = new AtomicInteger(3);
+        // if( value == 3 )
+        //     value = 5
+        atomicInteger.compareAndSet(3, 5);
+        // 偏向锁 < CAS 操作 < 重锁（完全互斥）
+        // CAS 操作也是相对重的操作，它也是实现 synchronized 瘦锁(thin lock)的关键
+        // 偏向锁就是避免 CAS（Compare And Set/Swap)操作
+    }
+
+    private synchronized static void compareAndSet(int expectedValue, int newValue) {
+        if (actualValue == expectedValue) {
+            actualValue = newValue;
+        }
+    }
+}
+```
+
 #### 劝退版
 Atomic* CAS 的底层是如何实现？
+
+汇编指令：`cpmxchg`  (Compare and Exchange)
