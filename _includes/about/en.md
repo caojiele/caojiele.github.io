@@ -1,6 +1,6 @@
 > Think of what you want to know what you need.
 
-Hey, I'm Jack Cao, Java engineer, as a member in Apache Dubbo Committer, such as the Apache & Alibaba open source contributor, found in all the year round lot, Github, Gitee, zhihu, jianshu. At present is mainly responsible for group APP back-end development and maintenance, micro services infrastructure, infrastructure construction, Had the opportunity with Alibaba Health & PICC participate in large-scale project development; and my first [studio](https://caojiele.com/cooperation/) was founded in 2017, solve all kinds of company 「incurable diseases」, to achieve the demand of 「imagination」.Have been torn between the demand and development of struggle, as in a line of powerhouse, is still in development.
+Hey, I'm Jack Cao, Java engineer, such as the Apache & Alibaba open source contributor, found in all the year round lot, Github, Gitee, zhihu, jianshu. At present is mainly responsible for group App backend development and maintenance, micro services infrastructure, infrastructure construction, Had the opportunity with Alibaba Health & PICC participate in large-scale project development; and my first [studio](https://caojiele.com/cooperation/) was founded in 2017, solve all kinds of company 「incurable diseases」, to achieve the demand of 「imagination」.Have been torn between the demand and development of struggle, as in a line of powerhouse, is still in development.
 
 - QQ：312236308
 - Wechat：CJL33333
