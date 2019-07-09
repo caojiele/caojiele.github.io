@@ -2,7 +2,7 @@
 
 ### [我的博客传送门 &rarr;](https://caojiele.com)
 
-![blog-desktop](https://caojiele.com/img/root/blog-desktop.jpg)
+![blog-desktop](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562635447723-4ad1235c-92d9-4552-a87a-5ef4e418b459.jpeg)
 
 ## 关于模板(beta)
 
@@ -104,7 +104,7 @@ tags:
 #### 侧边栏
 
 看右边:
-![blog-sideba](https://caojiele.com/img/root/blog-sidebar.jpg)
+![blog-sideba](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562635518053-b73d5f15-c726-4f91-b7ae-5de3f0150e6f.jpeg)
 
 设置是在 `_config.yml`文件里面的`Sidebar settings`那块。
 ```
