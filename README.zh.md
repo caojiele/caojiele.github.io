@@ -163,7 +163,7 @@ HTML5幻灯片的排版：
 
 这部分是用于占用html格式的幻灯片的，一般用到的是 Reveal.js, Impress.js, Slides, Prezi 等等.我认为一个现代化的博客怎么能少了放html幻灯的功能呢~
 
-![blog keynote_2](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562643104899-b18891e7-66d8-45bd-9611-4086c8b6b44c.jpeg)
+![blog keynote_2](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562674493253-02a898fb-9a93-48d5-bd61-9833b864c07d.jpeg)
 
 其主要原理是添加一个 `iframe`，在里面加入外部链接。你可以直接写到头文件里面去，详情请见下面的yaml头文件的写法。
 
