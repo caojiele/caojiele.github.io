@@ -170,7 +170,7 @@ friends: [
 
 There is a increasing tendency to use Open Web technology to create keynotes, presentations, like Reveal.js, Impress.js, Slides, Prezi etc. I consider a modern blog should have abilities to post these HTML based presentation easily also abilities to play it directly.
 
-![blog keynote_2](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562643104899-b18891e7-66d8-45bd-9611-4086c8b6b44c.jpeg)
+![blog keynote_2](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562674493253-02a898fb-9a93-48d5-bd61-9833b864c07d.jpeg)
 
 Under the hood, a `iframe` is used to include webpage from outer source, so the only things left is to give a url in the **front-matter**:
 
