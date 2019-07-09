@@ -108,7 +108,7 @@ tags:
 
 #### SideBar
 
-![blog-sideba](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562635518053-b73d5f15-c726-4f91-b7ae-5de3f0150e6f.jpeg)
+![blog-sidebar](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562635518053-b73d5f15-c726-4f91-b7ae-5de3f0150e6f.jpeg)
 
 Seeing more information may be necessary for you to display, from V1.1, a clean, gorgeous **SideBar** is added for you, which provide more area for displaying possible modules. You can enable *(it is default enable)* this feature by simply config:
 
@@ -166,9 +166,11 @@ friends: [
 
 #### Keynote Layout
 
-![HTML5幻灯片的排版](https://caojiele.com/img/root/blog-keynote.jpg)
+![blog keynote_1](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562643097540-c3d5e2bd-4783-4d0b-958c-e607e8a1aab8.jpeg)
 
 There is a increasing tendency to use Open Web technology to create keynotes, presentations, like Reveal.js, Impress.js, Slides, Prezi etc. I consider a modern blog should have abilities to post these HTML based presentation easily also abilities to play it directly.
+
+![blog keynote_2](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562643104899-b18891e7-66d8-45bd-9611-4086c8b6b44c.jpeg)
 
 Under the hood, a `iframe` is used to include webpage from outer source, so the only things left is to give a url in the **front-matter**:
 
