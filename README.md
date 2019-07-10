@@ -177,7 +177,7 @@ Under the hood, a `iframe` is used to include webpage from outer source, so the 
 ```
 ---
 layout:     keynote
-iframe:     "https://caojiele.com/js-module-7day/"
+iframe:     "https://caojiele.com/js-module-introduce-myself"
 ---
 ```
 
