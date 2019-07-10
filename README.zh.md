@@ -170,7 +170,7 @@ HTML5幻灯片的排版：
 ```
 ---
 layout:     keynote
-iframe:     "https://caojiele.com/js-module-7day/"
+iframe:     "https://caojiele.com/js-module-introduce-myself"
 ---
 ```
 
