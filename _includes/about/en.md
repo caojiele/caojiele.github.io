@@ -4,10 +4,7 @@ Hey, I'm Jack Cao, Java engineer, such as the Apache & Alibaba open source contr
 
 - QQ：312236308
 - Wechat：CJL33333
-    - Official Accounts：xiaomage_freestyle
 - Github：[http://github.com/caojiele](http://github.com/caojiele)
-
-
 
 ## Online Courses
 
@@ -22,7 +19,6 @@ Hey, I'm Jack Cao, Java engineer, such as the Apache & Alibaba open source contr
 
 - segmentfault
     - [「Personal Homepage」](https://segmentfault.com/u/xiaomage_5c10d17d26987)
-
 
 ## Open Source Projects
 
@@ -42,5 +38,14 @@ Hey, I'm Jack Cao, Java engineer, such as the Apache & Alibaba open source contr
     
 ## Community communication
 
-- QQ group：628732355<br>
-![QQ group](/img/root/qq_group_2.png)
+- QQ group：628732355
+
+  ![QQ group](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562678967088-beef0b3d-8fbf-4166-97e8-03a3f527c5e6.jpeg)
+
+- Official Accounts：xiaomage_freestyle
+
+  ![public wechat](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562681958344-f9b0d53f-2be5-42d0-bdb6-b043d04fd856.jpeg)
+  
+- More details, please scan qrcode：
+  
+  ![qrcode](https://cdn.nlark.com/yuque/0/2019/png/338441/1562683998026-42937005-a1e6-43cb-b51e-6aacf2952a56.png)
