@@ -28,7 +28,7 @@ Hey，我是小码哥，Java 攻城狮，Apache、Alibaba等开源组织贡献�
     - [dubbo-website](https://github.com/apache/dubbo-website): [http://dubbo.apache.org](http://dubbo.apache.org)
 - Alibaba
     - [nacos](https://github.com/alibaba/nacos)
-    - [nacos-group.github.io](https://github.com/nacos-group/nacos-group.github.io): [https://nacos.io](https://nacos.io)
+    - [nacos-website](https://github.com/nacos-group/nacos-group.github.io): [https://nacos.io](https://nacos.io)
 - Personal
     - [Automation-report](https://github.com/caojiele/Automation-report)
     - [Spring-official-reference](https://github.com/caojiele/Spring-official-reference)
