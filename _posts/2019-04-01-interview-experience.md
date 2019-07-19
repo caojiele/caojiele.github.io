@@ -28,6 +28,7 @@ tags:
 - [房多多](#房多多)
 - [DellEMC](#戴尔易安信)
 - [Amazon](#亚马逊)
+- [Ericsson](#爱立信)
 
 ## 平安产险
 先通过邮件发了一份线上测评（EQ+IQ), 做完达到要求后才能有后续的面试机会，没有通过`两年之内`不能进平安任何一家公司。
@@ -948,3 +949,61 @@ Definition of done:
 2、`WebPageUtil`类的职责建议设计成通用工具类，而不是耦合具体业务代码。
 
 3、考虑到扩展性，`KeyWordSearchService`应设计成接口，以支持不同搜索网站的各自实现。
+
+## 爱立信
+
+#### **英语自我介绍**
+
+#### **说一下 jdk 1.8 有哪些新特性？**
+
+[jdk8, jdk8u, jdk9, jdk10的侧重和区别是什么？](https://www.zhihu.com/question/60786248/answer/180169329)
+
+[JDK 9新特性汇总](https://zhuanlan.zhihu.com/p/29589033)
+  
+[JDK1.8新特性（持续更新）](https://zhuanlan.zhihu.com/p/62601317)
+
+#### **线程安全？用过哪些线程安全的类？**
+
+[Java集合中那些类是线程安全的](https://blog.csdn.net/mexican_ok/article/details/12859351)
+
+#### **线程池？`ThreadPoolExecutor` 类用过哪些方法？**
+
+[Java多线程-线程池ThreadPoolExecutor构造方法和规则](https://blog.csdn.net/qq_25806863/article/details/71126867)
+
+#### **用过哪些JVM诊断工具？**
+
+[【总结】性能调优：JVM内存诊断工具](https://blog.csdn.net/supera_li/article/details/45315241)
+
+[JVM监控及诊断工具](https://www.jianshu.com/p/c4966f7e8f36)
+
+#### **遇到内存溢出怎么解决？**
+
+OutOfMemoryError，当JVM因为没有足够的内存来为对象分配空间，并且垃圾回收器也已经没有空间可回收时，就会抛出这个error（注：非exception，因为这个问题已经严重到不足以被应用处理）。
+  
+因为OutOfMemoryError是可以catch的。catch之后吞掉的话程序还能试着继续运行。例如说以前见过的一个案例是：一个Java服务器端应用，有段代码没写对导致有一个线程在疯狂创建大数组对象——直到OOM。这个线程注册的uncaught exception handler捕获到了这个异常，记录了日志，然后就把这个异常吞掉了。这样还能继续正常跑下去是因为：只是一个创建很大的数组对象的请求失败了而已，而出错的那个方法由于异常处理已经被退出了，程序的其它部分并没有受影响。
+  
+[JVM 发生 OOM 的 8 种原因、及解决办法](https://zhuanlan.zhihu.com/p/63752449)
+
+#### **JVM内存结构**
+
+[JVM内存结构](https://www.cnblogs.com/ityouknow/p/5610232.html)
+
+#### **用过哪些liunx系统的命令？如何用命令查找带有Java内容的文件？**
+
+[Linux常用命令大全](https://www.cnblogs.com/fnlingnzb-learner/p/5831284.html)
+
+[Windows CMD中查找文件和文件内容](https://blog.csdn.net/milo_csdn/article/details/86306527)
+
+`grep -r "{关键字}"  {路径}` 
+
+eg: `grep -r "test"  /data/reports`
+
+#### **linux中如何用命令查看java进程？**
+
+`ps -ef|grep java`
+
+#### **用过Oracle吗？MySQL 如何调优？MySQL 如何避免索引失效？**
+
+[MySQL 性能调优的10个方法](https://www.cnblogs.com/claireyuancy/p/7258314.html)
+
+[索引优化：索引失效（应避免）](https://www.jianshu.com/p/d5b2f645d657)
