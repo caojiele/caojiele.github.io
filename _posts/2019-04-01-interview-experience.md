@@ -10,7 +10,7 @@ tags:
     - Java
 ---
 
-这是我今年从三月份开始，主要的大厂面试经过，有些企业面试的还没来得及整理，可能有些没有带答案就发出来了，还请各位先思考如果是你怎么回答面试官？这篇文章会持续更新，请各位持续关注，希望对你有所帮助！
+这是我今年从三月份开始，主要的大厂面试经历，有些企业面试的还没来得及整理，还有些没有带答案就发出来了，不管怎样，请各位先思考如果是你怎么回答面试官？这篇文章会持续更新，请各位持续关注，希望对你有所帮助！
 
 ## 面试清单
 - [平安产险](#平安产险)
@@ -28,7 +28,10 @@ tags:
 - [房多多](#房多多)
 - [DellEMC](#戴尔易安信)
 - [Amazon](#亚马逊)
+- [有赞](#有赞)
 - [Ericsson](#爱立信)
+- [步步高](#步步高)
+- [福米科技](#福米科技)
 
 ## 平安产险
 先通过邮件发了一份线上测评（EQ+IQ), 做完达到要求后才能有后续的面试机会，没有通过`两年之内`不能进平安任何一家公司。
@@ -615,11 +618,11 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
 
   [sleep( ) 和 wait( ) 的这 5 个区别，你知道几个？](https://zhuanlan.zhihu.com/p/45666264)
 
-#### **开发过程中遇到过哪些异常？/Exception 与 error的区别？/说一下error层次结构？**
+#### **开发过程中遇到过哪些异常？Exception 与 error的区别？说一下error层次结构？**
 
   [Java异常处理](https://zhuanlan.zhihu.com/p/37072375)
   
-#### **用过哪些数据库？/说一下Mysql 四种事务隔离级别/哪种级别最高？为什么？**
+#### **用过哪些数据库？说一下Mysql 四种事务隔离级别？哪种级别最高？为什么？**
 
   [真正理解Mysql的四种事务隔离级别](https://www.jianshu.com/p/75187e19faf2)
   
@@ -661,7 +664,7 @@ json格式
 
 #### **有中间件开发经验吗？**
 
-#### **如何搭建Nacos/dubbo平台？**
+#### **如何搭建nacos/dubbo平台？**
 
 #### **说一下Spring MVC框架**
 
@@ -784,11 +787,11 @@ json格式
 
 #### **请用英文介绍“温尔宝贝”项目？**
 
-* wener baby app
+**wener baby app**
 
 The project is for continuous monitoring of user's body temperature, real-time temperature, prompt the user and through the cyclical temperature data analysis of the user's health.Using Springboot + mybatis architecture, mybatis - plus to simplify the development of the dao layer, and extract the universal service;Swagger document automatically generated interface, convenient interface test;Gradle management jar package, solve the jars conflict;Use redis for middle pressure to reduce database cache.
 
-* wener baby pad
+**wener baby pad**
 
 The project on the basis of previous app, joint development with offline clinics and hospitals, and VIP card binding through mobile phones, on the pad for continuous monitoring of the user's temperature display.Springboot + mongo framework, using the swagger automatically generated interface documents, convenient interface test;Taiwan before and after data interaction using the vue to simplify the dom manipulation;Neginx reverse proxy server, the data flow, split into multiple servers to improve the whole performance of the server system.
 
@@ -899,7 +902,7 @@ The project on the basis of previous app, joint development with offline clinics
 
 #### **用英语介绍你最熟悉的项目？**
 
-wener baby (pad)
+**wener baby (pad)**
 
 The project on the basis of previous app, joint development with offline clinics and hospitals, and VIP card binding through mobile phones, on the pad for continuous monitoring of the user's temperature display.Springboot + mongo framework, using the swagger document automatically generated interface, convenient interface test;Taiwan before and after data interaction using the vue to simplify the dom manipulation;Neginx reverse proxy server, the data flow split into multiple server implementation, improve the performance of the entire server system.
 
@@ -922,8 +925,11 @@ Common requirements:
 Test Description: for any key words, please get the 1st non-AD search result from baidu.com.
 
 Definition of done:
+
 1. Define a mechanism for the user to provide the key words.
+
 2. The result will be shown on a web page (you may define the URL) of this project.
+
 ---
 
 为了考核众多面试者的技术能力，请review一下该面试者的code：[https://github.com/yingjil/JPHire/pull/6/commits/7b12ee650a15375a0b444f4374d0923e398bd02f]([https://github.com/yingjil/JPHire/pull/6/commits/7b12ee650a15375a0b444f4374d0923e398bd02f) 。他的任务是在`Test3`中描述的。对你的要求是用最高标准找到代码缺陷并提出修改意见。如果接受任务，请告知估计完成时间。
@@ -950,9 +956,39 @@ Definition of done:
 
 3、考虑到扩展性，`KeyWordSearchService`应设计成接口，以支持不同搜索网站的各自实现。
 
+## 有赞
+
+#### **hashmap 与 hashtable源码**
+
+#### **hashmap 在 jdk 1.7 和 jdk 1.8 中的区别**
+
+#### **线程池，线程参数的含义**
+
+#### **生产设置线程数的依据是什么？**
+
+#### **java.io.writer 有什么方法**
+
+#### **hashcode equals 重写一个会有什么情况**
+
+#### **sleep 加锁会释放吗？**
+
+#### **缓存击穿，雪崩**
+
+1.缓存过期导致的击穿，如果只是单条，对系统没有影响；如果同时一大批过期，效果就相当于雪崩，压力都到了数据库，扛不住。解决办法：使得各个数据的过期时间尽量均匀，比如可以加随机数。使得数据库压力均匀。
+
+2.缓存没命中导致的穿透，同样的问题。这个就需要尽量以缓存为准，即要么通过先返回空，再异步加载数据，要么就是用一个去重机制(bitmap 效果明显比 boomfilter 好)。还有一个方法就是，如果数据库里没有，也放一个key:null到缓存，加过期时间。
+
+3.雪崩主要是靠高可用处理，分片、多实例、持久化，不要被清空了，宕机或重启，预热可以比较平稳，比如逐步加载数据。
+
+#### **如何保证幂等性，一般在什么环节处理？**
+
+#### **说说你了解的分布式**
+
 ## 爱立信
 
 #### **英语自我介绍**
+
+hello, everone! my name is Jiele Cao, 25 years old, from hunan, graduated from hunan university of technology, electronic information engineering in Shanghai has been working for three years after graduation, respectively in two Internet biological medical company involved in the backend development of four projects.First company Shanghai with biological technology co., LTD., work for more than a year, is mainly responsible for the company's internal document management systems and WeChat public projects; wener recently, the Shanghai information technology co., LTD. Participated in two projects of a project which is Internet medical clinics online platform, the company is a company to do temperature detection, in the early stage of the project (wener baby), on the basis of the development on special pad, with modular service operations in the form of the project mainly includes frontend and backend, such as user, login, search module.
 
 #### **说一下 jdk 1.8 有哪些新特性？**
 
@@ -1007,3 +1043,7 @@ eg: `grep -r "test"  /data/reports`
 [MySQL 性能调优的10个方法](https://www.cnblogs.com/claireyuancy/p/7258314.html)
 
 [索引优化：索引失效（应避免）](https://www.jianshu.com/p/d5b2f645d657)
+
+## 步步高
+
+## 福米科技
