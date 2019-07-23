@@ -1046,4 +1046,161 @@ eg: `grep -r "test"  /data/reports`
 
 ## 步步高
 
+## 步步高
+
+### **一面**
+
+#### **自我介绍**
+
+#### **温尔宝贝 pad这个项目承担什么样的角色？**
+
+#### **MySQL 组合索引**
+
+[mysql 什么时候用单列索引？什么使用用联合索引？](https://www.zhihu.com/question/40736083/answer/88191544)
+
+#### **MySQL 和 MongoDB 的区别？**
+
+[MySQL与MongoDB的区别](https://www.cnblogs.com/caihuafeng/p/5494336.html)
+
+#### **MySQL 如何避免索引失效？**
+
+[索引优化：索引失效（应避免）](https://www.jianshu.com/p/d5b2f645d657)
+
+#### **假如线上项目出现问题，如何解决？**
+
+[如何应对线上故障](https://zhuanlan.zhihu.com/p/34107876)
+
+#### **用过哪些liunx系统的命令？查看日志命令？**
+
+[Linux 命令大全](http://man.linuxde.net)
+
+[Linux查看日志常用命令](https://www.cnblogs.com/kbkiss/p/7567725.html)
+
+#### **遇到异常怎么处理？**
+
+[Java异常处理](https://cloud.tencent.com/developer/article/1132994)
+
+#### **Object类及其常用方法**
+
+[Object类及其常用方法简介](https://www.cnblogs.com/wxywxy/p/6740277.html)
+
+[java Object类及其常用方法](https://blog.csdn.net/guo0820/article/details/51030380)
+
+#### **String、StringBuffer与StringBuilder的区别**
+
+[String,StringBuffer与StringBuilder的区别??](https://blog.csdn.net/rmn190/article/details/1492013)
+
+#### **"equals"和"=="的区别**
+
+[equals和==的区别小结](https://www.cnblogs.com/Eason-S/p/5524837.html)
+
+#### **ArrayList和LinkedList的区别?**
+
+**LinkedList**实现了List接口，允许null元素。此外LinkedList提供额外的get，remove，insert方法在LinkedList的首部或尾部。这些操作使LinkedList可被用作堆栈（stack），队列（queue）或双向队列（deque）。
+
+注意**LinkedList**没有同步方法。如果多个线程同时访问一个List，则必须自己实现访问同步。一种解决方法是在创建List时构造一个同步的List：
+
+`List list = Collections.synchronizedList(new LinkedList(…));`
+
+ 特点：寻址困难，插入和删除容易。
+ 
+**ArrayList**实现了可变大小的数组。它允许所有元素，包括null。ArrayList没有同步。
+
+size，isEmpty，get，set方法运行时间为常数。但是add方法开销为分摊的常数，添加n个元素需要O(n)的时间。其他的方法运行时间为线性。
+
+每个**ArrayList**实例都有一个容量（Capacity），即用于存储元素的数组的大小。这个容量可随着不断添加新元素而自动增加，但是增长算法并没有定义。当需要插入大量元素时，在插入前可以调用ensureCapacity方法来增加ArrayList的容量以提高插入效率。
+
+和LinkedList一样，**ArrayList**也是非同步的（unsynchronized）。
+
+特点是：寻址容易，插入和删除困难；
+
+#### **String str = new String("abc"); 创建了几个对象**
+
+[面试题之String str = new String("abc"); 创建了几个对象](https://blog.csdn.net/limingchuan123456789/article/details/14150327)
+
+#### **HashMap和Hashtable的区别**
+
+**Hashtable**继承Map接口，实现一个key-value映射的哈希表。任何非空（non-null）的对象都可作为key或者value。添加数据使用put(key,value)，取出数据使用get(key)，这两个基本操作的时间开销为常数。
+
+**Hashtable** 通过initial capacity和load factor两个参数调整性能。通常缺省的load factor 0.75较好地实现了时间和空间的均衡。增大load factor可以节省空间但相应的查找时间将增大，这会影响像get和put这样的操作。
+
+作为key的对象将通过计算其散列函数来确定与之对应的value的位置，因此任何作为key的对象都必须实现hashCode和equals方法。
+
+**Hashtable**是同步的。
+
+**HashMap**和Hashtable类似，不同之处在于HashMap是非同步的，并且允许null，即null value和null key。其迭代子操作时间开销和HashMap 的容量成比例,因此，不要将HashMap的初始化容量设得过高，或者load factor过低。
+
+#### **有哪些方法创建线程？**
+
+仅仅只有**new thread**这种方法创建线程
+
+```java
+public class ThreadCreationQuestion {
+
+    public static void main(String[] args) {
+        // main 线程 -> 子线程
+        Thread thread = new Thread(() -> {
+        }, "子线程-1");
+
+    }
+
+    /**
+     * 不鼓励自定义（扩展） Thread
+     */
+    private static class MyThread extends Thread {
+
+        /**
+         * 多态的方式，覆盖父类实现
+         */
+        @Override
+        public void run(){
+            super.run();
+        }
+    }
+
+}
+```
+
+与运行线程方法区分：
+**java.lang.Runnable()** 或 **java.lang.Thread类**
+
+#### **线程池的优点？如何创建一个线程池？**
+
+1）避免线程的创建和销毁带来的性能开销。
+
+2）避免大量的线程间因互相抢占系统资源导致的阻塞现象。
+
+3｝能够对线程进行简单的管理并提供定时执行、间隔执行等功能。
+
+```java
+ExecutorService pool = Executors.newCachedThreadPool(); //可根据需要创建新线程的线程池
+ExecutorService pool = Executors.newSingleThreadExecutor(); //创建是一个单线程池
+ExecutorService pool = Executors.newFixedThreadPool();//创建固定大小的线程池
+ExecutorService pool = Executors.newScheduledThreadPool();//创建一个大小无限的线程池
+```
+
+[线程、多线程与线程池总结](https://www.jianshu.com/p/b8197dd2934c)
+
+#### **sleep() 和 wait() 的区别**
+
+[sleep() 和 wait() 的区别](https://blog.csdn.net/xyh269/article/details/52613507)
+
+#### **SpringMVC 工作原理**
+
+客户端发送请求-> 前端控制器 DispatcherServlet 接受客户端请求 -> 找到处理器映射 HandlerMapping 解析请求对应的 Handler-> HandlerAdapter 会根据 Handler 来调用真正的处理器开处理请求，并处理相应的业务逻辑 -> 处理器返回一个模型视图 ModelAndView -> 视图解析器进行解析 -> 返回一个视图对象->前端控制器 DispatcherServlet 渲染数据（Moder）->将得到视图对象返回给用户
+
+#### **Spring 的理解**
+
+[怎么回答面试官：你对Spring的理解？](https://www.zhihu.com/question/48427693?sort=created)
+
+#### **分布式事务原理**
+
+[分布式事务：分布式事务原理概述](https://yq.aliyun.com/articles/608863)
+
+#### **如何设计接口？如何考虑接口安全性？**
+
+[如何设计出一些优雅的API接口呢？](https://www.zhihu.com/question/31363461)
+
+[如何设计好的RESTful API之安全性](https://www.cnblogs.com/longshiyVip/p/5374523.html)
+
 ## 福米科技
