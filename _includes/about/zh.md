@@ -5,6 +5,7 @@ Hey，我是小码哥，Java 攻城狮，Apache、Alibaba等开源组织贡献�
 - QQ：312236308
 - 微信：CJL33333
 - Github：[http://github.com/caojiele](http://github.com/caojiele)
+- Gitee： [https://gitee.com/caojiele](https://gitee.com/caojiele)
 
 ## 线上分享
 
@@ -30,10 +31,10 @@ Hey，我是小码哥，Java 攻城狮，Apache、Alibaba等开源组织贡献�
     - [nacos](https://github.com/alibaba/nacos)
     - [nacos-website](https://github.com/nacos-group/nacos-group.github.io): [https://nacos.io](https://nacos.io)
 - Personal
-    - [Automation-report](https://github.com/caojiele/Automation-report)
+    - [Automation-report](https://github.com/caojiele/automation-report)
     - [Spring-official-reference](https://github.com/caojiele/Spring-official-reference)
-    - [JavaMonitor](https://github.com/caojiele/JavaMonitor): [https://caojiele.com/JavaMonitor](http://116.85.23.6:8888)
-    - [Online-resume](https://github.com/caojiele/Online-resume): [https://caojiele.com/resume/](https://caojiele.com/resume/)
+    - [JavaMonitor](https://github.com/caojiele/java-monitor): [https://github.com/caojiele/java-monitor](http://116.85.23.6:8888)
+    - [Online-resume](https://github.com/caojiele/online-resume): [https://caojiele.com/online-resume/](https://caojiele.com/online-resume/)
     - [Jlcaoblog-boilerplate](https://github.com/caojiele/Jlcaoblog-boilerplate): [https://caojiele.com/Jlcaoblog-boilerplate/](https://caojiele.com/Jlcaoblog-boilerplate/)
 
 ## 社区交流
