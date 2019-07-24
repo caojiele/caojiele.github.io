@@ -33,7 +33,7 @@ Hey, I'm Jack Cao, Java engineer, such as the Apache & Alibaba open source contr
 - Personal
     - [Automation-report](https://github.com/caojiele/automation-report)
     - [Spring-official-reference](https://github.com/caojiele/Spring-official-reference)
-    - [JavaMonitor](https://github.com/caojiele/JavaMonitor): [https://caojiele.com/JavaMonitor](http://116.85.23.6:8888)
+    - [JavaMonitor](https://github.com/caojiele/JavaMonitor): [https://caojiele.com/java-monitor](http://116.85.23.6:8888)
     - [Online-resume](https://github.com/caojiele/online-resume): [https://caojiele.com/online-resume/](https://caojiele.com/online-resume/)
     - [Jlcaoblog-boilerplate](https://github.com/caojiele/Jlcaoblog-boilerplate): [https://caojiele.com/Jlcaoblog-boilerplate/](https://caojiele.com/Jlcaoblog-boilerplate/)
     
