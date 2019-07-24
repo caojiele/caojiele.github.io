@@ -2,9 +2,10 @@
 
 Hey, I'm Jack Cao, Java engineer, such as the Apache & Alibaba open source contributor, found in all the year round lot, Github, Gitee, zhihu, segmentfault. At present is mainly responsible for group App backend development and maintenance, micro services infrastructure, infrastructure construction, Had the opportunity with Alibaba Health & PICC participate in large-scale project development; and my first [studio](https://caojiele.com/cooperation/) was founded in 2017, solve all kinds of company 「incurable diseases」, to achieve the demand of 「imagination」.Have been torn between the demand and development of struggle, as in a line of powerhouse, is still in development.
 
-- QQ：312236308
-- Wechat：CJL33333
-- Github：[http://github.com/caojiele](http://github.com/caojiele)
+- QQ: 312236308
+- Wechat: CJL33333
+- Github: [http://github.com/caojiele](http://github.com/caojiele)
+- Gitee: [https://gitee.com/caojiele](https://gitee.com/caojiele)
 
 ## Online Courses
 
@@ -30,22 +31,22 @@ Hey, I'm Jack Cao, Java engineer, such as the Apache & Alibaba open source contr
     - [nacos](https://github.com/alibaba/nacos)
     - [nacos-website](https://github.com/nacos-group/nacos-group.github.io): [https://nacos.io](https://nacos.io)
 - Personal
-    - [Automation-report](https://github.com/caojiele/Automation-report)
+    - [Automation-report](https://github.com/caojiele/automation-report)
     - [Spring-official-reference](https://github.com/caojiele/Spring-official-reference)
     - [JavaMonitor](https://github.com/caojiele/JavaMonitor): [https://caojiele.com/JavaMonitor](http://116.85.23.6:8888)
-    - [Online-resume](https://github.com/caojiele/Online-resume): [https://caojiele.com/resume/](https://caojiele.com/resume/)
+    - [Online-resume](https://github.com/caojiele/online-resume): [https://caojiele.com/online-resume/](https://caojiele.com/online-resume/)
     - [Jlcaoblog-boilerplate](https://github.com/caojiele/Jlcaoblog-boilerplate): [https://caojiele.com/Jlcaoblog-boilerplate/](https://caojiele.com/Jlcaoblog-boilerplate/)
     
 ## Community communication
 
-- QQ group：628732355
+- QQ group: 628732355
 
   ![QQ group](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562678967088-beef0b3d-8fbf-4166-97e8-03a3f527c5e6.jpeg)
 
-- Official Accounts：xiaomage_freestyle
+- Official Accounts: xiaomage_freestyle
 
   ![public wechat](https://cdn.nlark.com/yuque/0/2019/jpeg/338441/1562681958344-f9b0d53f-2be5-42d0-bdb6-b043d04fd856.jpeg)
   
-- More details, please scan qrcode：
+- More details, please scan qrcode:
   
   ![qrcode](https://cdn.nlark.com/yuque/0/2019/png/338441/1562683998026-42937005-a1e6-43cb-b51e-6aacf2952a56.png)
