@@ -1202,3 +1202,63 @@ ExecutorService pool = Executors.newScheduledThreadPool();//创建一个大小�
 [如何设计好的RESTful API之安全性](https://www.cnblogs.com/longshiyVip/p/5374523.html)
 
 ## 福米科技
+
+虽然推迟了半个小时面试，但是这个面试官很耐心，等我答完后，把他的观点阐述，面试就应该这样，相互学习才是面试的最高境界。
+
+#### **自我介绍**
+
+#### **乐观锁和悲观锁**
+
+[乐观锁和悲观锁的区别](https://www.cnblogs.com/qlqwjy/p/7798266.html)
+
+#### **mysql出现索引失效情况**
+
+#### **解释下“字符串不加单引号”是如何造成索引失效**
+
+#### **查询一张表中是否有重复数据？场景：一张表中有 id 和 name 两个字段，查询出 name 重复的所有数据**
+
+[sql 查出一张表中重复的所有记录数据](https://www.cnblogs.com/wangfuyou/p/6058169.html)
+
+#### **多线程**
+
+[线程、多线程与线程池总结](https://www.jianshu.com/p/b8197dd2934c)
+
+#### **如何创建的一个线程池？（非调用接口）**
+
+```java
+public ThreadPoolExecutor(int corePoolSize,
+                          int maximumPoolSize,
+                          long keepAliveTime,
+                          TimeUnit unit,
+                          BlockingQueue<Runnable> workQueue,
+                          ThreadFactory threadFactory) {
+    this(corePoolSize, maximumPoolSize, keepAliveTime, unit, workQueue, 
+        threadFactory, defaultHandler);
+}
+```
+
+1）corePoolSize：线程池的核心线程数，一般情况下不管有没有任务都会一直在线程池中一直存活，只有在 ThreadPoolExecutor 中的方法 allowCoreThreadTimeOut(boolean value) 设置为 true 时，闲置的核心线程会存在超时机制，如果在指定时间没有新任务来时，核心线程也会被终止，而这个时间间隔由第3个属性 keepAliveTime 指定。
+
+2）maximumPoolSize：线程池所能容纳的最大线程数，当活动的线程数达到这个值后，后续的新任务将会被阻塞。
+
+3）keepAliveTime：控制线程闲置时的超时时长，超过则终止该线程。一般情况下用于非核心线程，只有在 ThreadPoolExecutor 中的方法 allowCoreThreadTimeOut(boolean value) 设置为 true时，也作用于核心线程。
+
+4）unit：用于指定 keepAliveTime 参数的时间单位，TimeUnit 是个 enum 枚举类型，常用的有：TimeUnit.HOURS(小时)、TimeUnit.MINUTES(分钟)、TimeUnit.SECONDS(秒) 和 TimeUnit.MILLISECONDS(毫秒)等。
+
+5）workQueue：线程池的任务队列，通过线程池的 execute(Runnable command) 方法会将任务 Runnable 存储在队列中。
+
+6）threadFactory：线程工厂，它是一个接口，用来为线程池创建新线程的。
+
+#### **如何解决线程被阻塞？**
+
+#### **集群分布式事务原理**
+
+#### **并发控制锁策略什么情况下失效 / 为什么要使用分布式锁?**
+
+为了保证一个方法或属性在高并发情况下的同一时间只能被同一个线程执行，在传统单体应用单机部署的情况下，可以使用并发处理相关的功能进行互斥控制。但是，随着业务发展的需要，原单体单机部署的系统被演化成分布式集群系统后，由于分布式系统多线程、多进程并且分布在不同机器上，这将使原单机部署情况下的并发控制锁策略失效，单纯的应用并不能提供分布式锁的能力。为了解决这个问题就需要一种跨机器的互斥机制来控制共享资源的访问，这就是分布式锁要解决的问题！
+
+#### **实现分布式锁的方式**
+
+[三种实现分布式锁的方式](https://blog.csdn.net/wuzhiwei549/article/details/80692278)
+
+#### **volatile**
