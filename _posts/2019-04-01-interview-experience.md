@@ -1213,7 +1213,24 @@ ExecutorService pool = Executors.newScheduledThreadPool();//创建一个大小�
 
 #### **mysql出现索引失效情况**
 
+- 如果条件中有or，即使其中有条件带索引也不会使用(这也是为什么尽量少用or的原因)。要想使用or，又想让索引生效，只能将or条件中的每个列都加上索引。
+
+- 对于多列索引，不是使用的第一部分，则不会使用索引。
+
+- like 查询以 % 开头。
+
+- 如果列类型是字符串，那一定要在条件中将数据使用引号引用起来，否则不使用索引。
+
+- 如果mysql估计使用全表扫描要比使用索引快，则不使用索引。
+
 #### **解释下“字符串不加单引号”是如何造成索引失效**
+
+```
+SELECT * from staffs where name='2000';
+SELECT * from staffs where name=2000;
+```
+
+这两条语句都会查询出正确结果，但第二条没有用到索引。因为mysql会在底层对其进行隐式的类型转换。
 
 #### **查询一张表中是否有重复数据？场景：一张表中有 id 和 name 两个字段，查询出 name 重复的所有数据**
 
@@ -1249,9 +1266,13 @@ public ThreadPoolExecutor(int corePoolSize,
 
 6）threadFactory：线程工厂，它是一个接口，用来为线程池创建新线程的。
 
-#### **如何解决线程被阻塞？**
+#### **多线程阻塞？**
+
+[JAVA多线程阻塞](https://blog.csdn.net/haozhugogo/article/details/55050681)
 
 #### **集群分布式事务原理**
+
+[分布式事务：分布式事务原理概述](https://yq.aliyun.com/articles/608863)
 
 #### **并发控制锁策略什么情况下失效 / 为什么要使用分布式锁?**
 
@@ -1262,3 +1283,13 @@ public ThreadPoolExecutor(int corePoolSize,
 [三种实现分布式锁的方式](https://blog.csdn.net/wuzhiwei549/article/details/80692278)
 
 #### **volatile**
+
+volatile关键字是线程同步的轻量级实现，所以volatile性能肯定比synchronized关键字要好。但是volatile关键字只能用于变量，而synchronized关键字可以修饰方法以及代码块。synchronized关键字在JavaSE1.6之后进行了优化，主要包括为了减少获得锁和释放锁带来的性能消耗而引入的偏向锁和轻量级锁以及其它各种优化，执行效率有了显著提升，实际开发中使 用 synchronized 关键字的场景还是更多一些。
+  
+多线程访问volatile关键字不会发生阻塞，而synchronized关键字可能会发生阻塞。
+  
+volatile关键字能保证数据的可见性，但不能保证数据的原子性。synchronized关键字两者都能保证。
+  
+volatile关键字主要用于解决变量在多个线程之间的可见性，而synchronized关键字解决的是多个线程之间访问资源的同步性。
+
+[volatile和synchronized的区别](https://blog.csdn.net/suifeng3051/article/details/52611233)
