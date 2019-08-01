@@ -300,6 +300,8 @@ public class HowToStopThreadQuestion {
 
 **Because it is inherently unsafe. Stopping a thread causes it to unlock all the monitors that it has locked.**(The monitors are unlocked as the ThreadDeath exception propagates up the stack.) If any of the objects previously protected by these monitors were in an inconsistent state, other threads may now view these objects in an inconsistent state. Such objects are said to be damaged. When threads operate on damaged objects, arbitrary behavior can result. This behavior may be subtle and difficult to detect, or it may be pronounced. Unlike other unchecked exceptions, ThreadDeath kills threads silently; thus, the user has no warning that his program may be corrupted. The corruption can manifest itself at any time after the actual damage occurs, even hours or days in the future.
 
+该方法具有固有的不安全性。用 Thread.stop 来终止线程将释放它已经锁定的所有监视器（作为沿堆栈向上传播的未检查 ThreadDeath 异常的一个自然后果）。如果以前受这些监视器保护的任何对象都处于一种不一致的状态，则损坏的对象将对其他线程可见，这有可能导致任意的行为。stop 的许多使用都应由只修改某些变量以指示目标线程应该停止运行的代码来取代。目标线程应定期检查该变量，并且如果该变量指示它要停止运行，则从其运行方法依次返回。如果目标线程等待很长时间（例如基于一个条件变量），则应使用 interrupt 方法来中断该等待。
+
 [Why is Thread.stop deprecated?](https://docs.oracle.com/javase/7/docs/technotes/guides/concurrency/threadPrimitiveDeprecation.html)
 
 **简单的说，防止死锁，以及状态不一致的情况出现。**
@@ -458,7 +460,7 @@ Java 线程有哪些状态，分别代表什么含义？
 
 在虚拟机内执行的。运行中状态，可能里面还能看到locked字样，表明它获得了某把锁。
 
-**BLOCKE**: Thread state for a thread blocked waiting for a monitor lock. A thread in the blocked state is waiting for a monitor lock to enter a synchronized block/method or reenter a synchronized block/method after calling `{@link Object#wait() Object.wait}`.
+**BLOCKE**: Thread state for a thread blocked waiting for a monitor lock. A thread in the blocked state is waiting for a monitor lock to enter a synchronized block/method or reenter a synchronized block/method after calling {@link Object#wait() Object.wait}.
 
 受阻塞并等待监视器锁。被某个锁(synchronizers)給block住了。
 
@@ -470,9 +472,9 @@ Java 线程有哪些状态，分别代表什么含义？
     <li>{@link LockSupport#park() LockSupport.park}</li>
 </ul>
 ```
-A thread in the waiting state is waiting for another thread to perform a particular action.
+<p>A thread in the waiting state is waiting for another thread to perform a particular action.
 
-For example, a thread that has called Object.wait() on an object is waiting for another thread to call Object.notify() or Object.notifyAll() on that object. A thread that has called Thread.join() is waiting for a specified thread to terminate.
+For example, a thread that has called <tt>Object.wait()</tt> on an object is waiting for another thread to call <tt>Object.notify()</tt> or <tt>Object.notifyAll()</tt> on that object. A thread that has called <tt>Thread.join()</tt> is waiting for a specified thread to terminate.
 
 无限期等待另一个线程执行特定操作。等待某个condition或monitor发生，一般停留在park(), wait(), sleep(),join() 等语句里。
 
@@ -1082,7 +1084,6 @@ queue.size() = 0
 ```
 queue.take() 方法会被阻塞
 
-## Java 并发框架
 ## Java 并发框架
 
 ### 1、锁 LOCK
@@ -1723,4 +1724,4 @@ public class AtomicQuestion {
 #### 劝退版
 Atomic* CAS 的底层是如何实现？
 
-汇编指令：`cpmxchg`  (Compare and Exchange)
+汇编指令：`cpmxchg` (Compare and Exchange)
