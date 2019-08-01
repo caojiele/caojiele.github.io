@@ -465,6 +465,7 @@ Java 线程有哪些状态，分别代表什么含义？
 受阻塞并等待监视器锁。被某个锁(synchronizers)給block住了。
 
 **WAITING**: Thread state for a waiting thread. A thread is in the waiting state due to calling one of the following methods:
+
 ```xml
 <ul>
     <li>{@link Object#wait() Object.wait} with no timeout</li>
@@ -472,13 +473,15 @@ Java 线程有哪些状态，分别代表什么含义？
     <li>{@link LockSupport#park() LockSupport.park}</li>
 </ul>
 ```
-<p>A thread in the waiting state is waiting for another thread to perform a particular action.
 
-For example, a thread that has called <tt>Object.wait()</tt> on an object is waiting for another thread to call <tt>Object.notify()</tt> or <tt>Object.notifyAll()</tt> on that object. A thread that has called <tt>Thread.join()</tt> is waiting for a specified thread to terminate.
+A thread in the waiting state is waiting for another thread to perform a particular action.
+
+For example, a thread that has called Object.wait() on an object is waiting for another thread to call Object.notify() or Object.notifyAll() on that object. A thread that has called Thread.join() is waiting for a specified thread to terminate.
 
 无限期等待另一个线程执行特定操作。等待某个condition或monitor发生，一般停留在park(), wait(), sleep(),join() 等语句里。
 
 **TIMED_WAITING**: Thread state for a waiting thread with a specified waiting time. A thread is in the timed waiting state due to calling one of the following methods with a specified positive waiting time:
+
 ```xml
 <ul>
      <li>{@link #sleep Thread.sleep}</li>
@@ -507,7 +510,6 @@ For example, a thread that has called <tt>Object.wait()</tt> on an object is wai
 方法二：ThreadMXBean
 
 ```java
-
 public class AllThreadStackQuestion {
 
     public static void main(String[] args) {
