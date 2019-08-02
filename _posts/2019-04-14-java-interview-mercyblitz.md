@@ -11,13 +11,13 @@ tags:
     - 慕课网手记
 ---
 
+> 本文来自于我的[慕课网手记](https://www.imooc.com/u/4024769)：[小马哥Java面试题课程总结](https://www.imooc.com/article/288342)，转载请保留链接 ;)
+
 前段时间在慕课网直播上听[小马哥](https://www.imooc.com/t/5387391)面试劝退（"面试虐我千百遍，Java 并发真讨厌"），发现讲得东西比自己拿到offer还要高兴，于是自己在线下做了一点小笔记，供各位参考。
 
 课程地址：[https://www.bilibili.com/video/av49124110](https://www.bilibili.com/video/av49124110)
 
 源码文档地址：[https://github.com/mercyblitz/tech-weekly](https://github.com/mercyblitz/tech-weekly/tree/master/2019.04.12%20%E3%80%8C%E5%B0%8F%E9%A9%AC%E5%93%A5%E6%8A%80%E6%9C%AF%E5%91%A8%E6%8A%A5%E3%80%8D-%20%E7%AC%AC%E4%BA%8C%E5%8D%81%E4%B8%89%E6%9C%9F%E3%80%8A%E9%9D%A2%E8%AF%95%E8%99%90%E6%88%91%E5%8D%83%E7%99%BE%E9%81%8D%EF%BC%8CJava%20%E5%B9%B6%E5%8F%91%E7%9C%9F%E8%AE%A8%E5%8E%8C%EF%BC%88%E7%BB%AD%EF%BC%89%E3%80%8B)
-
-> 本文来自于我的[慕课网手记](https://www.imooc.com/u/4024769)：[小马哥Java面试题课程总结](https://www.imooc.com/article/288342)，转载请保留链接 ;)
 
 ## Java 多线程
 
