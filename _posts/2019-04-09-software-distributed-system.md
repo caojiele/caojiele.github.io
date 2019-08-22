@@ -14,9 +14,11 @@ tags:
 > 本文来自于我的[慕课网手记](https://www.imooc.com/u/4024769)：[开篇-分布式系统中的那些开源软件](https://www.imooc.com/article/284696)，转载请保留链接 ;)
 
 
+![微服务框架历史演进](https://cdn.nlark.com/yuque/0/2019/png/338441/1566474998506-b5c65f28-53a2-48ea-a49d-e912cdc49075.png)
+
 我们来讨论一个大型话题，把分布式系统所能采用的开源或者商业软件，方方面面都来讨论一下。这里做个记录，也算是我加入慕课网认证作者的一个里程碑，今后的文章也是会和这些软件相关的，毕竟单体的项目已经不复返，分布式的项目已经成为了主流。不管你看到这个大纲可能有的熟悉，还是有的不了解，没关系，我们今后会一个个掰开的学习掌握它们，（熟悉的就要更加熟悉，不会的就要学会并掌握它。）当然，这篇文章不能代表所有分布式所用到的技术，也欢迎各位在后面评论中留言补充。
 
-
+![微服务框架的常见特性](https://pic4.zhimg.com/80/v2-c370436f1ddce659b60d35595d4445c7_hd.jpg)
 
 **基础框架**
 
@@ -177,3 +179,5 @@ Spring Cloud Sidecar，Service Mesh，istio，Sofa mesh
 **运维发布**
 
 DevOps，CICD和Pipeline，容器(Docker)化，K8S，Jenkins，蓝鲸，TriAquae，Choerodon（猪齿鱼）
+
+![Spring cloud 中间件生态](https://cdn.nlark.com/yuque/0/2019/png/338441/1566474998581-67fb061e-bec1-43bb-9337-09bac790c75b.png)
