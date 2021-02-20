@@ -11,15 +11,15 @@ tags:
     - 技术分享
 ---
 
-# GIT多源提交代码 `xxx` 为 Git Remotes Name
+## GIT多源提交代码 `xxx` 为 Git Remotes Name
 
 + git push -u `xxx` master
 
-# Maven私库设置
+## Maven私库设置
 
 > 请将 [Maven Setting](doc/settings.xml "Setting") 复制到本地私库缓存根目录下，默认在`{userhome}/.m2`下
 
-# 环境依赖
+## 环境依赖
 
 > * 【必选】JDK: 1.8
 > * 【必选】Maven: 3.3+
@@ -28,12 +28,12 @@ tags:
 > * 【必选】Nacos: 1.1.3+
 > * 【可选】Sentinel: 1.5.0+
 
-# 插件依赖
+## 插件依赖
 
 > * 【必选】Lombok Plugin
 > * 【可选】MybatisX Plugin
 
-# JVM启动参数，为了避免容器无限使用资源，请务必进行设置
+## JVM启动参数，为了避免容器无限使用资源，请务必进行设置
 
 > * 【必选】 `-XX:MetaspaceSize=128m`            （元空间默认大小）
 > * 【必选】 `-XX:MaxMetaspaceSize=128m`         （元空间最大大小）
@@ -52,60 +52,60 @@ tags:
 > * 【可选】 `-Delk=xxxxx`                        (设置elk服务地址)
 > * 【可选】 `--mpw.key=xxxx`                     (设置MP解密密钥，用于DB密码解密)
 
-# Sino-Boot 模块介绍 `2.6.0`
+## Sino-Boot 模块介绍 `2.6.0`
 
 > ###### `sino-boot`工程已集成常用组件和核心运行机制，_请勿擅自在业务层拓展重复逻辑_
 >
->  *[x] 【总装】**sino-bom** 集中版本配置，用于boot工程所有内外部构件库依赖的版本声明
->  *[x] 【内核】**sino-core-auto 工程自动化，编译时根据代码自动生成`spi`声明文件或`spring.factories`**
->  *[x] 【内核】**sino-core-boot** 核心包总装，覆盖核心组件，默认最小核心依赖
->  *[x] 【内核】**sino-core-cloud** 分布式协议设定、接口版本、RPC、熔断
->  *[x] 【内核】**sino-core-common** 公共约定、工具包
->  *[x] 【内核】**sino-core-context** 链路追逐上下文自定义管理
->  *[x] 【内核】**sino-core-db** 数据库连接池默认配置
->  *[x] 【内核】**sino-core-dubbo** dubbo和feign双模服务注册
->  *[x] 【内核】**sino-core-launch** 服务启动自定义封装、服务常量
->  *[x] 【内核】**sino-core-log4j2** LOG日志启动封装
->  *[x] 【内核】**sino-core-oss** OSS对象存储抽象定义
->  *[x] 【内核】**sino-core-secure** 权限认证模块抽象封装
->  *[x] 【内核】**sino-core-sms** 短信模块抽象定义
->  *[x] 【内核】**sino-core-gateway** 网关模块实现
->  *[x] 【框架】**sino-platform** 平台业务工程框架
->  *[x] 【插件】**sino-plugin-actuate** 暴露端点,请求拦截设置
->  *[x] 【插件】**sino-plugin-api-crypto** API请求加密签名支撑
->  *[x] 【插件】**sino-plugin-auth** 安全模块基础对象声明和安全工具包实现
->  *[x] 【插件】**sino-plugin-cache** 缓存抽象定义
->  *[x] 【插件】**sino-plugin-datascope** 数据权限封装
->  *[x] 【插件】**sino-plugin-develop** 代码在线生成封装
->  *[x] 【插件】**sino-plugin-ehcache** ehcache缓存封装
->  *[x] 【插件】**sino-plugin-excel** excel导入、导出组件封装
->  *[x] 【插件】**sino-plugin-http** httpclient组件封装，用于SDK底层调用
->  *[x] 【插件】**sino-plugin-ldap** LDAP同步插件封装
->  *[x] 【插件】**sino-plugin-log** log日志封装
->  *[x] 【插件】**sino-plugin-mongo** mongo拓展
->  *[x] 【插件】**sino-plugin-mybatis** mybatis拓展
->  *[x] 【插件】**sino-plugin-oss-aliyun** 阿里云OSS封装
->  *[x] 【插件】**sino-plugin-oss-all** OSS存储桶操作模型定义
->  *[x] 【插件】**sino-plugin-oss-minio** Minio存储封装
->  *[x] 【插件】**sino-plugin-oss-tencent** 腾讯云OSS封装
->  *[x] 【插件】**sino-plugin-redis** redis拓展
->  *[x] 【插件】**sino-plugin-ribbon** 负载均衡策略拓展，用于多人协作开发和服务的灰度发布
->  *[x] 【插件】**sino-plugin-rocket** rocketMQ拓展
->  *[x] 【插件】**sino-plugin-sms-aliyun** 阿里云短信封装
->  *[x] 【插件】**sino-plugin-sms-all** 短信操作模型定义
->  *[x] 【插件】**sino-plugin-sms-tencent** 腾讯短信封装
->  *[x] 【插件】**sino-plugin-sms-cloopen** 容联云短信封装
->  *[x] 【插件】**sino-plugin-swagger** API文档拓展
->  *[x] 【插件】**sino-plugin-tenant** 多租户模型封装
->  *[x] 【插件】**sino-plugin-trace** 链路追踪组件拓展
->  *[x] 【插件】**sino-plugin-transaction** 分布式事务拓展
+>  * [x] 【总装】**sino-bom** 集中版本配置，用于boot工程所有内外部构件库依赖的版本声明
+>  * [x] 【内核】**sino-core-auto 工程自动化，编译时根据代码自动生成`spi`声明文件或`spring.factories`**
+>  * [x] 【内核】**sino-core-boot** 核心包总装，覆盖核心组件，默认最小核心依赖
+>  * [x] 【内核】**sino-core-cloud** 分布式协议设定、接口版本、RPC、熔断
+>  * [x] 【内核】**sino-core-common** 公共约定、工具包
+>  * [x] 【内核】**sino-core-context** 链路追逐上下文自定义管理
+>  * [x] 【内核】**sino-core-db** 数据库连接池默认配置
+>  * [x] 【内核】**sino-core-dubbo** dubbo和feign双模服务注册
+>  * [x] 【内核】**sino-core-launch** 服务启动自定义封装、服务常量
+>  * [x] 【内核】**sino-core-log4j2** LOG日志启动封装
+>  * [x] 【内核】**sino-core-oss** OSS对象存储抽象定义
+>  * [x] 【内核】**sino-core-secure** 权限认证模块抽象封装
+>  * [x] 【内核】**sino-core-sms** 短信模块抽象定义
+>  * [x] 【内核】**sino-core-gateway** 网关模块实现
+>  * [x] 【框架】**sino-platform** 平台业务工程框架
+>  * [x] 【插件】**sino-plugin-actuate** 暴露端点,请求拦截设置
+>  * [x] 【插件】**sino-plugin-api-crypto** API请求加密签名支撑
+>  * [x] 【插件】**sino-plugin-auth** 安全模块基础对象声明和安全工具包实现
+>  * [x] 【插件】**sino-plugin-cache** 缓存抽象定义
+>  * [x] 【插件】**sino-plugin-datascope** 数据权限封装
+>  * [x] 【插件】**sino-plugin-develop** 代码在线生成封装
+>  * [x] 【插件】**sino-plugin-ehcache** ehcache缓存封装
+>  * [x] 【插件】**sino-plugin-excel** excel导入、导出组件封装
+>  * [x] 【插件】**sino-plugin-http** httpclient组件封装，用于SDK底层调用
+>  * [x] 【插件】**sino-plugin-ldap** LDAP同步插件封装
+>  * [x] 【插件】**sino-plugin-log** log日志封装
+>  * [x] 【插件】**sino-plugin-mongo** mongo拓展
+>  * [x] 【插件】**sino-plugin-mybatis** mybatis拓展
+>  * [x] 【插件】**sino-plugin-oss-aliyun** 阿里云OSS封装
+>  * [x] 【插件】**sino-plugin-oss-all** OSS存储桶操作模型定义
+>  * [x] 【插件】**sino-plugin-oss-minio** Minio存储封装
+>  * [x] 【插件】**sino-plugin-oss-tencent** 腾讯云OSS封装
+>  * [x] 【插件】**sino-plugin-redis** redis拓展
+>  * [x] 【插件】**sino-plugin-ribbon** 负载均衡策略拓展，用于多人协作开发和服务的灰度发布
+>  * [x] 【插件】**sino-plugin-rocket** rocketMQ拓展
+>  * [x] 【插件】**sino-plugin-sms-aliyun** 阿里云短信封装
+>  * [x] 【插件】**sino-plugin-sms-all** 短信操作模型定义
+>  * [x] 【插件】**sino-plugin-sms-tencent** 腾讯短信封装
+>  * [x] 【插件】**sino-plugin-sms-cloopen** 容联云短信封装
+>  * [x] 【插件】**sino-plugin-swagger** API文档拓展
+>  * [x] 【插件】**sino-plugin-tenant** 多租户模型封装
+>  * [x] 【插件】**sino-plugin-trace** 链路追踪组件拓展
+>  * [x] 【插件】**sino-plugin-transaction** 分布式事务拓展
 
-# Nacos配置说明
+## Nacos配置说明
 
 > 请参考 [Nacos Config](/doc/doc/nacos/*.yaml "Nacos Config") 配置模版
 
 
-# 判断当前环境类型
+## 判断当前环境类型
 
 > - CommonUtil.getEnv(); 获取环境代码
 > - CommonUtil.isProd(); 判断是否正式环境
@@ -114,7 +114,7 @@ tags:
 > - CommonUtil.call(Callable callable, String... env);  设定指定环境被执行
 
 
-# 常规操作
+## 常规操作
 
 - ### 带id和parentId列表自动合并成树形Json:
 
@@ -213,7 +213,7 @@ tags:
 
 
 
-# 开启Seata分布式事务
+## 开启Seata分布式事务
 
 * 1、在提供方和调用方服务的`pom.xml`文件中增加分布式事务依赖
 
@@ -300,7 +300,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 }
 ```
 
-#redis分布式锁基于`redisson`的实现
+## redis分布式锁基于`redisson`的实现
 
 + 1、@RedisLock 注解，用于声明当前方法启用分布式锁
 + 2、参数列表：
@@ -311,7 +311,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
   + `timeUnit`：时间单温，默认为秒
   + `type`：默认公平锁 (`LockType.REENTRANT` 重入锁) (`LockType.FAIR` 公平锁)
 
-# 关于日志采集
+## 关于日志采集
 
 + 1、`@ApiLog`注解，用户采集指定的方法执行耗时
 + 2、系统前后台都自动采集错误日志统一推送到`Sino-Log`进行采集
@@ -319,7 +319,7 @@ public class OrderServiceImpl extends ServiceImpl<OrderMapper, Order> implements
 + 4、`UsualLogPublisher.publishEvent()` 手动采集常规日志事件
 + 5、`ErrorLogPublisher.publishEvent()` 手动采集常规日志事件
 
-# 关于请求限流的控制
+## 关于请求限流的控制
 
 + 1、@RateLimiter 注解，用于声明当前方法参与限流策略
 + 2、参数列表：
@@ -346,7 +346,7 @@ public class XXXServiceImpl extends ServiceImpl<XXXMapper, XXX> implements IXXXS
 }
 ```
 
-# 关于异步响应请求开启
+## 关于异步响应请求开启
 
 >对于同一客户端存在多次并非获取某个相同请求时，容易出现请求响应紊乱情况，启用异步响应请求可以解决这类问题，如字典加载、图片响应等
 
@@ -410,7 +410,7 @@ public class DictController extends BaseController {
 }
 ```
 
-# HttpRequest工具包
+## HttpRequest工具包
 
 ```xml
     <dependency>
@@ -420,19 +420,19 @@ public class DictController extends BaseController {
     </dependency>
 ```
 
-# 启用加密通讯
+## 启用加密通讯
 
 > - 在Ctroller类或方法上增加`@ApiCrypto`即可
 > - 后台和前端分别配置aes和des对应的密钥
 > - 前后台默认都增加了对加密和非加密请求的兼容
 
-# 动态权限体系
+## 动态权限体系
 
-## **功能权限**
+### **功能权限**
 
 > 支持模块、菜单、按钮级别的授权，界面入口级限制
 
-## **接口权限**
+### **接口权限**
 
 > - 支持根据角色设定接口调用权限，针对敏感类的接口，是只能有固定的一些角色才能调用，非指定角色是不能调用，动态调整角色可调用接口
 > - 注解定义，`value`可用于`Spring EL`表达式，主要用于`RestController`层的`public`方法上
@@ -470,7 +470,7 @@ public @interface ApiAuth {
 >
 > > 注：注解指定级别最高，直接规定了某些重要的敏感接口只能由固定的角色才能访问。但同时带来但问题是不够灵活，适用于不能被篡改，只能由管理员调用但接口配置。
 
-## **数据权限**
+### **数据权限**
 
 > 动态的配置数据可访问的范围,动态数据权限部分只扫描了包含`Page`、`List`的`mapper`方法,如需扩大范围可以进入`nacos`配置`sino.data-scope.mapper-key`
 
@@ -572,7 +572,7 @@ public enum DataScopeEnum {
 > > - 通过可视化配置灵活类控制
 > > - 在角色授权时根据角色确定权限范围
 
-# oauth协议：登录认证、获取凭证
+## oauth协议：登录认证、获取凭证
 
 - 参数设定:
   - `sino.token.state`:token是否有状态
@@ -608,11 +608,11 @@ public enum DataScopeEnum {
 
 - 获取用户信息：`http://host/sino-auth/oauth/account-info`
 
-# 网关动态代理
+## 网关动态代理
 
 > 请参考`doc/nacos/sino-gateway-*.json` 配置示例
 
-# 字段自动脱敏处理
+## 字段自动脱敏处理
 
 > - `@SensitiveSerialize(SensitiveType.XXXXX)` 脱敏字段注解
 > - `SensitiveType`:脱敏类型
@@ -646,7 +646,7 @@ public class UserVO {
 }
 ```
 
-# JackJson常用注解使用
+## JackJson常用注解使用
 
 - @JsonInclude((JsonInclude.Include.XXXX)) 作用在类，用于声明本类转换json时的默认动作
   - `ALWAYS` : 包含所有属性，默认为ALWAYS
@@ -663,7 +663,7 @@ public class UserVO {
 - @JsonPropertyOrder 指定属性在 json 字符串中的顺序
 - @JsonSetter 标注于 setter 方法上，类似 @JsonProperty ，也可以解决 json 键名称和 java pojo 字段名称不匹配的问题
 
-# 枚举定义规范-主要方便数据库中的枚举类字段在代码中增强可读性
+## 枚举定义规范-主要方便数据库中的枚举类字段在代码中增强可读性
 
 示例：
 
@@ -694,7 +694,7 @@ public enum PlanEnum {
 }
 ```
 
-# MYSQL-DB配置加密
+## MYSQL-DB配置加密
 
 YML 配置：
 
@@ -727,7 +727,7 @@ class PWD{
     java -jar sino-auth.jar --mpw.key=d1104d7c3b616f0b
 ```
 
-# 多数据源使用
+## 多数据源使用
 
 1、引入dynamic-datasource-spring-boot-starter。
 
@@ -810,7 +810,7 @@ spring:
     }
 ```
 
-# 动态表名设置
+## 动态表名设置
 
 > `sino.mybatis-plus.dynamic-tables`参数可以设置需要按一定规则自动分表策略
 >
@@ -832,7 +832,7 @@ sino:
                 dynamic-rule: tenantId
 ```
 
-# Rocket MQ 使用
+## Rocket MQ 使用
 
 > - @EnableRocket : 运用在Application启动类上，用于标注本服务启动MQ配置
 > - @RocketListeners : 运用在类上，则这个类会被转换成为一个 DefaultMqPushConsumer
@@ -872,7 +872,7 @@ public class NoticeListener {
 
 ```
 
-#Excel 导入导出&常用操作工具
+## Excel 导入导出&常用操作工具
 
 ```java
 //读取excel的所有sheet数据
@@ -960,7 +960,7 @@ public class RegionController{
 }
 ```
 
-# ModuleInfo 定义,所有服务颗粒的主要暴露的模块信息
+## ModuleInfo 定义,所有服务颗粒的主要暴露的模块信息
 
 ```java
 /**
@@ -1024,7 +1024,7 @@ public interface ModuleInfo extends IModuleInfo {
 }
 ```
 
-# ServiceException 用于定义业务异常，用于service层主动抛出异常，并声明异常代码
+## ServiceException 用于定义业务异常，用于service层主动抛出异常，并声明异常代码
 
 ```java
 public class XXXXXController{
@@ -1038,7 +1038,7 @@ public class XXXXXController{
 }
 ```
 
-# 常见问题集合
+## 常见问题集合
 
 > - **ServiceImpl被强制提示需要实现IService中的所有方法?**
 >   答:  1、Mapper、Service、ServiceImpl中定义的Entity泛型是否一致；
