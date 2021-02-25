@@ -304,7 +304,7 @@ XML ------> Resource ------> BeanDefinition ------> BeanFactory
 
   可重入是通过记录锁的持有线程和持有数量来实现的，当调用synchronized保护的代码时，检查对象是否已被锁，如果是，再检查是否被当前线程锁定，如果是，增加持有数量，如果不是被当前线程锁定，才加入等待队列，当释放锁时，减少持有数量，当数量为0时才释放整个锁。
 
-  [synchronized 关键字](https://snailclimb.top/JavaGuide/#/./java/Multithread/JavaConcurrencyAdvancedCommonInterviewQuestions?id=_1-synchronized-关键字)
+  [synchronized 关键字](https://snailclimb.gitee.io/javaguide/#/docs/java/multi-thread/2020最新Java并发进阶常见面试题总结?id=1synchronized-关键字)
 
 #### **RuntimeException和Exception的区别？**
 
@@ -453,7 +453,7 @@ private static void threadJoinOneByOne() throws InterruptedException {
 
 #### **谈一下乐观锁和悲观锁？**
 
-  [面试必备之乐观锁与悲观锁](https://snailclimb.top/JavaGuide/#/./essential-content-for-interview/面试必备之乐观锁与悲观锁)
+  [面试必备之乐观锁与悲观锁](https://zhuanlan.zhihu.com/p/40211594)
   
   [面试官：什么是乐观锁请举例 程序员：瑟瑟发抖 不懂啊](https://www.toutiao.com/a6674394835207586311/?timestamp=1559090888&app=news_article&group_id=6674394835207586311&req_id=20190529084808010019054222417A028)
 
@@ -589,7 +589,7 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
 
 #### **说一下Spring MVC框架**
 
- [Spring MVC框架](https://snailclimb.top/JavaGuide/#/./system-design/framework/spring/SpringMVC-Principle?id=%E5%85%88%E6%9D%A5%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF-mvc-%E6%A8%A1%E5%BC%8F)
+ [Spring MVC框架](https://snailclimb.gitee.io/javaguide/#/docs/system-design/framework/spring/Spring常见问题总结?id=_62-springmvc-工作原理了解吗)
 
 #### **工作中有没有遇到过Mysql优化，请谈一谈**
 
@@ -607,7 +607,7 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
  
 #### **说一下在工作项目中如何运用Redis的？**
 
- [Redis](https://snailclimb.top/JavaGuide/#/./database/Redis/Redis)
+ [Redis](https://snailclimb.gitee.io/javaguide/#/docs/database/Redis/redis-all?id=_1-简单介绍一下-redis-呗)
 
 #### **工作中使用Java多态多吗？请简单说一下**
 
@@ -668,7 +668,7 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
 
 #### **说一下ArrayList、LinkedList、HashMap 底层数据结构**
 
-  [Arraylist 与 LinkedList 区别?](https://snailclimb.top/JavaGuide/#/./java/collection/Java%E9%9B%86%E5%90%88%E6%A1%86%E6%9E%B6%E5%B8%B8%E8%A7%81%E9%9D%A2%E8%AF%95%E9%A2%98?id=arraylist-%E4%B8%8E-linkedlist-%E5%8C%BA%E5%88%AB)
+  [Arraylist 与 LinkedList 区别?](https://snailclimb.gitee.io/javaguide/#/docs/java/collection/Java集合框架常见面试题?id=122-arraylist-与-linkedlist-区别)
 
   [一篇文章搞定ArrayList和LinkedList所有面试问题](https://zhuanlan.zhihu.com/p/45967570)
 
@@ -711,7 +711,7 @@ JDK 1.8: [jdk1.8 HashMap工作原理和扩容机制(源码解析)](https://blog.
 
 #### **说一下Spring MVC框架**
 
- [Spring MVC框架](https://snailclimb.top/JavaGuide/#/./system-design/framework/spring/SpringMVC-Principle?id=%E5%85%88%E6%9D%A5%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF-mvc-%E6%A8%A1%E5%BC%8F)
+ [Spring MVC框架](https://snailclimb.gitee.io/javaguide/#/docs/system-design/framework/spring/Spring常见问题总结?id=_62-springmvc-工作原理了解吗)
  
 #### **http 和 https 的区别？**
 
@@ -738,10 +738,6 @@ json格式
 #### **有中间件开发经验吗？**
 
 #### **如何搭建nacos/dubbo平台？**
-
-#### **说一下Spring MVC框架**
-
- [Spring MVC框架](https://snailclimb.top/JavaGuide/#/./system-design/framework/spring/SpringMVC-Principle?id=%E5%85%88%E6%9D%A5%E7%9C%8B%E4%B8%80%E4%B8%8B%E4%BB%80%E4%B9%88%E6%98%AF-mvc-%E6%A8%A1%E5%BC%8F)
  
 #### **Mybatis是如何将sql执行结果封装为目标对象并返回的？都有哪些映射形式？**
 
@@ -797,7 +793,7 @@ json格式
 相比synchronized，ReentrantLock增加了一些高级功能。主要来说主要有三点：①等待可中断；②可实现公平锁；③可实现选择性通知（锁可以绑定多个条件）
 - 两者的性能已经相差无几
 
-[谈谈 synchronized 和 ReentrantLock 的区别](https://snailclimb.top/JavaGuide/#/./essential-content-for-interview/PreparingForInterview/美团面试常见问题总结?id=_3-谈谈-synchronized-和-reentrantlock-的区别)
+[谈谈 synchronized 和 ReentrantLock 的区别](https://snailclimb.gitee.io/javaguide/#/docs/java/multi-thread/2020最新Java并发进阶常见面试题总结?id=_15-谈谈-synchronized-和-reentrantlock-的区别)
 
 ## 思爱普
 
@@ -940,9 +936,9 @@ The project on the basis of previous app, joint development with offline clinics
 
 #### **进程和线程的区别？**
 
-[简述线程、程序、进程的基本概念。以及他们之间关系是什么？](https://snailclimb.top/JavaGuide/#/java/Java基础知识?id=_29-简述线程、程序、进程的基本概念%E3%80%82以及他们之间关系是什么)
+[简述线程、程序、进程的基本概念。以及他们之间关系是什么？](https://snailclimb.gitee.io/javaguide/#/docs/java/multi-thread/2020最新Java并发基础常见面试题总结?id=_2-请简要描述线程与进程的关系区别及优缺点？)
 
-[图解进程和线程的关](https://snailclimb.top/JavaGuide/#/java/Multithread/JavaConcurrencyBasicsCommonInterviewQuestionsSummary?id=_21-图解进程和线程的关系)
+线程是进程划分成的更小的运行单位。线程和进程最大的不同在于基本上各进程是独立的，而各线程则不一定，因为同一进程中的线程极有可能会相互影响。线程执行开销小，但不利于资源的管理和保护；而进程正相反。
 
 #### **接触过哪些数据库索引数据结构？什么是 B+Tree？**
 
@@ -1365,4 +1361,4 @@ volatile关键字能保证数据的可见性，但不能保证数据的原子性
   
 volatile关键字主要用于解决变量在多个线程之间的可见性，而synchronized关键字解决的是多个线程之间访问资源的同步性。
 
-[volatile和synchronized的区别](https://blog.csdn.net/suifeng3051/article/details/52611233)tails/52611233)
+[volatile和synchronized的区别](https://blog.csdn.net/suifeng3051/article/details/52611233)
