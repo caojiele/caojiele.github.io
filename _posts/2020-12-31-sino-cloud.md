@@ -1,4 +1,4 @@
----
+<!-- ---
 layout:     post
 title:      "三诺云底层技术分享"
 subtitle:   "Sino cloud underlying technology sharing"
@@ -1044,4 +1044,4 @@ public class XXXXXController{
 >   答:  1、Mapper、Service、ServiceImpl中定义的Entity泛型是否一致；
 >        2、LiteEntity用IService,BaseEntity用BaseService
 
-[]: AuthUtil.md
+[]: AuthUtil.md -->
